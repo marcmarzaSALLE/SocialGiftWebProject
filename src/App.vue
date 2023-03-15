@@ -2,8 +2,6 @@
 import {RouterLink, RouterView} from 'vue-router'
 </script>
 <template>
-  <link rel="stylesheet" type="text/css" href="./src/assets/appVue.css">
-
   <header>
     <div>
       <nav>
@@ -11,9 +9,11 @@ import {RouterLink, RouterView} from 'vue-router'
       </nav>
     </div>
   </header>
-  <RouterView/>
-</template>
 
+  <main>
+    <RouterView/>
+  </main>
+</template>
 
 <style scoped>
 </style>

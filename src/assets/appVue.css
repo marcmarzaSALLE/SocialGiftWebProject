@@ -1,74 +1,99 @@
 header {
     background-color: #008fb6;
     color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    width: 100%;
-    height: 10%;
+    height: 50px;
 }
 
-.bannerTop{
+.sectionHeader1{
+    background-color: #008fb6;
+    margin-left: 2%;
+    color: #ffffff;
+    height: 50px;
+    display:flex;
+    align-content: space-between;
+}
+
+.imageLogoDiv{
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: flex-start;
     align-items: center;
+}
+
+.lenguages{
+    margin-left: 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.searchBoxInput{
+    width: 30%;
+    display: flex;
     margin: 0 auto;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.searchBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    background: url(https://cdnO.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 100% 10%;
+    background-size: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
 }
 
 .user-nav{
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-
-#searchBoxInput {
-    background: url(https://cdnO.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 100% 10%;
-    background-size: 5%;
-    display: grid;
-    width: 30%;
-    margin: 0 auto;
-    border: transparent;
-    border-bottom: 1px solid #e555;
-    outline: none;
-}
-
-nav{
+nav {
+    align-content: center;
+    justify-content: center;
     display: flex;
-    justify-content: flex-end;
     width: 80%;
 }
 
-nav a{
+nav a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.2rem;
-    margin-left: 1rem;
+    margin: 0 auto;
 }
 
-nav a:hover{
+nav a:hover {
     color: #e555;
     text-decoration: underline;
 }
 
-.sub-header{
+.sub-header {
     background-color: #2c3e50;
-    position: absolute;
     width: 100%;
     height: 20%;
     top: 100%;
-    padding: 1rem;
 }
 
-.hamburger-menu{
-    position: relative;
+.hamburger-menu {
     cursor: pointer;
-    padding: 10px;
 }
 
-.bar{
+.bar {
     width: 35px;
     height: 5px;
     background-color: #ffffff;
-    margin: 5px 0;
 }
 
 
