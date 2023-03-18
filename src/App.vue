@@ -3,12 +3,12 @@ import {RouterLink, RouterView} from 'vue-router'
 </script>
 <template>
   <header>
-    <section class="sectionHeader1" >
+    <section class="sectionHeader1">
       <div class="imageLogoDiv">
         <h2>SOCIALGIFT</h2>
       </div>
 
-      <div class ="lenguages">
+      <div class="lenguages">
         <h3>ES</h3>
       </div>
 
@@ -52,8 +52,15 @@ import {RouterLink, RouterView} from 'vue-router'
     </section>
   </header>
 
+
   <main>
+
     <RouterView/>
   </main>
+  <footer>
+    <section class="sectionFooter1">
+      <p>Copyright 2023©</p>
+    </section>
+  </footer>
 </template>
 
