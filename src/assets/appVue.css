@@ -1,6 +1,6 @@
 
 
-.sectionHeader1{
+.sectionHeader1 {
     background-color: #022873;
     border-color: #00bd7e;
     border-style: solid;
@@ -9,12 +9,24 @@
     align-content: space-between;
 }
 
+.sectionHeader2 {
+    background-color: #F2C063;
+    border-color: black;
+    border-style: solid;
+}
+
 .lenguages{
     margin-left: 2%;
     border-color: #00bd7e;
     border-style: solid;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+}
+
+.searchBox{
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -28,25 +40,19 @@
     align-content: space-between;
 }
 
-.imageLogoDiv{
-    display: flex;
-    border-color: #00bd7e;
-    border-style: solid;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.searchBox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .search{
     background: url(https://cdnO.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 100% 10%;
     background-size: 5%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.imageLogoDiv{
+    display: flex;
+    border-color: #00bd7e;
+    border-style: solid;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -65,6 +71,7 @@
     align-items: center;
     width: 100%;
 }
+
 nav {
     align-content: center;
     justify-content: center;
@@ -84,6 +91,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
+
 .sub-header {
     background-color:#F2C063;
     border-color: red;
@@ -95,14 +103,6 @@ nav a:hover {
 
 
 
-
-
-.hamburger-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 62px;
-}
 
 .notification {
     display: flex;
@@ -131,6 +131,8 @@ nav a:hover {
 
 
 
+
+
 .sectionFooter1{
     position: absolute;
     background-color: #008fb6;
@@ -141,6 +143,19 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     bottom:0;
+    width: 100%;
+}
+
+.sectionFooter2{
+    position: absolute;
+    background-color: #E2EEF7;
+    color: #ffffff;
+    height:50px;
+    line-height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom:50px;
     width: 100%;
 }
 
