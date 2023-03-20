@@ -1,15 +1,10 @@
-header {
-    background-color: #008fb6;
-    color: #ffffff;
-    height: 50px;
-}
+
 
 .sectionHeader1{
     background-color: #022873;
     border-color: #00bd7e;
     border-style: solid;
     color: #ffffff;
-    height: 50px;
     display:flex;
     align-content: space-between;
 }
@@ -91,8 +86,6 @@ nav a:hover {
 
 .sub-header {
     background-color:#F2C063;
-    height: 20%;
-    top: 100%;
     border-color: red;
     border-style: solid;
     display:flex;
@@ -101,20 +94,7 @@ nav a:hover {
 
 
 
-.hamburger-menu {
-    width: 100%;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
-    border-color: green;
-    border-style: solid;
-}
 
-#menu-toggle {
-    opacity: 0;
-}
-/*estoy aqyuuuuuu */
-#menu-toggle {
-    opacity: 0;
-}
 
 
 .hamburger-content {
@@ -137,7 +117,6 @@ nav a:hover {
 .notification-icon {
     display: flex;
     cursor: pointer;
-    height: 50px;
     width: 50px;
     justify-content: flex-start;
     align-items: center;

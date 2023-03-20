@@ -2,10 +2,11 @@
 import {RouterLink, RouterView} from 'vue-router'
 </script>
 <template>
+
   <header>
     <section class="sectionHeader1">
       <div class="imageLogoDiv">
-        <h2>SOCIALGIFT</h2>
+        <RouterLink to="/MyUser">SOCIALGIFT</RouterLink>
       </div>
 
       <div class="lenguages">
@@ -27,29 +28,13 @@ import {RouterLink, RouterView} from 'vue-router'
       </div>
 
     </section>
-    <section class="sectionHeader2">
-      <div class="sub-header">
 
-          <div class="hamburger-menu">
-            <input id="menu-toggle" type="checkbox"/>
-            <label for="menu-toggle" class="menu-btn">
-              <span></span>
-            </label>
-            <ul class="menu_box">
-              <li><a class="menu-item" href="#">MyUser</a></li>
-              <li><a class="menu-item" href="#">Messages</a></li>
-              <li><a class="menu-item" href="#">MyLists</a></li>
-            </ul>
-          </div>
-
-
-
-        <div class="notification">
-          <div class="notification-menu">
-            <img class="notification-icon" src="https://cdn-icons-png.flaticon.com/512/1361/1361713.png">
-          </div>
-        </div>
-      </div>
+ <!--Seccion del heder2-->
+    <section class="sectionHeader2" >
+        <!-- Notificaciones -->
+        <section>
+          <p>Tetoooooo</p>
+        </section>
     </section>
   </header>
 
@@ -64,4 +49,5 @@ import {RouterLink, RouterView} from 'vue-router'
     </section>
   </footer>
 </template>
+
 
