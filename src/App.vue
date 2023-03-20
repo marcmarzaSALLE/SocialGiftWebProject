@@ -26,26 +26,27 @@ import {RouterLink, RouterView} from 'vue-router'
         </nav>
       </div>
 
-
     </section>
     <section class="sectionHeader2">
       <div class="sub-header">
-        <nav>
+
           <div class="hamburger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+            <input id="menu-toggle" type="checkbox"/>
+            <label for="menu-toggle" class="menu-btn">
+              <span></span>
+            </label>
+            <ul class="menu_box">
+              <li><a class="menu-item" href="#">MyUser</a></li>
+              <li><a class="menu-item" href="#">Messages</a></li>
+              <li><a class="menu-item" href="#">MyLists</a></li>
+            </ul>
           </div>
 
-        </nav>
+
+
         <div class="notification">
-          <img spc="icono-caja-regalo.png" alt="Notificaciones">
           <div class="notification-menu">
-            <Ul>
-              <li><a href="#">Notificación 1</a></li>
-              <li><a href="#">Notificación 2</a></li>
-              <li><a href="#">Notificación 3</a></li>
-            </ul>
+            <img class="notification-icon" src="https://cdn-icons-png.flaticon.com/512/1361/1361713.png">
           </div>
         </div>
       </div>

@@ -14,6 +14,25 @@ header {
     align-content: space-between;
 }
 
+.lenguages{
+    margin-left: 2%;
+    border-color: #00bd7e;
+    border-style: solid;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.searchBoxInput{
+    width: 30%;
+    display: flex;
+    border-color: #00bd7e;
+    border-style: solid;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: space-between;
+}
+
 .imageLogoDiv{
     display: flex;
     border-color: #00bd7e;
@@ -27,6 +46,7 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .search{
     background: url(https://cdnO.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 100% 10%;
     background-size: 5%;
@@ -34,6 +54,7 @@ header {
     justify-content: center;
     align-items: center;
 }
+
 .user-div {
     display: flex;
     border-color: purple;
@@ -69,15 +90,59 @@ nav a:hover {
 }
 
 .sub-header {
-    background-color: #2c3e50;
-    width: 100%;
+    background-color:#F2C063;
     height: 20%;
     top: 100%;
+    border-color: red;
+    border-style: solid;
+    display:flex;
+    align-content: space-between;
 }
 
+
+
 .hamburger-menu {
-    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    border-color: green;
+    border-style: solid;
 }
+
+#menu-toggle {
+    opacity: 0;
+}
+/*estoy aqyuuuuuu */
+#menu-toggle {
+    opacity: 0;
+}
+
+
+.hamburger-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+}
+
+.notification {
+    display: flex;
+    cursor: pointer;
+    border-color: yellow;
+    border-style: solid;
+    justify-content: flex-start;
+    align-items: center;
+    left: 50%;
+}
+
+.notification-icon {
+    display: flex;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 .bar {
     width: 35px;
