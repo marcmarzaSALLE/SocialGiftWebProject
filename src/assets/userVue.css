@@ -28,13 +28,20 @@
     margin-left: 70px;
 }
 
-.editProfileButton{
+.buttonEditProfile{
+    display: flex;
+    justify-content: flex-end;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+
+.editProfile{
+    justify-content: flex-end;
     width: 210px;
     height: 54px;
     border-radius: 20px;
     background-color: #f2f2f2;
     border: 1px solid #ff6a00;
-    margin-left: 655px;
 }
 
 .textButton{
@@ -62,12 +69,26 @@
     border-color: #00bd7e;
     border-style: solid;
 }
-
 .friendsSection{
     width: 380px;
     height: 402px;
     background: #E2EEF7;
     border-radius: 20px;
+}
+
+.friend{
+    display: flex;
+    border-color: #ff0000;
+    border-style: solid;
+    padding: 10px;
+}
+
+.friendImg{
+    width: 50%;
+    height: 50%;
+    border-radius: 20%;
+    border-color: #00bd7e;
+    border-style: solid;
 }
 
 .bookingsList{
