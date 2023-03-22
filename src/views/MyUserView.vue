@@ -9,9 +9,13 @@
     <div class="userText">
       <h2>Username</h2>
       <h3>Firstname Secondname</h3>
-      <button class="editProfileButton">
-        <p class="textButton">Edit profile</p>
-      </button>
+      <div class="buttonEditProfile">
+        <RouterLink to="/EditUser">
+          <button class="editProfile">
+            <p class="textButton">Edit profile</p>
+          </button>
+        </RouterLink>
+      </div>
     </div>
   </section>
 
@@ -20,6 +24,11 @@
     <div class="friendsList">
       <h2>Friends</h2>
       <section class="friendsSection">
+        <div class="friend">
+          <img class="friendImg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png">
+          <h3>Username</h3>
+        </div>
+
       </section>
     </div>
 
