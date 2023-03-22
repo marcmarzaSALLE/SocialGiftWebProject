@@ -1,18 +1,102 @@
 .sectionUser{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 30%;
+    border-color: #00bd7e;
+    border-style: solid;
+    margin-left: 160px;
+    margin-right: 160px;
 }
 
 .userImg{
-    width: 15%;
-    height: 15%;
+    width: 169px;
+    height: 169px;
     border-radius: 20%;
+    border-color: #00bd7e;
+    border-style: solid;
 }
 
-.editProfile{
-    width: 65%;
-    height: 35%;
-    border-radius: 20%;
+.userText{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-color: #00bd7e;
+    border-style: solid;
+    margin-left: 70px;
+}
+
+.editProfileButton{
+    width: 210px;
+    height: 54px;
+    border-radius: 20px;
     background-color: #f2f2f2;
+    border: 1px solid #ff6a00;
+    margin-left: 655px;
 }
 
+.textButton{
+    font-family: Inter, sans-serif;
+    color: #ff6a00;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sectionUserItems{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    border-color: #00bd7e;
+    border-style: solid;
+    margin-top: 3%;
+}
+
+.friendsList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+
+.friendsSection{
+    width: 380px;
+    height: 402px;
+    background: #E2EEF7;
+    border-radius: 20px;
+}
+
+.bookingsList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+
+.bookingsSection{
+    width: 380px;
+    height: 402px;
+    background: #E2EEF7;
+    border-radius: 20px;
+}
+
+.listsList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30%;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+.listSection{
+    width: 380px;
+    height: 402px;
+    background: #E2EEF7;
+    border-radius: 20px;
+}
