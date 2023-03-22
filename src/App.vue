@@ -47,10 +47,11 @@ import {RouterLink, RouterView} from 'vue-router'
   <footer>
     <section class="sectionFooter1">
       <div>
-        <p>Copyright 2023©</p>
+
       </div>
     </section>
     <section class="sectionFooter2">
+      <p>Copyright 2023©</p>
     </section>
   </footer>
 </template>

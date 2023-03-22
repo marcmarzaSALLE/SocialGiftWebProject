@@ -16,15 +16,7 @@
   </section>
 
   </body>
-  <footer>
-    <section class="sectionFooter1">
-      <div>
-        <p>Copyright 2023©</p>
-      </div>
-    </section>
-    <section class="sectionFooter2">
-    </section>
-  </footer>
+
 
 </template>
 

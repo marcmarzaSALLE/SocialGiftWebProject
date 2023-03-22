@@ -131,10 +131,11 @@ nav a:hover {
 
 
 
+footer{
+    margin-top: 3%;
+}
 
-
-.sectionFooter1{
-    position: absolute;
+.sectionFooter2{
     background-color: #008fb6;
     color: #ffffff;
     height:50px;
@@ -146,8 +147,7 @@ nav a:hover {
     width: 100%;
 }
 
-.sectionFooter2{
-    position: absolute;
+.sectionFooter1{
     background-color: #E2EEF7;
     color: #ffffff;
     height:50px;
