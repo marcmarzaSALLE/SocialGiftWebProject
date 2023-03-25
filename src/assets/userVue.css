@@ -61,7 +61,8 @@
     margin-top: 3%;
 }
 
-.friendsList{
+
+.templateList{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,55 +70,40 @@
     border-color: #00bd7e;
     border-style: solid;
 }
-.friendsSection{
+
+.templateSection{
     width: 380px;
     height: 402px;
     background: #E2EEF7;
     border-radius: 20px;
 }
+
 
 .friend{
     display: flex;
+    align-items: center;
     border-color: #ff0000;
     border-style: solid;
     padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 .friendImg{
-    width: 50%;
-    height: 50%;
+    width: 20%;
+    height: 20%;
     border-radius: 20%;
     border-color: #00bd7e;
     border-style: solid;
+    margin-right: 3%;
 }
 
-.bookingsList{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
+.friendText{
     border-color: #00bd7e;
     border-style: solid;
+    margin-left: 3%;
 }
 
-.bookingsSection{
-    width: 380px;
-    height: 402px;
-    background: #E2EEF7;
-    border-radius: 20px;
-}
 
-.listsList{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 30%;
-    border-color: #00bd7e;
-    border-style: solid;
-}
-.listSection{
-    width: 380px;
-    height: 402px;
-    background: #E2EEF7;
-    border-radius: 20px;
-}
+
+

@@ -1,53 +1,59 @@
 <template xmlns:align-content="http://www.w3.org/1999/xhtml">
-  <body>
 
-  <section class="sectionUser">
+  <section className="sectionUser">
     <div>
-      <img class="userImg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png">
+      <img className="userImg"
+           src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png">
     </div>
 
-    <div class="userText">
+    <div className="userText">
       <h2>Username</h2>
       <h3>Firstname Secondname</h3>
-      <div class="buttonEditProfile">
+      <div className="buttonEditProfile">
         <RouterLink to="/EditUser">
-          <button class="editProfile">
-            <p class="textButton">Edit profile</p>
+          <button className="editProfile">
+            <p className="textButton">Edit profile</p>
           </button>
         </RouterLink>
       </div>
+
     </div>
   </section>
+  <section className="sectionUserItems">
 
-  <section class="sectionUserItems">
-
-    <div class="friendsList">
+    <!--Listas de amigos-->
+    <div className="templateList">
       <h2>Friends</h2>
-      <section class="friendsSection">
-        <div class="friend">
-          <img class="friendImg" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png">
-          <h3>Username</h3>
+      <section className="templateSection">
+
+        <div className="friend">
+          <img className="friendImg"
+               src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png">
+          <div className="friendText">
+            <h3>username</h3>
+            <h3>Firstname Secondname</h3>
+          </div>
         </div>
 
       </section>
     </div>
 
-    <div class="bookingsList">
+    <!--Listas de reservas-->
+    <div className="templateList">
       <h2>Bookings</h2>
-      <section class="bookingsSection">
+      <section className="templateSection">
       </section>
     </div>
 
-    <div class="listsList">
+    <!--Listas de listas-->
+    <div className="templateList">
       <h2>Lists</h2>
-      <section class="listSection">
+      <section className="templateSection">
       </section>
     </div>
 
 
   </section>
-
-  </body>
 
 
 </template>
