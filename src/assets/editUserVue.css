@@ -1,0 +1,121 @@
+.sectionUser {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    border-color: #ff0000;
+    border-style: solid;
+    margin-top: 150px;
+    margin-left: 400px;
+    margin-right: 160px;
+}
+
+.userImg {
+    width: 169px;
+    height: 169px;
+    border-radius: 20%;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+
+.userText {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-color: #00bd7e;
+    border-style: solid;
+    margin-left: 70px;
+}
+
+.editUser {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    align-items: center;
+    height: 30%;
+    border-color: #ff6a00;
+    border-style: solid;
+    margin-left: 400px;
+    margin-right: 160px;
+}
+.formEditUser{
+    margin-top: 20px;
+    width: 100%;
+}
+.name {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    font-size: 25px;
+}
+.inputName{
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background: rgba(131, 131, 131, 0.3);
+    border-radius: 15px;
+}
+
+.username {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    font-size: 25px;
+}
+
+.inputUsername{
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background: rgba(131, 131, 131, 0.3);
+    border-radius: 15px;
+}
+.email {
+    display: flex;
+    margin-left: 10%;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    font-size: 25px;
+}
+
+.inputEmail{
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background: rgba(131, 131, 131, 0.3);
+    border-radius: 15px;
+}
+.buttonSave{
+    display: flex;
+    margin-left: 20%;
+    margin-top: 30px;
+    height: 50px;
+    background: #00bd7e;
+    align-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 15px;
+}
+.buttonDelete{
+    display: flex;
+    margin-left: 20%;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: left;
+    background: crimson;
+    font-size: 20px;
+    border-radius: 10px;
+}

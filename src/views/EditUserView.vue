@@ -10,6 +10,22 @@
       <RouterLink to="">Cambiar contraseña</RouterLink>
     </div>
   </section>
+  <section class="editUser">
+    <form class="formEditUser">
+      <div class="name">
+        <label for="name">Nombre:<input type="text" class="inputName" name="name"></label>
+      </div>
+      <div class="username">
+        <label for="username">Nombre usuario: <input type="text" class="inputUsername" name="username"></label>
+      </div>
+      <div class="email">
+        <label for="email">Email:<input type="text" class="inputEmail" name="email"></label>
+      </div>
+      <button class="buttonSave">Guardar cambios</button>
+      <button class="buttonDelete">Eliminar cuenta</button>
+    </form>
+
+  </section>
 </template>
 
 <script>
