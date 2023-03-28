@@ -230,6 +230,9 @@ input:checked ~ .menu-burger-items-list {
     font-family: Inter, sans-serif;
     font-size: 14px;
     text-align: left;
+    background: #035AA6;
+    color: #ffffff;
+    text-decoration: none;
     padding: 2%;
     margin-left: 2%;
     margin-bottom: 5%;

@@ -73,10 +73,10 @@ import {RouterLink, RouterView} from 'vue-router'
         <ul class="menu-burger-items-list">
           <div class="menu-burger-items-div">
             <h2 class="menu-burger-title">My Account</h2>
-            <li class="menu-burger-link">My account</li>
+            <RouterLink class="menu-burger-link" to="/MyUser">My account</RouterLink>
             <li class="menu-burger-link">Friends</li>
             <li class="menu-burger-link">Bookings</li>
-            <li class="menu-burger-link">Edit profile</li>
+            <RouterLink to="/EditUser" class="menu-burger-link">Edit profile</RouterLink>
             <li class="menu-burger-link">Change password</li>
             <li class="menu-burger-link">Log out</li>
             <div class="line"></div>
