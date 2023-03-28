@@ -9,7 +9,7 @@ import {RouterLink, RouterView} from 'vue-router'
 
       <!--Parte logo-->
       <div class="image-logo-div">
-        <RouterLink to="/MyUser">SOCIALGIFT</RouterLink>
+        <RouterLink to="/MyUser" class="link-socialgift">SOCIALGIFT</RouterLink>
       </div>
 
       <!--Parte languajes-->
@@ -77,7 +77,7 @@ import {RouterLink, RouterView} from 'vue-router'
             <li class="menu-burger-link">Friends</li>
             <li class="menu-burger-link">Bookings</li>
             <RouterLink to="/EditUser" class="menu-burger-link">Edit profile</RouterLink>
-            <li class="menu-burger-link">Change password</li>
+            <RouterLink to="/EditPassword" class="menu-burger-link">Change password</RouterLink>
             <li class="menu-burger-link">Log out</li>
             <div class="line"></div>
             <h2 class="menu-burger-title">Messages</h2>

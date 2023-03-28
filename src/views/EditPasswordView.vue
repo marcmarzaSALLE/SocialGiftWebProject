@@ -7,20 +7,20 @@
     <div class="userText">
       <h3>Username</h3>
       <h3>Firstname Secondname</h3>
-      <RouterLink to="/EditPassword" class="changePassword"><h3>Cambiar contraseña</h3></RouterLink>
+      <RouterLink to="" class="changePassword"><h3>Cambiar contraseña</h3></RouterLink>
     </div>
   </section>
   <section class="editUser">
     <form class="formEditUser">
       <h3>Campos editables</h3>
       <div class="name">
-        <label for="name">Nombre:<input type="text" class="inputName" name="name" placeholder="Nombre Apellido"></label>
+        <label for="name">Contraseña actual:<input type="password" class="inputName" name="name" placeholder="Contraseña actual"></label>
       </div>
       <div class="username">
-        <label for="username">Nombre usuario: <input type="text" class="inputUsername" name="username" placeholder="Nombre usuario"></label>
+        <label for="username">Nueva contraseña: <input type="password" class="inputUsername" name="username" placeholder="Nueva contraseña"></label>
       </div>
       <div class="email">
-        <label for="email">Email:<input type="text" class="inputEmail" name="email" placeholder="Correo electrónico"></label>
+        <label for="email">Repetir contraseña:<input type="password" class="inputEmail" name="email" placeholder="Repetir contraseña"></label>
       </div>
       <button class="buttonSave">Guardar cambios</button>
       <button class="buttonDelete">Eliminar cuenta</button>

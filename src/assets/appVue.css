@@ -21,6 +21,11 @@ header {
     margin-left: 0.5%;
 }
 
+.link-socialgift {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
 /* Elemento buscador */
 
 .search-box-input {

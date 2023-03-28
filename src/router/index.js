@@ -3,6 +3,7 @@ import HomeView from '../views/MyUserView.vue'
 import MyListView from '../views/MyListsView.vue'
 import MyUser from '../views/MyUserView.vue'
 import EditUser from '../views/EditUserView.vue'
+import EditPasswordView from "../views/EditPasswordView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,10 @@ const router = createRouter({
             path: '/EditUser',
             name: 'EditUser',
             component: EditUser
+        },{
+            path: '/EditPassword',
+            name: 'EditPassword',
+            component: EditPasswordView
         }
 
 ]
