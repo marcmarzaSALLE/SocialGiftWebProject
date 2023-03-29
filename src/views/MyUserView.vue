@@ -26,6 +26,7 @@
     <!--Listas de amigos-->
     <div class="elements-template">
       <h2>Friends</h2>
+      <div class="line-div1"></div>
       <section class="section-template">
 
 
@@ -99,14 +100,14 @@
           </div>
         </div>
 
-
-
       </section>
+      <div class="line-div1"></div>
     </div>
 
     <!--Listas de reservas-->
     <div class="elements-template">
       <h2>Bookings</h2>
+      <div class="line-div1"></div>
       <section class="section-template">
 
         <!--Reserva 1-->
@@ -190,11 +191,13 @@
         </div>
 
       </section>
+      <div class="line-div1"></div>
     </div>
 
     <!--Listas de listas-->
     <div class="elements-template">
       <h2>Lists</h2>
+      <div class="line-div1"></div>
       <section class="section-template">
 
         <!--Lista 1-->
@@ -273,15 +276,8 @@
           </div>
         </div>
 
-
-
-
-
-
-
-
-
       </section>
+      <div class="line-div1"></div>
     </div>
 
 
