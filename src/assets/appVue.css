@@ -27,13 +27,12 @@ header {
 }
 
 /* Elemento buscador */
-
 .search-box-input {
     display: flex;
     justify-content: center;
     align-content: space-between;
     width: 30%;
-    margin-right: 10%;
+    margin-right: 8%;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 100px;
     margin-top: 1%;
@@ -69,10 +68,15 @@ header {
     border-radius: 0 100px 100px 0;
     border: none;
     background: none;
-    width: 10%;
+    width: 20%;
     font-family: Inter, sans-serif;
     text-align: center;
     color: rgba(0, 0, 0, 0.4);
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
 }
 
 
@@ -132,6 +136,7 @@ header {
     align-items: flex-start;
     background-color: #0561ff;
     border-radius: 0 0 20px 20px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     top:80px;
     padding: 1%;
 }
@@ -161,6 +166,7 @@ header {
     align-content: center;
     justify-content: space-between;
     background-color: rgb(255, 196, 0);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     height: 50px;
     width: 100%;
 }
@@ -193,6 +199,7 @@ header {
 
 ul.menu-burger-items-list {
     background: #035AA6;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.7);
     color: #ffffff;
     list-style: none;
     border-radius: 0 20px 20px 0;
@@ -288,6 +295,7 @@ input:checked ~ .menu-burger-items-list {
 
 .notifications-items-list {
     background: #035AA6;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.7);
     color: #ffffff;
     list-style: none;
     border-radius: 20px 0 0 20px;

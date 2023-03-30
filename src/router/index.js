@@ -4,6 +4,8 @@ import MyListView from '../views/MyListsView.vue'
 import MyUser from '../views/MyUserView.vue'
 import EditUser from '../views/EditUserView.vue'
 import EditPasswordView from "../views/EditPasswordView.vue";
+import LoginView from "../views/LoginView.vue";
+import RegisterView from "../views/RegisterView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +30,14 @@ const router = createRouter({
             path: '/EditPassword',
             name: 'EditPassword',
             component: EditPasswordView
+        },{
+            path: '/Login',
+            name: 'Login',
+            component: LoginView
+        },{
+            path: '/Register',
+            name: 'Register',
+            component: RegisterView
         }
 
 ]

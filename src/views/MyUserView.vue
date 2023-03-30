@@ -10,13 +10,7 @@
       <h3>Firstname Secondname</h3>
 
       <div class="edit-profile-div">
-        <RouterLink to="/EditUser">
-
-          <button class="edit-profile-button">
-            <span>EDIT PROFILE</span>
-          </button>
-
-        </RouterLink>
+        <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
       </div>
     </div>
   </section>
@@ -213,9 +207,7 @@
           </div>
 
           <div class="editList-button-div">
-            <button class="editList-button">
-              <span>Edit list</span>
-            </button>
+            <RouterLink class="editList-button" to="/MyLists">Edit list</RouterLink>
           </div>
         </div>
 

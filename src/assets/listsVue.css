@@ -1,27 +1,22 @@
-.swdefr {
+.user-lists-section {
     margin-top: 150px;
-    border-color: #00ff8b;
-    border-style: solid;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 3%;
-    padding-left: 3%;
+    justify-content: space-between;
+    margin-left: 160px;
+    margin-right: 160px;
     font-family: Inter, sans-serif;
 }
 
 .my-lists {
-    border-color: black;
-    border-style: solid;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-right: 6%;
+    width: 400px;
 }
 
 .line-div2 {
-    width: 270px;
+    width: 350px;
     border-color: #F25E7A;
     border-style: solid;
     border-width: 2px;
@@ -29,32 +24,31 @@
     margin: 2%;
 }
 
-.lists-section {
+.lists-section2 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 3%;
-    width: 270px;
+    width: 400px;
     height: 600px;
     background: rgba(0, 143, 182, 0);
     border-radius: 20px;
     overflow-y: auto;
 }
 
-
-.list-div {
+.list-div2 {
     display: flex;
     justify-content: flex-start;
     align-items:center;
     flex-direction: column;
+    width: 330px;
+    border-radius: 20px;
     background: rgb(226, 238, 247);
     padding-left: 4%;
     padding-right: 5%;
-    border-radius: 20px;
     margin: 1%;
 }
 
-.description1 {
+.description2 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -67,18 +61,23 @@
     border-radius: 20px;
 }
 
-.dates-list {
+.dates-list2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
     text-align: center;
 }
 
-.editList-button-div {
+.editList-button-div2 {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 3%;
 }
 
-.editList-button {
+.editList-button2 {
     border-radius: 20px;
     background-color: #f2f2f2;
     border: 2px solid #F25E7A;
@@ -89,21 +88,23 @@
     text-align: center;
 }
 
-.editList-button:hover {
+.editList-button2:hover {
     background-color: #F25E7A;
     color: #ffffff;
 }
 
 .create-list-button {
+    width: 150px;
+    height: 40px;
     border-radius: 20px;
     background-color: #f2f2f2;
     border: 2px solid #F25E7A;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
     color: #F25E7A;
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
-    margin: 8%;
+    margin-top: 4%;
 }
 
 .create-list-button:hover {
@@ -113,27 +114,21 @@
 
 
 
-
-
 /* Lista en vista */
-
-
 .list-view {
     display: flex;
     justify-content: flex-start;
     align-items:center;
     flex-direction: column;
-    border-color: #bd0000;
-    border-style: solid;
-
+    width: 900px;
 }
 
 .name-list-input{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 700px;
-    height: 5px;
+    width: 850px;
+    height: 10px;
     border-radius: 20px;
     border-color: #F25E7A;
     padding: 2%;
@@ -148,8 +143,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 700px;
-    height: 20px;
+    width: 850px;
+    height: 40px;
     border-radius: 20px;
     border-color: #F25E7A;
     padding: 2%;
@@ -160,28 +155,47 @@
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
-.gifts-list {
+.gifts-section {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
-    width: 690px;
+    flex-direction: column;
+    width: 850px;
     height: 500px;
-    background: #035AA6;
+    background: rgb(226, 238, 247);
     border-radius: 20px;
-    padding: 3%;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 2%;
     margin-bottom: 2%;
 }
 
-.list-buttons {
+.gifts-div {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     width: 100%;
-    height: 100%;
-    margin: 2%;
+    color: black;
 }
 
-.save-list-button {
+.add-gift-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+}
+
+.add-gift-button-input{
+    display: none;
+}
+
+.add-gift-button-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
     border-radius: 20px;
     background-color: #f2f2f2;
     border: 2px solid #F25E7A;
@@ -190,7 +204,350 @@
     color: #F25E7A;
     font-size: 15px;
     text-align: center;
-    margin: 2%;
+}
+
+.add-gift-button-label:hover {
+    background-color: #F25E7A;
+    color: #ffffff;
+}
+
+.add-gift-display {
+    display: none;
+}
+
+/* Elemento añadir regalo */
+.add-gift-button-input:checked ~ .add-gift-display {
+    display: flex;
+}
+
+.add-gift-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.add-gift-search-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.add-gift-search-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 1120px;
+    height: 591px;
+    border-radius: 20px;
+    background-color: #035AA6;
+    position: fixed;
+}
+
+
+
+
+/* Elemento buscador */
+.search-box-input2 {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    width: 500px;
+    height: 40px;
+    margin-top: 2%;
+    background: rgba(95, 95, 95, 0.4);
+    border-radius: 100px;
+    margin-bottom: 1%;
+    border-color: #00bd7e;
+    border-style: solid;
+}
+
+.dropdown-categories-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #022873;
+    width: 100px;
+    height: 40px;
+    border:none;
+    font-family: Inter, sans-serif;
+    color: #F2C063;
+    font-size: 15px;
+    text-align: center;
+}
+
+.categories-button:hover {
+    background-color: #F2C063;
+    color: #022873;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+/* Al pulsar el botón de categorías, se despliega el menú
+.dropdown-categories-div:hover .dropdown-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    top: 65px;
+    padding: 10px;
+    margin-left: 60px;
+    border-radius: 20px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+*/
+
+
+
+
+
+.search-box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.search2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 100px 0 0 100px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    font-family: Inter, sans-serif;
+    text-align: center;
+    color: #ffffff;
+}
+
+.search-button2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+    background: #022873;
+    width: 20%;
+    font-family: Inter, sans-serif;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-icon2 {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+.gifts-view-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+/* Gift post */
+.gift-post-div {
+    display: flex;;
+    align-items: stretch;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    margin: 1%;
+}
+
+.gift-info-div {
+    height: 80%;
+}
+
+.gift-img-div {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 200px;
+}
+
+.gift-img {
+    border-color: #a0a0a0;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.gift-data-div {
+    display: none;
+}
+
+.gift-info-div:hover .gift-data-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    Font-family: Inter, sans-serif;
+    font-size: 25px;
+}
+
+.gift-info-div:hover .gift-img-div {
+    display: none;
+    color: #E2EEF7;
+}
+
+.gift-information-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 3%;
+}
+
+
+/* Gift post buttons*/
+.gift-buttons-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.booking-button-gift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid rgb(255, 196, 0);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: rgb(255, 196, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.booking-button-gift:hover {
+    background-color: rgb(255, 196, 0);
+    color: #ffffff;
+}
+
+.move-gift-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+.move-gift-button:hover {
+    background: #a0a0a0;
+}
+
+.move-gift-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.remove-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
+.remove-button:hover {
+    background: #a0a0a0;
+}
+
+.remove-gift-icon {
+    width: 25px;
+    height: 25px;
+}
+
+
+.list-buttons-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.save-delete-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-list-button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #F25E7A;
+    font-size: 15px;
+    text-align: center;
 }
 
 .save-list-button:hover {
@@ -199,6 +556,8 @@
 }
 
 .delete-list-button {
+    width: 100px;
+    height: 40px;
     border-radius: 20px;
     background-color: #f2f2f2;
     border: 2px solid #535353;
@@ -207,7 +566,7 @@
     color: rgb(83, 83, 83);
     font-size: 15px;
     text-align: center;
-    margin: 2%;
+    margin-left: 20px;
 }
 
 .delete-list-button:hover {
@@ -216,10 +575,11 @@
 }
 
 .date-end-div {
+    width: 300px;
+    height: 40px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    margin-left: 40%;
 }
 
 .calendar-icon{
