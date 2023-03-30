@@ -1,9 +1,7 @@
 .user-lists-section {
     margin-top: 150px;
     display: flex;
-    justify-content: space-between;
-    margin-left: 160px;
-    margin-right: 160px;
+    justify-content: space-around;
     font-family: Inter, sans-serif;
 }
 
@@ -13,6 +11,7 @@
     justify-content: center;
     flex-direction: column;
     width: 400px;
+    margin-left: 4%;
 }
 
 .line-div2 {
@@ -121,6 +120,8 @@
     align-items:center;
     flex-direction: column;
     width: 900px;
+    margin-right: 4%;
+
 }
 
 .name-list-input{
@@ -220,6 +221,18 @@
     display: flex;
 }
 
+
+.exit-button-input {
+    display: flex;
+}
+
+.exit-button-input:checked ~ .add-gift-display {
+    display: none;
+}
+
+
+
+
 .add-gift-background {
     display: flex;
     justify-content: center;
@@ -234,6 +247,7 @@
     z-index: 1;
 }
 
+/*
 .add-gift-search-section {
     display: flex;
     justify-content: flex-start;
@@ -248,16 +262,6 @@
     margin-bottom: 2%;
 }
 
-
-
-
-
-
-
-
-
-
-
 .add-gift-search-section {
     display: flex;
     justify-content: flex-start;
@@ -269,9 +273,6 @@
     background-color: #035AA6;
     position: fixed;
 }
-
-
-
 
 /* Elemento buscador */
 .search-box-input2 {
@@ -317,6 +318,7 @@
 .dropdown-content {
     display: none;
 }
+
 
 /* Al pulsar el botón de categorías, se despliega el menú
 .dropdown-categories-div:hover .dropdown-content {

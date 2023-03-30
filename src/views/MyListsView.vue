@@ -123,12 +123,20 @@
             <label for="add-gift-button" class="add-gift-button-label" >
               <span>+ add gift</span>
             </label>
+            <input type="checkbox" id="exit-button" class="exit-button-input">
+
+
+
 
             <div class="add-gift-display">
 
               <section class="add-gift-background">
+
                 <section class="add-gift-search-section">
-                  <input type="checkbox" id="exit-button" class="exit-button-input">
+                  <!--<input type="checkbox" id="exit-button" class="exit-button-input">-->
+                  <label for="exit-button" class="exit-button-label" >
+                    <span>X</span>
+                  </label>
                   <!--Parte buscador-->
                   <div class="search-box-input2">
                     <div class="dropdown-categories-div">
@@ -151,6 +159,7 @@
 
                 </section>
               </section>
+
             </div>
 
           </div>
