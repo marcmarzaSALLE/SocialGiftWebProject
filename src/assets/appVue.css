@@ -134,7 +134,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #0561ff;
+    background-color: #035AA6;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     top:80px;
@@ -145,8 +145,12 @@ header {
     display: flex;
     margin-top: 4%;
     font-family: Inter, sans-serif;
-    color: #F25E7A;
     font-weight: bold;
+}
+
+.language-text-anchor {
+    text-decoration: none;
+    color: #F25E7A;
 }
 
 .language-icon {

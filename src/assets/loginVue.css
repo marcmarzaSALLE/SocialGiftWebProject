@@ -1,0 +1,170 @@
+
+.title-login {
+    display: flex;
+    padding: 2%;
+    margin-left: 480px;
+    margin-right: 500px;
+    margin-top: 150px;
+    font-family: Inter, sans-serif;
+    color: #035AA6;
+
+}
+
+.section-login {
+    display: flex;
+    background: #035AA6;
+    border-radius: 20px;
+    margin-top: -40px;
+    padding: 2%;
+    margin-left: 500px;
+    margin-right: 500px;
+    font-family: Inter, sans-serif;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.email-login {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    color: #f2f2f2;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.password-login {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    color: #f2f2f2;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.inputEmail-login {
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 10px;
+    background: rgba(131, 131, 131, 0.3);
+    border-radius: 15px;
+}
+
+.inputPassword-login {
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 10px;
+    background: rgba(131, 131, 131, 0.3);
+    border-radius: 15px;
+}
+
+.button-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+}
+.routerLink-login{
+    text-decoration: none;
+}
+.btn-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    width: 200px;
+    background: #ffcb80;
+    color: #000000;
+    border-radius: 15px;
+    border-width: 1px;
+    height: 75%;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-left: 8%;
+}
+
+.section-register-login {
+    display: flex;
+    background: #035AA6;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 2%;
+    margin-left: 500px;
+    margin-right: 500px;
+    font-family: Inter, sans-serif;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+.text-info{
+    font-size: 12px;
+}
+.register {
+    display: flex;
+    width: 500px;
+    margin-top: -10px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    color: #f5526e;
+}
+
+hr {
+    display: inline-block;
+    width: 150px;
+    border: none;
+    border-top: 1px solid #f5526e;
+}
+
+.pregunta {
+    vertical-align: middle;
+}
+
+.routerLink-register{
+    text-decoration: none;
+}
+.btn-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: none;
+    width: 200px;
+    font-size: 20px;
+    background: #ffcb80;
+    color: #000000;
+    border-radius: 15px;
+    border-width: 1px;
+    height: 75%;
+}

@@ -2,6 +2,7 @@
 
   <section class="user-lists-section">
 
+    <!--Sección de listas-->
     <div class="my-lists">
       <h2>My lists</h2>
 
@@ -104,41 +105,33 @@
       <button class="create-list-button">
         <span>+ create list</span>
       </button>
-
     </div>
 
-    <!--Lista editar-->
+    <!--Lista a editar-->
     <div class="list-view">
-
       <input type="text" placeholder="Name list" name="name-list" class="name-list-input">
       <input type="text" placeholder="Description" name="description-list" class="description-list-input">
 
+      <!--Sección de productos-->
       <section class="gifts-section">
 
         <div class="gifts-div">
           <h3>Gifts</h3>
-
           <div class="add-gift-div">
-            <input type="checkbox" id="add-gift-button" class="add-gift-button-input">
-            <label for="add-gift-button" class="add-gift-button-label" >
-              <span>+ add gift</span>
-            </label>
-            <input type="checkbox" id="exit-button" class="exit-button-input">
 
+            <div class="add-gift-button-div">
+              <a class="add-gift-button" href="#gifts-products-screen">+ add gift</a>
+            </div>
 
+            <!--Sección overlay productos-->
+            <div id="gifts-products-screen" class="gifts-products-div">
+              <div class="gift-products-main-div">
+                <a class="close-button" href="#">&times;</a>
 
-
-            <div class="add-gift-display">
-
-              <section class="add-gift-background">
-
-                <section class="add-gift-search-section">
-                  <!--<input type="checkbox" id="exit-button" class="exit-button-input">-->
-                  <label for="exit-button" class="exit-button-label" >
-                    <span>X</span>
-                  </label>
-                  <!--Parte buscador-->
+                <!--Parte buscador-->
+                <div class="search-bar-div">
                   <div class="search-box-input2">
+                    <!--Dropdown-->
                     <div class="dropdown-categories-div">
                       <button class="categories-button">Categories</button>
                       <div class="dropdown-content">
@@ -148,27 +141,111 @@
                       </div>
                     </div>
 
-
+                    <!--Buscador-->
                     <form class="search-box2" method="get">
                       <input class="search2" type="search" placeholder="Look for a gift..." />
                     </form>
+
+                    <!--Botón de búsqueda-->
                     <button class="search-button2" type="submit">
                       <img class="search-icon2" src="public/Icons/searchIcon.png">
                     </button>
                   </div>
+                </div>
 
-                </section>
-              </section>
+                <!--Parte de productos-->
+                <div class="products-results-div">
+                  <h3>Results</h3>
+                  <section class="products-section">
 
+                    <!--Producto 1-->
+                    <div class="product-div">
+                      <div class="product-data-div">
+                        <span>Product_Name</span>
+                        <span>Description</span>
+                        <span>Link</span>
+                        <span>Price</span>
+                        <span>Is_active</span>
+                      </div>
+
+                      <button class="add-product-button">
+                        <span>Add</span>
+                      </button>
+                    </div>
+
+                    <!--Producto 1-->
+                    <div class="product-div">
+                      <div class="product-data-div">
+                        <span>Product_Name</span>
+                        <span>Description</span>
+                        <span>Link</span>
+                        <span>Price</span>
+                        <span>Is_active</span>
+                      </div>
+
+                      <button class="add-product-button">
+                        <span>Add</span>
+                      </button>
+                    </div>
+
+                    <!--Producto 1-->
+                    <div class="product-div">
+                      <div class="product-data-div">
+                        <span>Product_Name</span>
+                        <span>Description</span>
+                        <span>Link</span>
+                        <span>Price</span>
+                        <span>Is_active</span>
+                      </div>
+
+                      <button class="add-product-button">
+                        <span>Add</span>
+                      </button>
+                    </div>
+
+                    <!--Producto 1-->
+                    <div class="product-div">
+                      <div class="product-data-div">
+                        <span>Product_Name</span>
+                        <span>Description</span>
+                        <span>Link</span>
+                        <span>Price</span>
+                        <span>Is_active</span>
+                      </div>
+
+                      <button class="add-product-button">
+                        <span>Add</span>
+                      </button>
+                    </div>
+
+                    <!--Producto 1-->
+                    <div class="product-div">
+                      <div class="product-data-div">
+                        <span>Product_Name</span>
+                        <span>Description</span>
+                        <span>Link</span>
+                        <span>Price</span>
+                        <span>Is_active</span>
+                      </div>
+
+                      <button class="add-product-button">
+                        <span>Add</span>
+                      </button>
+                    </div>
+
+                  </section>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
 
+        <!--Regalos-->
         <section class="gifts-view-section">
           <!--Gift 1-->
           <div class="gift-post-div">
 
+            <!--Sección de datos-->
             <div class="gift-info-div">
               <div class="gift-img-div">
                 <img class="gift-img" src="public/Icons/imageProduct.png">
@@ -184,12 +261,40 @@
               </div>
             </div>
 
-
+            <!--Sección de botones-->
             <div class="gift-buttons-div">
 
-              <button class="move-gift-button">
-                <img class="move-gift-icon" src="public/Icons/moveGiftIcon.png">
-              </button>
+              <!--Sección overlay mover regalo-->
+              <div class="move-gift-button">
+                <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="public/Icons/moveGiftIcon.png"></a>
+              </div>
+
+              <div id="move-gift-screen" class="move-gift-div">
+                <div class="move-gift-main-div">
+                  <a class="close-button" href="#">&times;</a>
+                  <h3>Move to:</h3>
+                  <div class="move-gift-bar">
+
+                    <!--Dropdown list to move-->
+                    <div class="dropdown-list-div">
+                      <button class="list-button">Lists</button>
+                      <div class="dropdown-list">
+                        <a href="#">List 1</a>
+                        <a href="#">List 2</a>
+                        <a href="#">List 3</a>
+                      </div>
+                    </div>
+
+                    <!--Select list-->
+                    <input type="text" class="list-moved-input" placeholder="Select list...">
+                    <!--Botón de mover-->
+                    <button class="move-button">
+                      <span>Move</span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
 
               <button class="booking-button-gift">
                 <span>Reserve</span>
@@ -200,13 +305,13 @@
               </button>
 
             </div>
-
 
           </div>
 
           <!--Gift 2-->
           <div class="gift-post-div">
 
+            <!--Sección de datos-->
             <div class="gift-info-div">
               <div class="gift-img-div">
                 <img class="gift-img" src="public/Icons/imageProduct.png">
@@ -222,12 +327,40 @@
               </div>
             </div>
 
-
+            <!--Sección de botones-->
             <div class="gift-buttons-div">
 
-              <button class="move-gift-button">
-                <img class="move-gift-icon" src="public/Icons/moveGiftIcon.png">
-              </button>
+              <!--Sección overlay mover regalo-->
+              <div class="move-gift-button">
+                <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="public/Icons/moveGiftIcon.png"></a>
+              </div>
+
+              <div id="move-gift-screen" class="move-gift-div">
+                <div class="move-gift-main-div">
+                  <a class="close-button" href="#">&times;</a>
+                  <h3>Move to:</h3>
+                  <div class="move-gift-bar">
+
+                    <!--Dropdown list to move-->
+                    <div class="dropdown-list-div">
+                      <button class="list-button">Lists</button>
+                      <div class="dropdown-list">
+                        <a href="#">List 1</a>
+                        <a href="#">List 2</a>
+                        <a href="#">List 3</a>
+                      </div>
+                    </div>
+
+                    <!--Select list-->
+                    <input type="text" class="list-moved-input" placeholder="Select list...">
+                    <!--Botón de mover-->
+                    <button class="move-button">
+                      <span>Move</span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
 
               <button class="booking-button-gift">
                 <span>Reserve</span>
@@ -238,13 +371,13 @@
               </button>
 
             </div>
-
 
           </div>
 
           <!--Gift 3-->
           <div class="gift-post-div">
 
+            <!--Sección de datos-->
             <div class="gift-info-div">
               <div class="gift-img-div">
                 <img class="gift-img" src="public/Icons/imageProduct.png">
@@ -260,12 +393,40 @@
               </div>
             </div>
 
-
+            <!--Sección de botones-->
             <div class="gift-buttons-div">
 
-              <button class="move-gift-button">
-                <img class="move-gift-icon" src="public/Icons/moveGiftIcon.png">
-              </button>
+              <!--Sección overlay mover regalo-->
+              <div class="move-gift-button">
+                <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="public/Icons/moveGiftIcon.png"></a>
+              </div>
+
+              <div id="move-gift-screen" class="move-gift-div">
+                <div class="move-gift-main-div">
+                  <a class="close-button" href="#">&times;</a>
+                  <h3>Move to:</h3>
+                  <div class="move-gift-bar">
+
+                    <!--Dropdown list to move-->
+                    <div class="dropdown-list-div">
+                      <button class="list-button">Lists</button>
+                      <div class="dropdown-list">
+                        <a href="#">List 1</a>
+                        <a href="#">List 2</a>
+                        <a href="#">List 3</a>
+                      </div>
+                    </div>
+
+                    <!--Select list-->
+                    <input type="text" class="list-moved-input" placeholder="Select list...">
+                    <!--Botón de mover-->
+                    <button class="move-button">
+                      <span>Move</span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
 
               <button class="booking-button-gift">
                 <span>Reserve</span>
@@ -276,13 +437,13 @@
               </button>
 
             </div>
-
 
           </div>
 
           <!--Gift 4-->
           <div class="gift-post-div">
 
+            <!--Sección de datos-->
             <div class="gift-info-div">
               <div class="gift-img-div">
                 <img class="gift-img" src="public/Icons/imageProduct.png">
@@ -298,12 +459,40 @@
               </div>
             </div>
 
-
+            <!--Sección de botones-->
             <div class="gift-buttons-div">
 
-              <button class="move-gift-button">
-                <img class="move-gift-icon" src="public/Icons/moveGiftIcon.png">
-              </button>
+              <!--Sección overlay mover regalo-->
+              <div class="move-gift-button">
+                <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="public/Icons/moveGiftIcon.png"></a>
+              </div>
+
+              <div id="move-gift-screen" class="move-gift-div">
+                <div class="move-gift-main-div">
+                  <a class="close-button" href="#">&times;</a>
+                  <h3>Move to:</h3>
+                  <div class="move-gift-bar">
+
+                    <!--Dropdown list to move-->
+                    <div class="dropdown-list-div">
+                      <button class="list-button">Lists</button>
+                      <div class="dropdown-list">
+                        <a href="#">List 1</a>
+                        <a href="#">List 2</a>
+                        <a href="#">List 3</a>
+                      </div>
+                    </div>
+
+                    <!--Select list-->
+                    <input type="text" class="list-moved-input" placeholder="Select list...">
+                    <!--Botón de mover-->
+                    <button class="move-button">
+                      <span>Move</span>
+                    </button>
+
+                  </div>
+                </div>
+              </div>
 
               <button class="booking-button-gift">
                 <span>Reserve</span>
@@ -315,15 +504,11 @@
 
             </div>
 
-
           </div>
         </section>
 
-
-
-
+        <!--Sección de botones-->
       </section>
-
       <div class="list-buttons-div">
 
         <div class="save-delete-div">
@@ -341,30 +526,18 @@
           <span class="text-calendar">End date:</span>
           <input type="date" placeholder="End date" name="end-date-list" class="end-date-list-input">
         </div>
-
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
   </section>
 
 
-
-
 </template>
-
-
+<script>
+export default {
+  name: "MyListView"
+}
+</script>
 <style scoped>
 
 </style>

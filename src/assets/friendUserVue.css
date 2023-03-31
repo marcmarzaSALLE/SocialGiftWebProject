@@ -1,0 +1,297 @@
+.section-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    background: #035AA6;
+    border-radius: 20px;
+    padding: 2%;
+    margin-left: 260px;
+    margin-right: 260px;
+    margin-top: 150px;
+    font-family: Inter, sans-serif;
+    color: #E2EEF7;
+}
+
+.user-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-left: 8%;
+}
+
+.friend-buttons-div1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.friend-buttons-div2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.friends-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border-radius: 20px;
+    padding: 1%;
+    background-color: #f2f2f2;
+    border: 2px solid #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #F25E7A;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.friends-button:hover {
+    background-color: #F25E7A;
+    color: #ffffff;
+}
+
+.send-friend-message-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border-radius: 20px;
+    padding: 1%;
+    margin-left: 3%;
+    background-color: #f2f2f2;
+    border: 2px solid #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #F25E7A;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.send-friend-message-button:hover {
+    background-color: #F25E7A;
+    color: #ffffff;
+}
+
+.unfollow-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    border-radius: 20px;
+    padding: 1%;
+    background-color: #f2f2f2;
+    border: 2px solid #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #F25E7A;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.unfollow-button:hover {
+    background-color: #F25E7A;
+    color: #ffffff;
+}
+
+/* Sección de listas y regalos */
+.lists-gifts-section {
+    margin: 30px 100px 50px;
+    display: flex;
+    justify-content: space-around;
+    font-family: Inter, sans-serif;
+}
+
+.friend-lists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    margin-left: 4%;
+}
+
+.line-div4 {
+    width: 350px;
+    border-color: #F25E7A;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    margin: 2%;
+}
+
+.lists-section3 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    background: rgba(0, 143, 182, 0);
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.description3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    border-color: #F25E7A;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+.dates-list2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+/* Lista en vista de amigo */
+.list-view {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 4%;
+    border-color: red;
+    border-style: solid;
+}
+
+.data-list-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.description-h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+    border-color: #F25E7A;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+/*-----------*/
+
+.gifts-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 850px;
+    height: 500px;
+    background: rgb(226, 238, 247);
+    border-radius: 20px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+.gifts-view-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+
+/* Gift post */
+.gift-post-div {
+    display: flex;;
+    align-items: stretch;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    margin: 1%;
+}
+
+.gift-info-div {
+    height: 80%;
+}
+
+.gift-img-div {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    height: 200px;
+}
+
+.gift-img {
+    border-color: #a0a0a0;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.gift-data-div {
+    display: none;
+}
+
+.gift-info-div:hover .gift-data-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    Font-family: Inter, sans-serif;
+    font-size: 25px;
+}
+
+.gift-info-div:hover .gift-img-div {
+    display: none;
+    color: #E2EEF7;
+}
+
+.gift-information-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 3%;
+}
+
+
+
+
+
+
+

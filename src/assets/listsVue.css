@@ -1,5 +1,5 @@
 .user-lists-section {
-    margin-top: 150px;
+    margin: 180px 100px 160px;
     display: flex;
     justify-content: space-around;
     font-family: Inter, sans-serif;
@@ -112,7 +112,6 @@
 }
 
 
-
 /* Lista en vista */
 .list-view {
     display: flex;
@@ -121,7 +120,6 @@
     flex-direction: column;
     width: 900px;
     margin-right: 4%;
-
 }
 
 .name-list-input{
@@ -187,11 +185,8 @@
     height: 40px;
 }
 
-.add-gift-button-input{
-    display: none;
-}
-
-.add-gift-button-label {
+/* Boton añadir regalo */
+.add-gift-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,74 +199,79 @@
     font-family: Inter, sans-serif;
     color: #F25E7A;
     font-size: 15px;
+    text-decoration: none;
     text-align: center;
 }
 
-.add-gift-button-label:hover {
+.add-gift-button:hover {
     background-color: #F25E7A;
     color: #ffffff;
 }
 
-.add-gift-display {
-    display: none;
-}
-
-/* Elemento añadir regalo */
-.add-gift-button-input:checked ~ .add-gift-display {
+/* Elemento pantalla overlay de regalos */
+.gifts-products-div {
+    position: fixed;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.gifts-products-div:target {
+    visibility: visible;
+    opacity: 1;
 }
 
-
-.exit-button-input {
+.gift-products-main-div {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: #035AA6;
+    border-radius: 20px;
+    color: #E2EEF7;
+    width: 70%;
+    height: 60%;
+    position: relative;
+
 }
 
-.exit-button-input:checked ~ .add-gift-display {
-    display: none;
+.gift-products-main-div .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fafafa;
+}
+.gift-products-main-div .close-button:hover {
+    color: #F25E7A;
 }
 
+/*
+.gift-products-main-div .content-div {
+    max-height: 30%;
+    overflow: auto;
 
+}
+ */
 
-
-.add-gift-background {
+.search-bar-div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-/*
-.add-gift-search-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 400px;
-    height: 400px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    padding: 2%;
-    margin-bottom: 2%;
-}
-
-.add-gift-search-section {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 1120px;
-    height: 591px;
-    border-radius: 20px;
-    background-color: #035AA6;
-    position: fixed;
+    height: 20%;
 }
 
 /* Elemento buscador */
@@ -281,12 +281,8 @@
     align-content: space-between;
     width: 500px;
     height: 40px;
-    margin-top: 2%;
     background: rgba(95, 95, 95, 0.4);
     border-radius: 100px;
-    margin-bottom: 1%;
-    border-color: #00bd7e;
-    border-style: solid;
 }
 
 .dropdown-categories-div {
@@ -311,16 +307,14 @@
 }
 
 .categories-button:hover {
-    background-color: #F2C063;
-    color: #022873;
+    color:#F2C063;
+    background-color: #022873;
 }
 
 .dropdown-content {
     display: none;
 }
 
-
-/* Al pulsar el botón de categorías, se despliega el menú
 .dropdown-categories-div:hover .dropdown-content {
     display: flex;
     justify-content: flex-start;
@@ -328,19 +322,15 @@
     flex-direction: column;
     position: absolute;
     height: 100%;
-    top: 65px;
+    top: 47px;
     padding: 10px;
-    margin-left: 60px;
-    border-radius: 20px;
-    background-color: #f9f9f9;
+    margin-left: 81px;
+    border-radius: 0 20px 20px 20px;
+    background-color: #022873;
+    color: #E2EEF7;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-*/
-
-
-
 
 
 .search-box2 {
@@ -383,10 +373,78 @@
     height: 20px;
 }
 
+.products-results-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.products-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 65%;
+    border-radius: 20px;
+    padding: 3%;
+    overflow-y: auto;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.product-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+    background: #D9D9D9;
+    color: black;
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.product-data-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.add-product-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 30%;
+    background: #F2C063;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #020202;
+    font-size: 15px;
+    text-align: center;
+}
+
+.add-product-button:hover {
+    background-color: #ffffff;
+    color: #020202;
+}
 
 
 
 
+/* Elemento regalos en vista */
 .gifts-view-section {
     display: flex;
     justify-content: space-between;
@@ -504,6 +562,141 @@
     height: 25px;
 }
 
+/* Elemento pantalla overlay de mover regalo */
+.move-gift-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.move-gift-div:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.move-gift-main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #035AA6;
+    border-radius: 20px;
+    color: #E2EEF7;
+    width: 500px;
+    height: 150px;
+    padding: 20px;
+    position: relative;
+}
+
+.move-gift-main-div .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fafafa;
+}
+.move-gift-main-div .close-button:hover {
+    color: #F25E7A;
+}
+
+.move-gift-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 500px;
+    height: 50px;
+    background: #E2EEF7;
+    border-radius: 100px;
+}
+
+/* Elemento dropdown mover regalo */
+.dropdown-list-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: #022873;
+    width: 100px;
+    height: 50px;
+    border:none;
+    font-family: Inter, sans-serif;
+    color: #F2C063;
+    font-size: 15px;
+    text-align: center;
+}
+
+.list-button:hover {
+    color:#F2C063;
+    background-color: #022873;
+}
+
+.dropdown-list {
+    display: none;
+}
+
+.dropdown-list-div:hover .dropdown-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    top: 130px;
+    padding: 10px;
+    margin-left: 80px;
+    border-radius: 0 20px 20px 20px;
+    background-color: #022873;
+    color: #E2EEF7;
+    min-width: 160px;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.list-moved-input {
+    width: 100%;
+    height: 90%;
+    background: none;
+    border: none;
+}
+
+.move-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background: #F2C063;
+    border: none;
+    font-family: Inter, sans-serif;
+    color: #022873;
+    font-size: 15px;
+    text-align: center;
+}
+
+.move-button:hover {
+    background-color: #022873;
+    color: #F2C063;
+}
+
+
+
+
 .remove-button {
     width: 40px;
     height: 40px;
@@ -523,7 +716,6 @@
     width: 25px;
     height: 25px;
 }
-
 
 .list-buttons-div {
     display: flex;

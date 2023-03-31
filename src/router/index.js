@@ -6,6 +6,8 @@ import EditUser from '../views/EditUserView.vue'
 import EditPasswordView from "../views/EditPasswordView.vue";
 import LoginView from "../views/LoginView.vue";
 import RegisterView from "../views/RegisterView.vue";
+import Messages from '../views/MessagesView.vue'
+import friend from "../views/FriendUserView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +40,14 @@ const router = createRouter({
             path: '/Register',
             name: 'Register',
             component: RegisterView
+        },{
+            path: '/Messages',
+            name: 'Messages',
+            component: Messages
+        },{
+            path: '/friend',
+            name: 'friend',
+            component: friend
         }
 
 ]

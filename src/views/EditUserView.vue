@@ -1,32 +1,78 @@
 <template>
-  <section class="sectionUser">
-    <div>
-      <img class="userImg" src="public/Icons/imageUserPic.png">
+
+  <!-- Section User -->
+  <section class="section-user2">
+    <div class="user-profile-pic">
+      <img class="user-img2" src="public/Icons/imageUserPic.png">
+
+      <!--Sección overlay poner imagen perfil-->
+      <div class="change-pic-button">
+        <a class="change-pic-anchor" href="#change-pic-screen">Change profile picture</a>
+      </div>
+
+      <div id="change-pic-screen" class="change-pic-div">
+        <div class="change-pic-main-div">
+          <a class="close-button" href="#">&times;</a>
+          <h3>Choose a new profile pic (PNG, JPG):</h3>
+          <div class="new-pic-bar">
+
+            <!--Select pic-->
+            <input type="file" class="new-pic-input" name="user-pic" placeholder="Update a new pic..." accept="image/png, image/jpg">
+
+            <!--Botón de update-->
+            <button class="update-button">
+              <span>Update</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="userText">
+    <div class="user-text2">
       <h3>Username</h3>
       <h3>Firstname Secondname</h3>
-      <RouterLink to="/EditPassword" class="changePassword"><h3>Cambiar contraseña</h3></RouterLink>
+
+      <div class="change-password-div">
+        <RouterLink to="/EditPassword" class="change-password-button"><h3>Change password</h3></RouterLink>
+      </div>
+
     </div>
   </section>
-  <section class="editUser">
-    <form class="formEditUser">
-      <h3>Campos editables</h3>
-      <div class="name">
-        <label for="name">Nombre:<input type="text" class="inputName" name="name" placeholder="Nombre Apellido"></label>
-      </div>
-      <div class="username">
-        <label for="username">Nombre usuario: <input type="text" class="inputUsername" name="username" placeholder="Nombre usuario"></label>
-      </div>
-      <div class="email">
-        <label for="email">Email:<input type="text" class="inputEmail" name="email" placeholder="Correo electrónico"></label>
-      </div>
-      <button class="buttonSave">Guardar cambios</button>
-      <button class="buttonDelete">Eliminar cuenta</button>
-    </form>
+
+  <!-- Section Edit User -->
+  <section class="edit-user-section">
+
+    <h2>Edit fields</h2>
+    <div class="line-div3"></div>
+
+    <div class="name-div">
+      <span class="name-span">Name:</span>
+      <input type="text" class="input-name" name="name" placeholder="Name">
+    </div>
+
+    <div class="secondname-div">
+      <span class="secondname-span">Second name:</span>
+      <input type="text" class="input-secondname" name="name" placeholder="Secondname">
+    </div>
+
+    <div class="username-div">
+      <span class="username-span">Username:</span>
+      <input type="text" class="input-username" name="username" placeholder="Username">
+    </div>
+
+    <div class="email-div">
+      <span class="email-span">Email:</span>
+      <input type="text" class="input-email" name="email" placeholder="Email">
+    </div>
+
+    <div class="buttons-edit-div">
+      <button class="button-save">Save</button>
+      <button class="button-delete">Delete account</button>
+    </div>
 
   </section>
+
 </template>
 
 <script>

@@ -1,38 +1,55 @@
 <template>
-  <section class="sectionUser">
-    <div>
-      <img class="userImg" src="public/Icons/imageUserPic.png">
+
+
+  <!-- Section User -->
+  <section class="section-user3">
+    <div class="user-profile-pic">
+      <img class="user-img3" src="public/Icons/imageUserPic.png">
     </div>
 
-    <div class="userText">
+    <div class="user-text3">
       <h3>Username</h3>
       <h3>Firstname Secondname</h3>
-      <RouterLink to="" class="changePassword"><h3>Cambiar contraseña</h3></RouterLink>
+
+
+      <div class="edit-profile-div3">
+        <RouterLink class="edit-profile-button3" to="/EditUser">Edit profile</RouterLink>
+      </div>
+
     </div>
   </section>
-  <section class="editUser">
-    <form class="formEditUser">
-      <h3>Campos editables</h3>
-      <div class="name">
-        <label for="name">Contraseña actual:<input type="password" class="inputName" name="name" placeholder="Contraseña actual"></label>
-      </div>
-      <div class="username">
-        <label for="username">Nueva contraseña: <input type="password" class="inputUsername" name="username" placeholder="Nueva contraseña"></label>
-      </div>
-      <div class="email">
-        <label for="email">Repetir contraseña:<input type="password" class="inputEmail" name="email" placeholder="Repetir contraseña"></label>
-      </div>
-      <button class="buttonSave">Guardar cambios</button>
-      <button class="buttonDelete">Eliminar cuenta</button>
-    </form>
+
+  <!-- Section Edit User -->
+  <section class="edit-user-password">
+
+    <h2>Edit password</h2>
+    <div class="line-div3"></div>
+
+    <div class="password-div">
+      <span class="password-span">Current password:</span>
+      <input type="password" class="input-password" name="password" placeholder="Current password">
+    </div>
+
+    <div class="new-password-div">
+      <span class="new-password-span">New password:</span>
+      <input type="password" class="input-new-password" name="new-password" placeholder="New password">
+    </div>
+
+    <div class="confirm-password-div">
+      <span class="confirm-password-span">Confirm password:</span>
+      <input type="password" class="input-confirm-password" name="confirm-password" placeholder="Confirm password">
+    </div>
+
+    <div class="buttons-edit-div2">
+      <button class="button-save2">Save</button>
+    </div>
 
   </section>
+
 </template>
 
 <script>
-export default {
-  name: "EditUserView"
-}
+
 </script>
 
 <style scoped>
