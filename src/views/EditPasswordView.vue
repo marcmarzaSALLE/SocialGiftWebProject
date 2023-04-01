@@ -1,7 +1,6 @@
 <template>
 
-
-  <!-- Section User -->
+  <!--Section User-->
   <section class="section-user3">
     <div class="user-profile-pic">
       <img class="user-img3" src="public/Icons/imageUserPic.png">
@@ -10,7 +9,6 @@
     <div class="user-text3">
       <h3>Username</h3>
       <h3>Firstname Secondname</h3>
-
 
       <div class="edit-profile-div3">
         <RouterLink class="edit-profile-button3" to="/EditUser">Edit profile</RouterLink>

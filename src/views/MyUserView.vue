@@ -1,5 +1,6 @@
-<template xmlns:align-content="http://www.w3.org/1999/xhtml">
+<template>
 
+  <!--Sección del usuario-->
   <section class="section-user">
     <div>
       <img class="user-img" src="public/Icons/imageUserPic.png">
@@ -15,6 +16,7 @@
     </div>
   </section>
 
+  <!--Sección de los elemntos del usuario-->
   <section class="section-user-items">
 
     <!--Listas de amigos-->
@@ -22,7 +24,6 @@
       <h2>Friends</h2>
       <div class="line-div1"></div>
       <section class="section-template">
-
 
         <!--Amigo 1-->
         <div class="friend-div" >
@@ -39,7 +40,6 @@
             </button>
           </div>
         </div>
-
 
         <!--Amigo 2-->
         <div class="friend-div" >
@@ -284,9 +284,7 @@
       <div class="line-div1"></div>
     </div>
 
-
   </section>
-
 
 </template>
 

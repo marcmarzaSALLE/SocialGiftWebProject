@@ -31,7 +31,6 @@
 }
 
 /* Secciçon poner nueva foto de perfil */
-
 .change-pic-button {
     padding: 1%;
     margin-top: 2%;
@@ -140,7 +139,6 @@
 .update-button:hover {
     background: rgb(255, 196, 0);
 }
-/*------------------------------------*/
 
 .user-text2 {
     display: flex;
@@ -164,30 +162,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 20px;
     border-radius: 20px;
-
     padding: 1%;
     margin-left: 2%;
     margin-right: 2%;
     background-color: #f2f2f2;
     border: 2px solid #F25E7A;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-
     font-family: Inter, sans-serif;
     color: #F25E7A;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
-
 }
 
 .change-password-button:hover{
     background-color: #F25E7A;
     color: #ffffff;
 }
-
 
 .edit-user-section {
     display: flex;
@@ -225,6 +218,7 @@
     width: 100%;
     font-size: 25px;
 }
+
 .input-name {
     display: flex;
     justify-content: center;
@@ -253,6 +247,7 @@
     width: 100%;
     font-size: 25px;
 }
+
 .input-secondname {
     display: flex;
     justify-content: center;

@@ -50,7 +50,7 @@ const router = createRouter({
             component: friend
         }
 
-]
+    ]
 })
 
 export default router

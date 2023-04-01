@@ -1,6 +1,6 @@
 <template>
 
-  <!-- Section User -->
+  <!--Section User-->
   <section class="section-user2">
     <div class="user-profile-pic">
       <img class="user-img2" src="public/Icons/imageUserPic.png">
@@ -40,7 +40,7 @@
     </div>
   </section>
 
-  <!-- Section Edit User -->
+  <!--Section Edit User-->
   <section class="edit-user-section">
 
     <h2>Edit fields</h2>

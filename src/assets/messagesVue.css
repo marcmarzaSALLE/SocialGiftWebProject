@@ -66,6 +66,7 @@
     background: #035AA6;
 }
 
+/*Elementos de la sección de contactos*/
 .contacts-view-section {
     display: flex;
     justify-content: flex-start;
@@ -115,6 +116,7 @@
     font-size: 13px;
 }
 
+/*Elementos de la sección de chat*/
 .chat-section {
     display: flex;
     justify-content: center;

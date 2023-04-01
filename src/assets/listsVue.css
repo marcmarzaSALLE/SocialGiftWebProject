@@ -1,7 +1,8 @@
 .user-lists-section {
-    margin: 180px 100px 160px;
     display: flex;
     justify-content: space-around;
+    margin-top: 160px;
+    margin-bottom: 160px;
     font-family: Inter, sans-serif;
 }
 
@@ -110,7 +111,6 @@
     background-color: #F25E7A;
     color: #ffffff;
 }
-
 
 /* Lista en vista */
 .list-view {
@@ -256,14 +256,6 @@
 .gift-products-main-div .close-button:hover {
     color: #F25E7A;
 }
-
-/*
-.gift-products-main-div .content-div {
-    max-height: 30%;
-    overflow: auto;
-
-}
- */
 
 .search-bar-div {
     display: flex;
@@ -498,7 +490,7 @@
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     color: #000000;
     Font-family: Inter, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .gift-info-div:hover .gift-img-div {
@@ -606,6 +598,7 @@
     text-decoration: none;
     color: #fafafa;
 }
+
 .move-gift-main-div .close-button:hover {
     color: #F25E7A;
 }
@@ -693,9 +686,6 @@
     background-color: #022873;
     color: #F2C063;
 }
-
-
-
 
 .remove-button {
     width: 40px;

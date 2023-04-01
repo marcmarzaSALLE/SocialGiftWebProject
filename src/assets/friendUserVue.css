@@ -1,4 +1,4 @@
-.section-user {
+.section-user3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,13 +13,13 @@
     color: #E2EEF7;
 }
 
-.user-img {
+.user-img3 {
     width: 100%;
     height: 100%;
     border-radius: 20%;
 }
 
-.user-text {
+.user-text3 {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -34,7 +34,7 @@
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: 40px;
 }
 
 .friend-buttons-div2 {
@@ -45,11 +45,14 @@
     height: 100%;
 }
 
-.friends-button {
+
+/* ------------------------------------ */
+/* Secciçon poner nueva foto de perfil */
+
+.friends-anchor {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
     border-radius: 20px;
     padding: 1%;
     background-color: #f2f2f2;
@@ -62,16 +65,148 @@
     text-decoration: none;
 }
 
-.friends-button:hover {
+.friends-anchor:hover {
     background-color: #F25E7A;
     color: #ffffff;
 }
 
+
+/* Elemento pantalla overlay de mover regalo */
+.friends-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.friends-div:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.friends-main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #035AA6;
+    border-radius: 20px;
+    color: #E2EEF7;
+    width: 500px;
+    height: 550px;
+    padding: 20px;
+    position: relative;
+}
+
+.friends-main-div .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fafafa;
+}
+.friends-main-div .close-button:hover {
+    color: #F25E7A;
+}
+
+.friends-list-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1%;
+    background: none;
+    border-radius: 20px;
+    color: #035AA6;
+    width: 450px;
+    height: 500px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/* Sección amigos */
+.friend-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background: rgb(226, 238, 247);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 20px;
+    margin: 1%;
+}
+
+.friend-route-link2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    width: 100%;
+    color: #000000;
+}
+
+.friend-img2 {
+    width: 30%;
+    height: 30%;
+    margin-right: 0.5%;
+}
+
+.friend-text2 {
+    margin-left: 1%;
+    height: 100%;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    font-size: 13px;
+}
+
+.friend-button-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-right: 2%;
+}
+
+.friend-button2 {
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid #F25E7A;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: #F25E7A;
+    font-size: 12px;
+    text-align: center;
+    margin-left: 2%;
+}
+
+.friend-button2:hover {
+    background-color: #F25E7A;
+    color: #ffffff;
+}
+/*------------------------------------*/
+
+
+/* ------------------------------------ */
 .send-friend-message-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
     border-radius: 20px;
     padding: 1%;
     margin-left: 3%;
@@ -90,11 +225,10 @@
     color: #ffffff;
 }
 
-.unfollow-button {
+.friend-button3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px;
     border-radius: 20px;
     padding: 1%;
     background-color: #f2f2f2;
@@ -107,17 +241,19 @@
     text-decoration: none;
 }
 
-.unfollow-button:hover {
+.friend-button3:hover {
     background-color: #F25E7A;
     color: #ffffff;
 }
 
 /* Sección de listas y regalos */
 .lists-gifts-section {
-    margin: 30px 100px 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-family: Inter, sans-serif;
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .friend-lists {
@@ -126,7 +262,6 @@
     justify-content: center;
     flex-direction: column;
     width: 400px;
-    margin-left: 4%;
 }
 
 .line-div4 {
@@ -170,15 +305,12 @@
 }
 
 /* Lista en vista de amigo */
-.list-view {
+.list-view2 {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items:center;
     flex-direction: column;
-    width: 100%;
-    margin-right: 4%;
-    border-color: red;
-    border-style: solid;
+    padding: 1%;
 }
 
 .data-list-div {
@@ -186,40 +318,43 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 850px;
+    height: 50%;
 }
 
-.description-h3 {
+.description-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    height: 100%;
-    padding: 1%;
+    height: 50%;
     border-color: #F25E7A;
     border-style: solid;
     border-width: 2px;
     border-radius: 20px;
 }
 
+.description-p {
+    margin-left: 1%;
+    width: 100%;
+    height: 60px;
+}
+
 /*-----------*/
 
-.gifts-section {
+.gifts-section2 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     width: 850px;
     height: 500px;
-    background: rgb(226, 238, 247);
+    background: none;
     border-radius: 20px;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    padding: 2%;
     margin-bottom: 2%;
 }
 
-.gifts-view-section {
+.gifts-view-section2 {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -227,12 +362,12 @@
     height: 500px;
     overflow-y: auto;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    background: #E2EEF7;
     border-radius: 20px;
 }
 
-
 /* Gift post */
-.gift-post-div {
+.gift-post-div2 {
     display: flex;;
     align-items: stretch;
     flex-direction: column;
@@ -241,28 +376,28 @@
     margin: 1%;
 }
 
-.gift-info-div {
+.gift-info-div2 {
     height: 80%;
 }
 
-.gift-img-div {
+.gift-img-div2 {
     display: flex;
     justify-content: stretch;
     align-items: stretch;
     height: 200px;
 }
 
-.gift-img {
+.gift-img2 {
     border-color: #a0a0a0;
     border-style: solid;
     border-radius: 20px;
 }
 
-.gift-data-div {
+.gift-data-div2 {
     display: none;
 }
 
-.gift-info-div:hover .gift-data-div {
+.gift-info-div2:hover .gift-data-div2 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -276,18 +411,68 @@
     font-size: 25px;
 }
 
-.gift-info-div:hover .gift-img-div {
+.gift-info-div2:hover .gift-img-div2 {
     display: none;
     color: #E2EEF7;
 }
 
-.gift-information-div {
+.gift-information-div2 {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
     padding: 3%;
 }
+
+.gift-buttons-div2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.booking-button-gift2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+    border: 2px solid rgb(255, 196, 0);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    font-family: Inter, sans-serif;
+    color: rgb(255, 196, 0);
+    font-size: 15px;
+    text-align: center;
+}
+
+.booking-button-gift2:hover {
+    background-color: rgb(255, 196, 0);
+    color: #ffffff;
+}
+
+.date-end-div2 {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.calendar-icon2 {
+    width: 30px;
+    height: 30px;
+}
+
+.text-calendar2 {
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    color: #F25E7A;
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+
+
 
 
 

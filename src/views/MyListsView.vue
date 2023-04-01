@@ -173,7 +173,7 @@
                       </button>
                     </div>
 
-                    <!--Producto 1-->
+                    <!--Producto 2-->
                     <div class="product-div">
                       <div class="product-data-div">
                         <span>Product_Name</span>
@@ -188,7 +188,7 @@
                       </button>
                     </div>
 
-                    <!--Producto 1-->
+                    <!--Producto 3-->
                     <div class="product-div">
                       <div class="product-data-div">
                         <span>Product_Name</span>
@@ -203,7 +203,7 @@
                       </button>
                     </div>
 
-                    <!--Producto 1-->
+                    <!--Producto 4-->
                     <div class="product-div">
                       <div class="product-data-div">
                         <span>Product_Name</span>
@@ -218,7 +218,7 @@
                       </button>
                     </div>
 
-                    <!--Producto 1-->
+                    <!--Producto 5-->
                     <div class="product-div">
                       <div class="product-data-div">
                         <span>Product_Name</span>
@@ -530,7 +530,6 @@
 
     </div>
   </section>
-
 
 </template>
 <script>

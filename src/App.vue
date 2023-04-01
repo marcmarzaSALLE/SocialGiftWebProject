@@ -1,10 +1,7 @@
-<script setup>
-import {RouterLink, RouterView} from 'vue-router'
-</script>
 <template>
 
   <header>
-    <!--Seccion del header1-->
+    <!--Sección del header1-->
     <section class="section-header-1">
 
       <!--Parte logo-->
@@ -35,7 +32,6 @@ import {RouterLink, RouterView} from 'vue-router'
         </button>
       </div>
 
-
       <!--Parte navegación usuario-->
       <div class="user-nav-header">
         <RouterLink to="/MyLists"><img class="user-nav-icons" src="public/Icons/myListIcon.png"></RouterLink>
@@ -48,28 +44,28 @@ import {RouterLink, RouterView} from 'vue-router'
     <!--Seccion del heder2-->
     <section class="section-header-2" >
 
-
-      <!-- Menu hamburg -->
+      <!--Menu hamburg-->
       <div class="menu-burger">
         <input type="checkbox" />
         <input type="checkbox" id="burger-menu" class="burger-menu-input">
-        <label for="burger-menu" class="burger-menu-label">    <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-menu-2"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <line id="burger-line1" x1="4" y1="6" x2="20" y2="6" />
-          <line id="burger-line1" x1="4" y1="12" x2="20" y2="12" />
-          <line id="burger-line1" x1="4" y1="18" x2="20" y2="18" />
-        </svg> </label>
+        <label for="burger-menu" class="burger-menu-label">
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-menu-2"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round">
 
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <line id="burger-line1" x1="4" y1="6" x2="20" y2="6" />
+            <line id="burger-line1" x1="4" y1="12" x2="20" y2="12" />
+            <line id="burger-line1" x1="4" y1="18" x2="20" y2="18" />
+          </svg> </label>
 
+        <!--Desplegable-->
         <ul class="menu-burger-items-list">
           <div class="menu-burger-items-div">
             <h2 class="menu-burger-title">My Account</h2>
@@ -90,11 +86,8 @@ import {RouterLink, RouterView} from 'vue-router'
         </ul>
       </div>
 
-      <!-- Notificaciones
-      <div class="notifications">
-        <img class="notifications-icon" src="public/Icons/giftIcon.png">
-      </div>-->
 
+      <!--Notificaciones -->
       <div class="notifications">
         <input type="checkbox" id="notifications" class="notifications-input">
         <label for="notifications" class="notifications-label"> <svg xmlns="http://www.w3.org/2000/svg" class="notifications-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -110,6 +103,7 @@ import {RouterLink, RouterView} from 'vue-router'
             <h2 class="notifications-title">Notifications</h2>
 
             <div class="notification-banner">
+              <!--Aqui van las notificaciones-->
             </div>
 
           </div>
@@ -122,18 +116,22 @@ import {RouterLink, RouterView} from 'vue-router'
 
   <main style="padding-top: 10px">
     <RouterView/>
-
   </main>
 
   <footer>
-    <div class="sectionFooter1">
-      <p>Footer 1</p>
-
+    <div class="section-footer1">
+      <p>Socialgift - by Marc Marca & Younes Bouahmed</p>
     </div>
-    <div class="sectionFooter2">
+
+    <div class="section-footer2">
       <p>Copyright 2023©</p>
     </div>
   </footer>
+
 </template>
+
+<script setup>
+import {RouterLink, RouterView} from 'vue-router'
+</script>
 
 

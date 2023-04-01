@@ -61,7 +61,6 @@
 
 
 /* Elementos del usuario */
-
 .section-user-items {
     display: flex;
     justify-content: space-around;
@@ -93,7 +92,6 @@
 }
 
 /* Elementos de la sección de amigos */
-
 .friend-div {
     display: flex;
     justify-content: center;
@@ -214,7 +212,6 @@
 }
 
 /* Elementos de la sección de listas */
-
 .list {
     display: flex;
     justify-content: flex-start;
@@ -282,11 +279,5 @@
     margin-top: 2%;
     margin-bottom: 2%;
 }
-
-
-
-
-
-
 
 
