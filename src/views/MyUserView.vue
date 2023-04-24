@@ -10,9 +10,9 @@
       <h2>Username</h2>
       <h3>Firstname Secondname</h3>
 
-      <div class="edit-profile-div">
+      <nav class="edit-profile-nav">
         <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
-      </div>
+      </nav>
     </div>
   </section>
 
@@ -26,8 +26,8 @@
       <section class="section-template">
 
         <!--Amigo 1-->
-        <div class="friend-div" >
-          <Router-link  class="friend-route-link" to="/friend">
+        <div class="friend-div">
+          <Router-link class="friend-route-link" to="/friend">
             <img class="friend-img" src="public/Icons/imageFriend.png">
             <div class="friend-text">
               <h3>username</h3>
@@ -42,8 +42,8 @@
         </div>
 
         <!--Amigo 2-->
-        <div class="friend-div" >
-          <Router-link  class="friend-route-link" to="/friend">
+        <div class="friend-div">
+          <Router-link class="friend-route-link" to="/friend">
             <img class="friend-img" src="public/Icons/imageFriend.png">
             <div class="friend-text">
               <h3>username</h3>
@@ -58,8 +58,8 @@
         </div>
 
         <!--Amigo 3-->
-        <div class="friend-div" >
-          <Router-link  class="friend-route-link" to="/friend">
+        <div class="friend-div">
+          <Router-link class="friend-route-link" to="/friend">
             <img class="friend-img" src="public/Icons/imageFriend.png">
             <div class="friend-text">
               <h3>username</h3>
@@ -74,8 +74,8 @@
         </div>
 
         <!--Amigo 4-->
-        <div class="friend-div" >
-          <Router-link  class="friend-route-link" to="/friend">
+        <div class="friend-div">
+          <Router-link class="friend-route-link" to="/friend">
             <img class="friend-img" src="public/Icons/imageFriend.png">
             <div class="friend-text">
               <h3>username</h3>
@@ -90,8 +90,8 @@
         </div>
 
         <!--Amigo 5-->
-        <div class="friend-div" >
-          <Router-link  class="friend-route-link" to="/friend">
+        <div class="friend-div">
+          <Router-link class="friend-route-link" to="/friend">
             <img class="friend-img" src="public/Icons/imageFriend.png">
             <div class="friend-text">
               <h3>username</h3>
@@ -179,22 +179,6 @@
           </div>
         </div>
 
-        <!--Reserva 5-->
-        <Router-link  class="friend-route-link" to="/friend">
-          <div class="friend-div" >
-            <img class="friend-img" src="public/Icons/imageFriend.png">
-            <div class="friend-text">
-              <h3>username</h3>
-              <h3>Firstname Secondname</h3>
-            </div>
-            <div class="friend-button-div">
-              <button class="friend-button">
-                <span>Unfollow</span>
-              </button>
-            </div>
-          </div>
-
-        </Router-link>
 
       </section>
       <div class="line-div1"></div>

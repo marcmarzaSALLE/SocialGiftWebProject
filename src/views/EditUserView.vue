@@ -20,9 +20,7 @@
             <input type="file" class="new-pic-input" name="user-pic" placeholder="Update a new pic..." accept="image/png, image/jpg">
 
             <!--Botón de update-->
-            <button class="update-button">
-              <span>Update</span>
-            </button>
+            <button class="update-button">Update</button>
 
           </div>
         </div>

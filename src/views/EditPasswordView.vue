@@ -10,9 +10,9 @@
       <h3>Username</h3>
       <h3>Firstname Secondname</h3>
 
-      <div class="edit-profile-div3">
+      <nav class="edit-profile-nav3">
         <RouterLink class="edit-profile-button3" to="/EditUser">Edit profile</RouterLink>
-      </div>
+      </nav>
 
     </div>
   </section>

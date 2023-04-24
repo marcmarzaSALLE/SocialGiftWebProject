@@ -21,9 +21,7 @@
           </div>
 
           <div class="editList-button-div2">
-            <button class="editList-button2">
-              <span>Edit list</span>
-            </button>
+            <button class="editList-button2">Edit list</button>
           </div>
         </div>
         <!--Lista 2-->
@@ -39,9 +37,8 @@
           </div>
 
           <div class="editList-button-div2">
-            <button class="editList-button2">
-              <span>Edit list</span>
-            </button>
+            <button class="editList-button2">Edit list</button>
+
           </div>
         </div>
         <!--Lista 3-->
@@ -57,9 +54,8 @@
           </div>
 
           <div class="editList-button-div2">
-            <button class="editList-button2">
-              <span>Edit list</span>
-            </button>
+            <button class="editList-button2">Edit list</button>
+
           </div>
         </div>
         <!--Lista 4-->
@@ -75,9 +71,8 @@
           </div>
 
           <div class="editList-button-div2">
-            <button class="editList-button2">
-              <span>Edit list</span>
-            </button>
+            <button class="editList-button2">Edit list</button>
+
           </div>
         </div>
         <!--Lista 5-->
@@ -93,18 +88,14 @@
           </div>
 
           <div class="editList-button-div2">
-            <button class="editList-button2">
-              <span>Edit list</span>
-            </button>
+            <button class="editList-button2">Edit list</button>
           </div>
         </div>
 
       </section>
       <div class="line-div2"></div>
 
-      <button class="create-list-button">
-        <span>+ create list</span>
-      </button>
+      <button class="create-list-button">+ create list</button>
     </div>
 
     <!--Lista a editar-->
@@ -168,9 +159,7 @@
                         <span>Is_active</span>
                       </div>
 
-                      <button class="add-product-button">
-                        <span>Add</span>
-                      </button>
+                      <button class="add-product-button">Add</button>
                     </div>
 
                     <!--Producto 2-->
@@ -183,9 +172,8 @@
                         <span>Is_active</span>
                       </div>
 
-                      <button class="add-product-button">
-                        <span>Add</span>
-                      </button>
+                      <button class="add-product-button">Add</button>
+
                     </div>
 
                     <!--Producto 3-->
@@ -198,9 +186,8 @@
                         <span>Is_active</span>
                       </div>
 
-                      <button class="add-product-button">
-                        <span>Add</span>
-                      </button>
+                      <button class="add-product-button">Add</button>
+
                     </div>
 
                     <!--Producto 4-->
@@ -213,9 +200,8 @@
                         <span>Is_active</span>
                       </div>
 
-                      <button class="add-product-button">
-                        <span>Add</span>
-                      </button>
+                      <button class="add-product-button">Add</button>
+
                     </div>
 
                     <!--Producto 5-->
@@ -228,9 +214,8 @@
                         <span>Is_active</span>
                       </div>
 
-                      <button class="add-product-button">
-                        <span>Add</span>
-                      </button>
+                      <button class="add-product-button">Add</button>
+
                     </div>
 
                   </section>
@@ -288,17 +273,13 @@
                     <!--Select list-->
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
-                    <button class="move-button">
-                      <span>Move</span>
-                    </button>
+                    <button class="move-button">Move</button>
 
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift">Reserve</button>
 
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
@@ -354,17 +335,13 @@
                     <!--Select list-->
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
-                    <button class="move-button">
-                      <span>Move</span>
-                    </button>
+                    <button class="move-button">Move</button>
 
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift">Reserve</button>
 
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
@@ -420,17 +397,13 @@
                     <!--Select list-->
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
-                    <button class="move-button">
-                      <span>Move</span>
-                    </button>
+                    <button class="move-button">Move</button>
 
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift">Reserve</button>
 
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
@@ -486,17 +459,13 @@
                     <!--Select list-->
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
-                    <button class="move-button">
-                      <span>Move</span>
-                    </button>
+                    <button class="move-button">Move</button>
 
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift">Reserve</button>
 
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
@@ -516,9 +485,7 @@
             <span>Save list</span>
           </button>
 
-          <button class="delete-list-button">
-            <span>Delete list</span>
-          </button>
+          <button class="delete-list-button">Delete list</button>
         </div>
 
         <div class="date-end-div">

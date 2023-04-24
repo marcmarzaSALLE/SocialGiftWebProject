@@ -32,9 +32,7 @@
                     </div>
                   </Router-link>
                   <div class="friend-button-div2">
-                    <button class="friend-button2">
-                      <span>Unfollow</span>
-                    </button>
+                    <button class="friend-button2">Unfollow</button>
                   </div>
                 </div>
 
@@ -48,9 +46,7 @@
                     </div>
                   </Router-link>
                   <div class="friend-button-div2">
-                    <button class="friend-button2">
-                      <span>Unfollow</span>
-                    </button>
+                    <button class="friend-button2">Unfollow</button>
                   </div>
                 </div>
 
@@ -64,9 +60,7 @@
                     </div>
                   </Router-link>
                   <div class="friend-button-div2">
-                    <button class="friend-button2">
-                      <span>Unfollow</span>
-                    </button>
+                    <button class="friend-button2">Unfollow</button>
                   </div>
                 </div>
 
@@ -80,9 +74,7 @@
                     </div>
                   </Router-link>
                   <div class="friend-button-div2">
-                    <button class="friend-button2">
-                      <span>Follow</span>
-                    </button>
+                    <button class="friend-button2">Unfollow</button>
                   </div>
                 </div>
 
@@ -96,9 +88,7 @@
                     </div>
                   </Router-link>
                   <div class="friend-button-div2">
-                    <button class="friend-button2">
-                      <span>Follow</span>
-                    </button>
+                    <button class="friend-button2">Unfollow</button>
                   </div>
                 </div>
 
@@ -115,9 +105,7 @@
 
           <RouterLink class="send-friend-message-button" to="/Messages">Send message</RouterLink>
         </div>
-        <button class="friend-button3">
-          <span>Unfollow</span>
-        </button>
+        <button class="friend-button3">Unfollow</button>
 
       </div>
     </div>
@@ -239,9 +227,7 @@
 
             <!--Sección de botones-->
             <div class="gift-buttons-div2">
-              <button class="booking-button-gift2">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift2">Reserve</button>
             </div>
 
           </div>
@@ -267,9 +253,7 @@
 
             <!--Sección de botones-->
             <div class="gift-buttons-div2">
-              <button class="booking-button-gift2">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift2">Reserve</button>
             </div>
 
           </div>
@@ -295,9 +279,7 @@
 
             <!--Sección de botones-->
             <div class="gift-buttons-div2">
-              <button class="booking-button-gift2">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift2">Reserve</button>
             </div>
 
           </div>
@@ -323,9 +305,8 @@
 
             <!--Sección de botones-->
             <div class="gift-buttons-div2">
-              <button class="booking-button-gift2">
-                <span>Reserve</span>
-              </button>
+              <button class="booking-button-gift2">Reserve</button>
+
             </div>
 
           </div>

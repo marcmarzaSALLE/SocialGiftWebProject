@@ -129,11 +129,11 @@ header {
     justify-content: center;
 }
 
-.languages-menu-div {
+.languages-menu-nav {
     display: none;
 }
 
-.languages-menu-input:checked ~ .languages-menu-div {
+.languages-menu-input:checked ~ .languages-menu-nav {
     position: absolute;
     display: flex;
 }
@@ -142,7 +142,7 @@ header {
     cursor: pointer;
 }
 
-.languages-menu-div {
+.languages-menu-nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
