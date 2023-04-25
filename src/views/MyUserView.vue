@@ -2,7 +2,7 @@
 
   <!--Sección del usuario-->
   <section class="section-user">
-    <div>
+    <div class="user-img-div">
       <img class="user-img" src="public/Icons/imageUserPic.png">
     </div>
 
