@@ -146,3 +146,55 @@
     background: #ffc527;
 }
 
+@media screen and (max-width: 768px) {
+
+    .login-section {
+        width: 80%;
+    }
+
+    .title-login {
+        font-size: 15px;
+    }
+
+    div.line-div5 {
+        width: 80%;
+    }
+
+    div.data-login-div {
+        width: 100%;
+    }
+
+
+    .login-button {
+        width: 40%;
+    }
+
+    .inputEmail-login {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+
+    .inputPassword-login {
+        font-size: 18px;
+    }
+
+    .login-button {
+        width: 30%;
+        height: 100%;
+        font-size: 15px;
+    }
+
+    .section-signin {
+        width: 80%;
+    }
+
+    .signin-button {
+        width: 50%;
+        height: 100%;
+        font-size: 15px;
+    }
+
+    .new-user-text {
+        font-size: 15px;
+    }
+}

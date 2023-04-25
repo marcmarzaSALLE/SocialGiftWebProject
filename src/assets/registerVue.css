@@ -91,3 +91,35 @@
 .register-button:hover {
     background: #ffc527;
 }
+
+@media screen and (max-width: 768px) {
+    .title-create-account{
+        font-size: 15px;
+    }
+    div.line-div5{
+        width: 85%;
+    }
+    .signin-section{
+        margin-top: 5%;
+        width: 85%;
+    }
+    div.data-login-div{
+        width: 100%;
+        margin-top: 10%;
+        margin-bottom: 2%;
+    }
+    .name-account, .secondname-account, .username-account ,.email-account, .password-account, .password2-account {
+        width: 70%;
+        margin-top: 5px;
+        font-size: 18px;
+
+    }
+    .routerLink-register{
+        margin-top: 7%;
+    }
+    .register-button{
+        width: 40%;
+        height: 100%;
+        font-size: 15px;
+    }
+}

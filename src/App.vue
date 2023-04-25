@@ -85,30 +85,44 @@
         </ul>
       </div>
 
+      <!-- Buscador versión móvil -->
+      <div class="search-box-input-mobile">
+        <form class="search-box-mobile" method="get">
+          <input class="search-mobile" type="search" placeholder="Look for a friend..." />
+          <button class="search-button-mobile" type="submit">
+            <img class="search-icon-mobile" src="public/Icons/searchIconPink.png">
+          </button>
+        </form>
+      </div>
+
+
 
       <!--Notificaciones -->
       <div class="notifications">
+
         <input type="checkbox" id="notifications" class="notifications-input">
         <label for="notifications" class="notifications-label">
           <svg xmlns="http://www.w3.org/2000/svg" class="notifications-icon" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <rect x="3" y="8" width="18" height="4" rx="1" />
-          <line x1="12" y1="8" x2="12" y2="21" />
-          <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" />
-          <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" />
-        </svg>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <rect x="3" y="8" width="18" height="4" rx="1" />
+            <line x1="12" y1="8" x2="12" y2="21" />
+            <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" />
+            <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" />
+          </svg>
         </label>
 
         <ul class="notifications-items-list">
           <div class="notifications-items-div">
             <h2 class="notifications-title">Notifications</h2>
 
+            <!--Notificacion 1-->
             <div class="notification-banner">
-              <!--Aqui van las notificaciones-->
+              <!--Aqui van la información de la notificacion-->
             </div>
 
           </div>
         </ul>
+
       </div>
 
     </section>
@@ -125,9 +139,16 @@
     </div>
 
     <div class="section-footer2">
-      <p>Copyright 2023©</p>
+      <p class="text-footer">Copyright 2023©</p>
+      <!--Parte navegación usuario-->
     </div>
   </footer>
+
+  <nav class="user-nav-footer">
+    <RouterLink to="/MyLists"><img class="user-nav-icons" src="public/Icons/myListIcon.png"></RouterLink>
+    <RouterLink to="/Messages"><img class="user-nav-icons" src="public/Icons/messagesIcon.png"></RouterLink>
+    <RouterLink to="/MyUser"><img class="user-nav-icons" src="public/Icons/myUserIcon.png"></RouterLink>
+  </nav>
 
 </template>
 
