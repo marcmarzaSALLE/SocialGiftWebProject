@@ -604,7 +604,7 @@ footer {
         width: 100%;
         height: 600px;
         padding: 2%;
-        left: 0;
+        right: 0px;
         margin-top: 690px;
         z-index: 1;
     }
@@ -615,7 +615,7 @@ footer {
         align-items: flex-start;
         flex-direction: column;
         margin-top: 1%;
-        width: 400px;
+        width: 80%;
         margin-left: 16%;
     }
 
@@ -655,6 +655,7 @@ footer {
         width: 100%;
         background: #022873;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.7);
+        z-index: 1;
     }
 
 

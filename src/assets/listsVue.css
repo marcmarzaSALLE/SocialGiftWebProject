@@ -355,6 +355,7 @@
     border: none;
     background: #022873;
     width: 20%;
+    height: 100%;
     font-family: Inter, sans-serif;
     text-align: center;
     color: rgba(0, 0, 0, 0.4);
@@ -432,8 +433,6 @@
     background-color: #ffffff;
     color: #020202;
 }
-
-
 
 
 /* Elemento regalos en vista */
@@ -712,7 +711,6 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    height: 100%;
 }
 
 .save-delete-div {
@@ -790,6 +788,312 @@
     color: rgba(0, 0, 0, 0.4);
     margin-right: 2%;
     margin-left: 2%;
+}
+
+
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+
+@media screen and (max-width: 767px) {
+
+    .user-lists-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 15%;
+        margin-bottom: 25%;
+    }
+
+    .my-lists {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .lists-section2 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 220px;
+        background: rgba(0, 143, 182, 0);
+        border-radius: 20px;
+        overflow-y: auto;
+        font-size: 12px;
+    }
+
+    .list-div2 {
+        height: 200px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+
+    .description2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 300px;
+        height: 100%;
+        padding: 1%;
+        border-color: #F25E7A;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 20px;
+    }
+
+    .dates-list2 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    }
+
+    .editList-button-div2 {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3%;
+    }
+
+    .editList-button2 {
+        border-radius: 20px;
+        background-color: #f2f2f2;
+        border: 2px solid #F25E7A;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        font-family: Inter, sans-serif;
+        color: #F25E7A;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .editList-button2:hover {
+        background-color: #F25E7A;
+        color: #ffffff;
+    }
+
+    .create-list-button {
+        width: 20%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #f2f2f2;
+        border: 2px solid #F25E7A;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        font-family: Inter, sans-serif;
+        color: #F25E7A;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 0%;
+        margin-bottom: 3%;
+    }
+
+    /* Lista en vista */
+    .list-view {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        margin-top: 2%;
+        margin-right: 0%;
+        margin-bottom: 0%;
+    }
+
+    .name-list-input {
+        width: 100%;
+        height: 40px;
+        border-radius: 20px;
+        border-color: #F25E7A;
+        border-style: solid;
+        border-width: 2px;
+        font-family: Inter, sans-serif;
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.4);
+        margin-bottom: 5%;
+    }
+
+    .description-list-input {
+        width: 100%;
+        height: 100px;
+        border-radius: 20px;
+        border-color: #F25E7A;
+        border-style: solid;
+        border-width: 2px;
+        font-family: Inter, sans-serif;
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.4);
+        margin-bottom: 5%;
+    }
+
+    .gifts-section {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 320px;
+        padding: 2%;
+        margin-bottom: 0;
+    }
+
+    .gifts-div {
+        width: 100%;
+        color: black;
+    }
+
+    .add-gift-div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100px;
+        height: 40px;
+    }
+
+    /* Boton añadir regalo */
+    .add-gift-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 30px;
+        border-radius: 20px;
+        background-color: #f2f2f2;
+        border: 2px solid #F25E7A;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        font-family: Inter, sans-serif;
+        color: #F25E7A;
+        font-size: 12px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    /* Elemento pantalla overlay de regalos */
+    .gift-products-main-div {
+        width: 90%;
+        height: 60%;
+        position: relative;
+    }
+
+    .search-bar-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 20%;
+    }
+
+    /* Elemento buscador */
+    .search-box-input2 {
+        width: 80%;
+        height: 40px;
+    }
+
+    .dropdown-categories-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dropdown-categories-div:hover .dropdown-content {
+        height: 40%;
+        top: 47px;
+        overflow-y: auto;
+    }
+
+    .products-results-div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-div {
+        font-size: 10px;
+    }
+
+    .product-data-div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .add-product-button {
+        font-size: 10px;
+    }
+
+    /* Elemento regalos en vista */
+    .gifts-view-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 250px;
+        overflow-y: auto;
+    }
+
+    /* Elemento pantalla overlay de mover regalo */
+    .move-gift-main-div {
+        width: 80%;
+    }
+
+    .move-gift-bar {
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Elemento botones lista */
+
+    .list-buttons-div {
+        align-items: flex-start;
+        margin-top: 2%;
+        height: 50px;
+    }
+
+    .save-delete-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0%;
+    }
+
+    .save-list-button {
+        width: 50%;
+        height: 40px;
+    }
+
+    .delete-list-button {
+        width: 50%;
+        height: 40px;
+    }
+
+    .date-end-div {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .calendar-icon{
+        display: none;
+    }
+
+
 }
 
 

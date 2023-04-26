@@ -9,6 +9,7 @@
         <form class="search-contact" method="get">
           <input class="search-contact-input" type="search" placeholder="Search contact..." />
         </form>
+
         <button class="search-contact-button" type="submit">
           <img class="search-contact-icon" src="public/Icons/searchIcon.png">
         </button>
