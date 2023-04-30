@@ -2,16 +2,21 @@
 
   <!--Section User-->
   <section class="section-user3">
-    <div class="user-profile-pic">
-      <img class="user-img3" src="public/Icons/imageUserPic.png">
-    </div>
+    <img class="user-img" src="public/Icons/imageUserPic.png">
 
-    <div class="user-text3">
-      <h3>Username</h3>
-      <h3>Firstname Secondname</h3>
+    <div class="user-data">
+      <div class="user-info">
+        <h2 class="user-username">Username</h2>
+        <h3 class="user-complete-name">Firstname Secondname</h3>
+        <p class="user-email">username@email.com</p>
+      </div>
 
-      <nav class="edit-profile-nav3">
-        <RouterLink class="edit-profile-button3" to="/EditUser">Edit profile</RouterLink>
+      <div class="user-info-mobile">
+        <p class="user-username">Username</p>
+      </div>
+
+      <nav class="edit-profile-nav">
+        <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
       </nav>
 
     </div>
@@ -21,7 +26,7 @@
   <section class="edit-user-password">
 
     <h2>Edit password</h2>
-    <div class="line-div3"></div>
+    <div class="line3"></div>
 
     <div class="password-div">
       <span class="password-span">Current password:</span>

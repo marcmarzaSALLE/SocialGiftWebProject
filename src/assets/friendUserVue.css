@@ -1,25 +1,36 @@
-.section-user3 {
+/***************************************************/
+/* Componente elementos perfil amigo */
+/***************************************************/
+.section-friend {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 30%;
-    background: #035AA6;
+    background: #ffffff;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 150px;
     border-radius: 20px;
     padding: 2%;
-    margin-left: 260px;
-    margin-right: 260px;
-    margin-top: 150px;
+    box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
     font-family: Inter, sans-serif;
-    color: #E2EEF7;
+    color: #000000;
 }
 
-.user-img3 {
-    width: 100%;
-    height: 100%;
-    border-radius: 20%;
+.section-friend:hover {
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    transition: color 0.5s ease;
 }
 
-.user-text3 {
+.friend-profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border-color: #5CBB81;
+    border-style: solid;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+}
+
+.friend-data {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -29,309 +40,159 @@
     margin-left: 8%;
 }
 
-.friend-buttons-div1 {
+.friend-info-mobile {
+    display: none;
+}
+
+/* Componente botones de amigo */
+.friend-buttons-div {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 100%;
-    height: 40px;
 }
 
-.friend-buttons-div2 {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* ------------------------------------ */
-/* Secciçon poner nueva foto de perfil */
-
-.friends-anchor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.message-button {
     border-radius: 20px;
     padding: 1%;
-    background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    background-color: #E1E1E1;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border: #5CBB81 solid 1px;
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #000000;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
 }
 
-.friends-anchor:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
+.message-button:hover {
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    color: #000000;
 }
 
-
-/* Elemento pantalla overlay de mover regalo */
-.friends-div {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    transition: opacity 200ms;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.friends-div:target {
-    visibility: visible;
-    opacity: 1;
-}
-
-.friends-main-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: #035AA6;
+.unfollow-button {
     border-radius: 20px;
-    color: #E2EEF7;
-    width: 500px;
-    height: 550px;
-    padding: 20px;
-    position: relative;
-}
-
-.friends-main-div .close-button {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
+    padding: 1%;
+    background-color: #E1E1E1;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border: #5CBB81 solid 1px;
+    font-family: Inter, sans-serif;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
     text-decoration: none;
-    color: #fafafa;
-}
-.friends-main-div .close-button:hover {
-    color: #F25E7A;
 }
 
-.friends-list-div {
+.unfollow-button:hover {
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    color: #000000;
+}
+
+/***************************************************/
+/* Componente de listas y regalos */
+/***************************************************/
+.section-friend-items {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
+    font-family: Inter, sans-serif;
+    font-weight: normal;
+}
+
+.friend-lists-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.line3 {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background-color: #0B2237;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.lists-section {
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
+    padding: 3%;
+}
+
+.list-section-inside {
+    display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 1%;
-    background: none;
-    border-radius: 20px;
-    color: #035AA6;
-    width: 450px;
     height: 500px;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
+
+    width: 430px;
 }
 
-/* Sección amigos */
-.friend-div2 {
+.list-friend-div {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 90%;
-    background: rgb(226, 238, 247);
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    background: rgb(239, 239, 239);
+    border: 1px solid #0B2237;
+
+    width: 400px;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 20px;
     margin: 1%;
 }
 
-.friend-route-link2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    text-decoration: none;
-    width: 100%;
-    color: #000000;
+.list-friend-div:hover {
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
 }
 
-.friend-img2 {
-    width: 30%;
-    height: 30%;
-    margin-right: 0.5%;
-}
-
-.friend-text2 {
-    margin-left: 1%;
-    height: 100%;
-    width: 100%;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    font-size: 13px;
-}
-
-.friend-button-div2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    margin-right: 2%;
-}
-
-.friend-button2 {
-    border-radius: 20px;
-    background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    font-family: Inter, sans-serif;
-    color: #F25E7A;
-    font-size: 12px;
-    text-align: center;
-    margin-left: 2%;
-}
-
-.friend-button2:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
-}
-/*------------------------------------*/
-
-
-/* ------------------------------------ */
-.send-friend-message-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 1%;
-    margin-left: 3%;
-    background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    font-family: Inter, sans-serif;
-    color: #F25E7A;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.send-friend-message-button:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
-}
-
-.friend-button3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 1%;
-    background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    font-family: Inter, sans-serif;
-    color: #F25E7A;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.friend-button3:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
-}
-
-/* Sección de listas y regalos */
-.lists-gifts-section {
-    display: flex;
-    justify-content: space-between;
-    font-family: Inter, sans-serif;
-    margin-top: 1%;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.friend-lists {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 400px;
-}
-
-.line-div4 {
-    width: 350px;
-    border-color: #F25E7A;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 20px;
-    margin: 2%;
-}
-
-.lists-section3 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 400px;
-    height: 600px;
-    background: rgba(0, 143, 182, 0);
-    border-radius: 20px;
-    overflow-y: auto;
-}
-
-.description3 {
+.description-list-friend-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 63px;
+    overflow-y: auto;
+    border: 1px solid #0B2237;
     padding: 1%;
-    border-color: #F25E7A;
-    border-style: solid;
-    border-width: 2px;
     border-radius: 20px;
 }
 
-.dates-list2 {
+.dates-friend-list {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    text-align: center;
+    width: 95%;
 }
 
-/* Lista en vista de amigo */
-.list-view2 {
+/* Componente de lista en vista de amigo */
+.list-view-friend-div {
     display: flex;
     justify-content: center;
     align-items:center;
     flex-direction: column;
     padding: 1%;
+    background: #ffffff;
 }
 
-.data-list-div {
+.description-list-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-direction: column;
-    width: 850px;
-    height: 50%;
-}
+    width: 97%;
 
-.description-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    height: 50%;
-    border-color: #F25E7A;
-    border-style: solid;
-    border-width: 2px;
+    height: 70px;
+    border: 1px solid #0B2237;
     border-radius: 20px;
+    overflow-y: auto;
 }
 
 .description-p {
@@ -340,83 +201,71 @@
     height: 60px;
 }
 
-/*-----------*/
-
-.gifts-section2 {
+.gifts-list-friend-section {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     width: 850px;
-    height: 500px;
-    background: none;
+    height: 350px;
     border-radius: 20px;
-    margin-bottom: 2%;
+    box-shadow: 0px 2px 13px 0px rgb(92, 187, 129);
 }
 
-.gifts-view-section2 {
+.gifts-view-section {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     height: 500px;
     overflow-y: auto;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    background: #E2EEF7;
     border-radius: 20px;
+    border: #5CBB81 solid 2px;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* Gift post */
-.gift-post-div2 {
-    display: flex;;
-    align-items: stretch;
+.gift-post-list-div {
+    display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 250px;
+    justify-content: center;
+    align-items: center;
     margin: 1%;
 }
 
-.gift-info-div2 {
-    height: 80%;
-}
-
-.gift-img-div2 {
+.gift-post-img-div {
     display: flex;
     justify-content: stretch;
     align-items: stretch;
+    width: 250px;
     height: 200px;
 }
 
-.gift-img2 {
-    border-color: #a0a0a0;
-    border-style: solid;
+.gift-post-img {
+    border: #bcbcbc solid 2px;
     border-radius: 20px;
 }
 
-.gift-data-div2 {
+.gift-post-data-div {
     display: none;
 }
 
-.gift-info-div2:hover .gift-data-div2 {
+.gift-post-info-div:hover .gift-post-data-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    width: 250px;
     height: 200px;
     border-radius: 20px;
-    background-color: #F25E7A;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    color: #000000;
-    Font-family: Inter, sans-serif;
-    font-size: 25px;
+    background-color: #5CBB81;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
 }
 
-.gift-info-div2:hover .gift-img-div2 {
+.gift-post-info-div:hover .gift-post-img-div {
     display: none;
-    color: #E2EEF7;
 }
 
-.gift-information-div2 {
+.gift-information-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -424,59 +273,213 @@
     padding: 3%;
 }
 
-.gift-buttons-div2 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 2%;
-}
-
-.booking-button-gift2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.booking-button-gift-post {
+    width: 30%;
+    margin-top: 8px;
     border-radius: 20px;
-    background-color: #f2f2f2;
-    border: 2px solid rgb(255, 196, 0);
+    background-color: #0F2F4C;
+    border: 2px solid rgb(15, 47, 76);
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    font-family: Inter, sans-serif;
-    color: rgb(255, 196, 0);
+
+    color: rgb(255, 255, 255);
     font-size: 15px;
     text-align: center;
 }
 
-.booking-button-gift2:hover {
-    background-color: rgb(255, 196, 0);
-    color: #ffffff;
+.booking-button-gift-post:hover {
+    background-color: #49A25D;
+    border: 2px solid rgb(73, 162, 93);
+    box-shadow: 0px 6px 24px 0px rgb(73, 162, 93);
 }
 
-.date-end-div2 {
+.date-end-list-div {
     width: 100%;
     height: 40px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
-.calendar-icon2 {
-    width: 30px;
-    height: 30px;
-}
-
-.text-calendar2 {
+.text-calendar-span {
     font-family: Inter, sans-serif;
     font-size: 15px;
-    color: #F25E7A;
+    color: #49A25D;
     margin-right: 2%;
     margin-left: 2%;
 }
 
 
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+@media screen and (max-width: 768px) {
+    .section-friend {
+        padding: 2%;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 60px;
+    }
 
+    .friend-profile-img {
+        width: 70px;
+        height: 70px;
+    }
 
+    .friend-data {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+    }
 
+    .friend-info-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        border-radius: 15px;
+        color: #000000;
+        font-size: 19px;
+        font-weight: bold;
+    }
 
+    .friend-info {
+        display: none;
+    }
 
+    .friend-buttons-div {
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+    }
 
+    .message-button {
+        margin-bottom: 20%;
+    }
 
+    .section-friend-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 4%;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 20px;
+    }
 
+    .friend-lists-div {
+        width: 100%;
+    }
+
+    .line2 {
+        width: 90%;
+    }
+
+    .list-section-inside {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        overflow-x: auto;
+        width: 320px;
+        height: 200px;
+    }
+
+    .list-friend-div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: rgb(239, 239, 239);
+        border: 1px solid #0B2237;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 20px;
+        margin: 1%;
+    }
+
+    .list-friend-div:hover {
+        box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    }
+
+    .description-list-friend-div {
+        width: 285px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .dates-friend-list {
+        display: flex;
+        justify-content: space-around;
+        width: 95%;
+    }
+
+    /* Componente lista en vista de amigo */
+    .list-view-friend-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 98%;
+        margin-bottom: 80px;
+    }
+
+    .data-list-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+    }
+
+    .description-list-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 68px;
+        border: #0B2237 solid 2px;
+        border-radius: 20px;
+        overflow-y: auto;
+    }
+
+    .gifts-list-friend-section {
+        align-items: center;
+        flex-direction: column;
+        width: 98%;
+        height: 100%;
+        background: none;
+        border-radius: 20px;
+        margin-bottom: 0%;
+    }
+
+    .gifts-view-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 250px;
+    }
+
+    .gift-post-img {
+        border: #bababa solid 2px;
+        border-radius: 20px;
+    }
+
+    .gift-buttons-div2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .date-end-list-div {
+        justify-content: center;
+        align-items: center;
+    }
+}

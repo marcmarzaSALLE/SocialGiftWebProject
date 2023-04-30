@@ -1,96 +1,103 @@
+/***************************************************/
+/* Componente listas usuario */
+/***************************************************/
 .user-lists-section {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 160px;
-    margin-bottom: 160px;
+    margin-bottom: 2%;
     font-family: Inter, sans-serif;
 }
 
-.my-lists {
+/***************************************************/
+/* Componente listas */
+/***************************************************/
+.my-lists-section {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 400px;
-    margin-left: 4%;
 }
 
-.line-div2 {
-    width: 350px;
-    border-color: #F25E7A;
-    border-style: solid;
-    border-width: 2px;
+.line3 {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background-color: #0B2237;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.user-list-section {
     border-radius: 20px;
-    margin: 2%;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
+    padding: 3%;
 }
 
-.lists-section2 {
+.user-list-section-inside {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 400px;
-    height: 600px;
-    background: rgba(0, 143, 182, 0);
-    border-radius: 20px;
+    height: 500px;
     overflow-y: auto;
+    width: 390px;
 }
 
-.list-div2 {
+.list-user-div {
     display: flex;
-    justify-content: flex-start;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
-    width: 330px;
+    background: rgb(239, 239, 239);
+    border: 1px solid #0B2237;
+    width: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
     border-radius: 20px;
-    background: rgb(226, 238, 247);
-    padding-left: 4%;
-    padding-right: 5%;
     margin: 1%;
 }
 
-.description2 {
+.list-user-div:hover {
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+}
+
+.description-list-user-div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 63px;
+    overflow-y: auto;
+    border: 1px solid #0B2237;
     padding: 1%;
-    border-color: #F25E7A;
-    border-style: solid;
-    border-width: 2px;
     border-radius: 20px;
 }
 
-.dates-list2 {
+.dates-user-list {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    text-align: center;
+    width: 95%;
 }
 
-.editList-button-div2 {
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3%;
-}
-
-.editList-button2 {
+.editList-button-user {
     border-radius: 20px;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #c5c5c5;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    margin-bottom: 2%;
     font-family: Inter, sans-serif;
-    color: #F25E7A;
-    font-size: 15px;
+    color: #000000;
+    font-size: 12px;
     text-align: center;
+    text-decoration: none;
 }
 
-.editList-button2:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
+.editList-button-user:hover {
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    border: 2px solid #5CBB81;
 }
 
 .create-list-button {
@@ -98,59 +105,61 @@
     height: 40px;
     border-radius: 20px;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #5CBB81;
     font-size: 20px;
     text-align: center;
     margin-top: 4%;
 }
 
 .create-list-button:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    color: #000000;
 }
 
-/* Lista en vista */
+
+/***************************************************/
+/* Componente lista en vista */
+/***************************************************/
 .list-view {
     display: flex;
     justify-content: flex-start;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     width: 900px;
-    margin-right: 4%;
+}
+
+.list-view-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    margin-bottom: 2%;
 }
 
 .name-list-input{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 850px;
+    width: 100%;
     height: 10px;
     border-radius: 20px;
-    border-color: #F25E7A;
     padding: 2%;
     margin-bottom: 2%;
-    border-style: solid;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
+    border: 2px solid #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
 .description-list-input {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 850px;
+    width: 100%;
     height: 40px;
     border-radius: 20px;
-    border-color: #F25E7A;
+    border: 2px solid #5CBB81;
     padding: 2%;
     margin-bottom: 2%;
-    border-style: solid;
-    font-family: Inter, sans-serif;
-    text-align-all: center;
+    overflow-y: auto;
+
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -159,9 +168,11 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    width: 850px;
-    height: 500px;
-    background: rgb(226, 238, 247);
+    width: 90%;
+    height: 320px;
+    background: rgb(11, 34, 55);
+    color: #ffffff;
+    border: 2px solid #5CBB81;
     border-radius: 20px;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     padding: 2%;
@@ -174,7 +185,7 @@
     align-items: center;
     flex-direction: row;
     width: 100%;
-    color: black;
+    color: #ffffff;
 }
 
 .add-gift-div {
@@ -194,21 +205,22 @@
     height: 30px;
     border-radius: 20px;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #5CBB81;
     font-size: 15px;
     text-decoration: none;
     text-align: center;
 }
 
 .add-gift-button:hover {
-    background-color: #F25E7A;
-    color: #ffffff;
+    background-color: #5CBB81;
+    color: #000000;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
 }
 
-/* Elemento pantalla overlay de regalos */
+/* Componente pantalla overlay de regalos */
 .gifts-products-div {
     position: fixed;
     display: flex;
@@ -234,13 +246,12 @@
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    background: #035AA6;
+    background: #0B2237;
     border-radius: 20px;
     color: #E2EEF7;
     width: 70%;
     height: 60%;
     position: relative;
-
 }
 
 .gift-products-main-div .close-button {
@@ -254,7 +265,7 @@
     color: #fafafa;
 }
 .gift-products-main-div .close-button:hover {
-    color: #F25E7A;
+    color: #5CBB81;
 }
 
 .search-bar-div {
@@ -266,8 +277,8 @@
     height: 20%;
 }
 
-/* Elemento buscador */
-.search-box-input2 {
+/* Componente elemento buscador */
+.search-box-gift-input {
     display: flex;
     justify-content: center;
     align-content: space-between;
@@ -288,19 +299,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: #022873;
+    background: #49A25D;
     width: 100px;
     height: 40px;
     border:none;
     font-family: Inter, sans-serif;
-    color: #F2C063;
+    color: #ffffff;
     font-size: 15px;
     text-align: center;
-}
-
-.categories-button:hover {
-    color:#F2C063;
-    background-color: #022873;
 }
 
 .dropdown-content {
@@ -318,14 +324,13 @@
     padding: 10px;
     margin-left: 81px;
     border-radius: 0 20px 20px 20px;
-    background-color: #022873;
+    background-color: #49A25D;
     color: #E2EEF7;
     min-width: 160px;
     z-index: 1;
 }
 
-
-.search-box2 {
+.search-box-gift {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,7 +338,7 @@
     text-align: center;
 }
 
-.search2 {
+.search-gift {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,16 +349,15 @@
     height: 100%;
     font-family: Inter, sans-serif;
     text-align: center;
-    color: #ffffff;
 }
 
-.search-button2 {
+.search-button-gift {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     border: none;
-    background: #022873;
+    background: #49A25D;
     width: 20%;
     height: 100%;
     font-family: Inter, sans-serif;
@@ -361,7 +365,7 @@
     color: rgba(0, 0, 0, 0.4);
 }
 
-.search-icon2 {
+.search-icon-gift {
     width: 20px;
     height: 20px;
 }
@@ -373,6 +377,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    color: #ffffff;
 }
 
 .products-section {
@@ -385,6 +390,7 @@
     border-radius: 20px;
     padding: 3%;
     overflow-y: auto;
+    overflow-x: hidden;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -395,7 +401,7 @@
     flex-direction: row;
     width: 100%;
     height: 30%;
-    background: #D9D9D9;
+    background: #ffffff;
     color: black;
     border-radius: 20px;
     padding: 2%;
@@ -419,23 +425,22 @@
     align-items: center;
     width: 10%;
     height: 30%;
-    background: #F2C063;
+    background: #ffffff;
     border-radius: 20px;
-    border: none;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border: #5CBB81 solid 2px;
+    box-shadow: 0px 6px 24px 0px rgb(73, 162, 93);
     font-family: Inter, sans-serif;
-    color: #020202;
+    color: #49A25D;
     font-size: 15px;
     text-align: center;
 }
 
 .add-product-button:hover {
-    background-color: #ffffff;
-    color: #020202;
+    background-color: #49A25D;
+    color: #ffffff;
 }
 
-
-/* Elemento regalos en vista */
+/* Componente regalos en vista */
 .gifts-view-section {
     display: flex;
     justify-content: space-between;
@@ -445,9 +450,9 @@
     overflow-y: auto;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
+    background: rgb(255, 255, 255);
 }
 
-/* Gift post */
 .gift-post-div {
     display: flex;;
     align-items: stretch;
@@ -485,8 +490,8 @@
     flex-direction: column;
     height: 200px;
     border-radius: 20px;
-    background-color: #F25E7A;
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    background-color: #49A25D;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
     color: #000000;
     Font-family: Inter, sans-serif;
     font-size: 20px;
@@ -505,32 +510,12 @@
     padding: 3%;
 }
 
-
 /* Gift post buttons*/
 .gift-buttons-div {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 2%;
-}
-
-.booking-button-gift {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: #f2f2f2;
-    border: 2px solid rgb(255, 196, 0);
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    font-family: Inter, sans-serif;
-    color: rgb(255, 196, 0);
-    font-size: 15px;
-    text-align: center;
-}
-
-.booking-button-gift:hover {
-    background-color: rgb(255, 196, 0);
-    color: #ffffff;
 }
 
 .move-gift-button {
@@ -578,9 +563,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #035AA6;
+    background: #0B2237;
     border-radius: 20px;
-    color: #E2EEF7;
+    color: #ffffff;
     width: 500px;
     height: 150px;
     padding: 20px;
@@ -599,7 +584,7 @@
 }
 
 .move-gift-main-div .close-button:hover {
-    color: #F25E7A;
+    color: #49A25D;
 }
 
 .move-gift-bar {
@@ -609,7 +594,7 @@
     flex-direction: row;
     width: 500px;
     height: 50px;
-    background: #E2EEF7;
+    background: #ffffff;
     border-radius: 100px;
 }
 
@@ -625,19 +610,14 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background: #022873;
+    background: #49A25D;
     width: 100px;
     height: 50px;
     border:none;
     font-family: Inter, sans-serif;
-    color: #F2C063;
+    color: #ffffff;
     font-size: 15px;
     text-align: center;
-}
-
-.list-button:hover {
-    color:#F2C063;
-    background-color: #022873;
 }
 
 .dropdown-list {
@@ -655,8 +635,8 @@
     padding: 10px;
     margin-left: 80px;
     border-radius: 0 20px 20px 20px;
-    background-color: #022873;
-    color: #E2EEF7;
+    background-color: #49A25D;
+    color: #ffffff;
     min-width: 160px;
     z-index: 1;
     overflow-y: auto;
@@ -673,17 +653,17 @@
     width: 100px;
     height: 50px;
     border-radius: 20px;
-    background: #F2C063;
-    border: none;
+    background: #ffffff;
+    border: #5CBB81 solid 2px;
     font-family: Inter, sans-serif;
-    color: #022873;
+    color: #5CBB81;
     font-size: 15px;
     text-align: center;
 }
 
 .move-button:hover {
-    background-color: #022873;
-    color: #F2C063;
+    background-color: #5CBB81;
+    color: #ffffff;
 }
 
 .remove-button {
@@ -710,7 +690,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 100%;
+    width: 90%;
 }
 
 .save-delete-div {
@@ -724,16 +704,16 @@
     height: 40px;
     border-radius: 20px;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #5CBB81;
     font-size: 15px;
     text-align: center;
 }
 
 .save-list-button:hover {
-    background-color: #F25E7A;
+    background-color: #5CBB81;
     color: #ffffff;
 }
 
@@ -773,14 +753,14 @@
 .text-calendar {
     font-family: Inter, sans-serif;
     font-size: 15px;
-    color: #F25E7A;
+    color: #5CBB81;
     margin-right: 2%;
     margin-left: 2%;
 }
 
 .end-date-list-input {
     border-radius: 20px;
-    border-color: #F25E7A;
+    border-color: #5CBB81;
     border-style: solid;
     border-width: 2px;
     font-family: Inter, sans-serif;
@@ -794,19 +774,17 @@
 /***********************************************/
 /*************Version mobile********************/
 /***********************************************/
-
 @media screen and (max-width: 767px) {
-
     .user-lists-section {
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        margin-top: 15%;
-        margin-bottom: 25%;
+        margin-top: 60px;
+        margin-bottom: 80px;
     }
 
-    .my-lists {
+    .my-lists-section {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -816,7 +794,7 @@
         margin-right: 4%;
     }
 
-    .lists-section2 {
+    .user-list-section {
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -828,55 +806,53 @@
         font-size: 12px;
     }
 
-    .list-div2 {
+    .user-list-section-inside {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .list-user-div {
         height: 200px;
         padding-left: 1%;
         padding-right: 1%;
     }
 
-    .description2 {
+    .description-list-user-div {
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        width: 300px;
+        width: 290px;
         height: 100%;
-        padding: 1%;
-        border-color: #F25E7A;
-        border-style: solid;
+        margin-left: 5px;
+        margin-right: 5px;
         border-width: 2px;
         border-radius: 20px;
     }
 
-    .dates-list2 {
+    .dates-user-list {
         display: flex;
         justify-content: space-around;
         align-items: center;
         text-align: center;
     }
 
-    .editList-button-div2 {
-        width: 100%;
-        height: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 3%;
-    }
-
-    .editList-button2 {
+    .editList-button-user {
         border-radius: 20px;
         background-color: #f2f2f2;
-        border: 2px solid #F25E7A;
+        border: 2px solid #c5c5c5;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
         font-family: Inter, sans-serif;
-        color: #F25E7A;
+        color: #000000;
         font-size: 15px;
         text-align: center;
     }
 
-    .editList-button2:hover {
-        background-color: #F25E7A;
-        color: #ffffff;
+    .editList-button-user:hover {
+        background-color: #5CBB81;
+        box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+        color: #000000;
     }
 
     .create-list-button {
@@ -884,23 +860,23 @@
         height: 40px;
         border-radius: 20px;
         background-color: #f2f2f2;
-        border: 2px solid #F25E7A;
+        border: 2px solid #5CBB81;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
         font-family: Inter, sans-serif;
-        color: #F25E7A;
+        color: #5CBB81;
         font-size: 12px;
         text-align: center;
         margin-top: 0%;
         margin-bottom: 3%;
     }
 
-    /* Lista en vista */
+    /* Componente lista en vista */
     .list-view {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         flex-direction: column;
-        width: 90%;
+        width: 97%;
         margin-top: 2%;
         margin-right: 0%;
         margin-bottom: 0%;
@@ -910,26 +886,20 @@
         width: 100%;
         height: 40px;
         border-radius: 20px;
-        border-color: #F25E7A;
-        border-style: solid;
-        border-width: 2px;
-        font-family: Inter, sans-serif;
-        font-size: 15px;
+        border: 2px solid #5CBB81;
         color: rgba(0, 0, 0, 0.4);
-        margin-bottom: 5%;
+        margin-bottom: 3%;
     }
 
     .description-list-input {
         width: 100%;
-        height: 100px;
+        height: 50px;
         border-radius: 20px;
-        border-color: #F25E7A;
-        border-style: solid;
-        border-width: 2px;
-        font-family: Inter, sans-serif;
+        border: 2px solid #5CBB81;
         font-size: 15px;
         color: rgba(0, 0, 0, 0.4);
-        margin-bottom: 5%;
+        margin-bottom: 3%;
+        overflow-y: auto;
     }
 
     .gifts-section {
@@ -937,7 +907,7 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
-        width: 100%;
+        width: 90%;
         height: 320px;
         padding: 2%;
         margin-bottom: 0;
@@ -945,7 +915,7 @@
 
     .gifts-div {
         width: 100%;
-        color: black;
+        color: #ffffff;
     }
 
     .add-gift-div {
@@ -965,10 +935,10 @@
         height: 30px;
         border-radius: 20px;
         background-color: #f2f2f2;
-        border: 2px solid #F25E7A;
+        border: 2px solid #5CBB81;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
         font-family: Inter, sans-serif;
-        color: #F25E7A;
+        color: #5CBB81;
         font-size: 12px;
         text-decoration: none;
         text-align: center;
@@ -991,7 +961,7 @@
     }
 
     /* Elemento buscador */
-    .search-box-input2 {
+    .search-box-gift-input {
         width: 80%;
         height: 40px;
     }
@@ -1043,10 +1013,10 @@
         flex-direction: column;
         width: 100%;
         height: 250px;
-        overflow-y: auto;
+        overflow-x: auto;
     }
 
-    /* Elemento pantalla overlay de mover regalo */
+    /* Componente pantalla overlay de mover regalo */
     .move-gift-main-div {
         width: 80%;
     }
@@ -1057,7 +1027,6 @@
     }
 
     /* Elemento botones lista */
-
     .list-buttons-div {
         align-items: flex-start;
         margin-top: 2%;
@@ -1082,17 +1051,16 @@
     }
 
     .date-end-div {
-        width: 100%;
+        width: 50%;
         height: 40px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
 
-    .calendar-icon{
+    .text-calendar{
         display: none;
     }
-
 
 }
 

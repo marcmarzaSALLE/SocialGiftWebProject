@@ -4,114 +4,87 @@
 
     <sections class="contacts-sections">
 
-      <!--Buscador de contactos-->
+      <!--Componente buscador de contactos-->
       <div class="search-contact-div">
         <form class="search-contact" method="get">
-          <input class="search-contact-input" type="search" placeholder="Search contact..." />
+          <input class="search-contact-input" type="search"/>
+          <button class="search-contact-button" type="submit">
+            <img class="search-contact-icon" src="public/Icons/searchIconGreen.png">
+          </button>
         </form>
-
-        <button class="search-contact-button" type="submit">
-          <img class="search-contact-icon" src="public/Icons/searchIcon.png">
-        </button>
       </div>
 
-      <!--Contactos-->
+      <!--Componente contactos-->
       <section class="contacts-view-section">
-        <!--Contacto 1-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
-            <h2>username</h2>
-          </div>
-        </div>
 
-        <!--Contacto 2-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+        <section class="contacts-view-section-inside">
+          <!--Contacto 1-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 3-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 2-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 4-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 3-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 5-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 4-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 6-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 5-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 7-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 6-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
 
-        <!--Contacto 8-->
-        <div class="contact-div">
-          <img class="contact-img" src="public/Icons/imageFriend.png">
-          <div class="contact-text">
+          <!--Contacto 7-->
+          <div class="contact-div">
+            <img class="contact-img" src="public/Icons/imageUserPic.png">
             <h2>username</h2>
           </div>
-        </div>
+
+
+        </section>
       </section>
-
     </sections>
 
-    <!--Mensajes-->
+    <!--Componente mensajes-->
     <section class="chat-section">
 
       <div class="chat-contact-div">
-
-        <!--Imagen de contacto-->
-        <img class="chat-contact-img" src="public/Icons/imageFriend.png">
-        <div class="chat-contact-text">
-          <h2>username</h2>
-        </div>
+        <img class="chat-contact-img" src="public/Icons/imageUserPic.png">
+        <h2>username</h2>
       </div>
 
       <!--Aquí se pondrán los mensajes-->
       <section class="chating-section">
-
       </section>
 
-      <!--Enviar mensaje-->
+      <!--Componente enviar mensaje-->
       <div class="send-message-div">
-
-        <button class="send-message-button" type="submit">
-          <img class="send-message-icon" src="public/Icons/sendIcon.png">
-        </button>
-
         <form class="send-message-form" method="get">
+          <button class="send-message-button" type="submit">
+            <img class="send-message-icon" src="public/Icons/sendIcon.png">
+          </button>
           <input class="send-message-input" type="text"/>
         </form>
-
       </div>
 
     </section>

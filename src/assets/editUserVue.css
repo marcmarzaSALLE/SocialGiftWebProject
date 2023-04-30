@@ -1,59 +1,60 @@
 .section-user2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 30%;
-    background: #035AA6;
+    background: #ffffff;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 150px;
     border-radius: 20px;
     padding: 2%;
-    margin-left: 260px;
-    margin-right: 260px;
-    margin-top: 150px;
+    box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
     font-family: Inter, sans-serif;
-    font-size: 20px;
-    color: #E2EEF7;
+    color: #000000;
 }
+
+.section-user2:hover {
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    transition: color 0.5s ease;
+}
+
 
 .user-profile-pic {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 30%;
     height: 100%;
 }
 
-
 .user-img2 {
-    width: 100%;
-    height: 100%;
-    border-radius: 20%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    border-color: #5CBB81;
+    border-style: solid;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
 }
 
 /* Secciçon poner nueva foto de perfil */
 .change-pic-button {
     padding: 1%;
-    margin-top: 2%;
+    margin-top: 5%;
     border-radius: 15px;
     background: none;
     border: none;
-    color: #E2EEF7;
     font-size: 17px;
     text-decoration: none;
-}
-
-.change-pic-anchor {
-    text-decoration: none;
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #000000;
 }
 
-.change-pic-anchor:hover {
-    color: #ffffff;
+.change-pic-button:hover {
+    color: #5CBB81;
 }
 
 
-/* Elemento pantalla overlay de mover regalo */
+/* Elemento pantalla overlay de cambiar foto */
 .change-pic-div {
     position: fixed;
     display: flex;
@@ -78,7 +79,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: #035AA6;
+    background: #0B2237;
     border-radius: 20px;
     color: #E2EEF7;
     width: 500px;
@@ -97,8 +98,9 @@
     text-decoration: none;
     color: #fafafa;
 }
+
 .change-pic-main-div .close-button:hover {
-    color: #F25E7A;
+    color: #5CBB81;
 }
 
 .new-pic-bar {
@@ -118,7 +120,7 @@
     height: 50%;
     background: rgba(131, 131, 131, 0.3);
     border-radius: 15px;
-    border: 4px solid rgb(255, 196, 0);
+    border: 2px solid rgb(92, 187, 129);
     padding-top: 1%;
     padding-left: 1%;
 }
@@ -132,12 +134,13 @@
     padding: 1%;
     margin-left: 1%;
     background: none;
-    border: 4px solid rgb(255, 196, 0);
+    border: 2px solid rgb(92, 187, 129);
     border-radius: 15px;
     color: #ffffff;
 }
 .update-button:hover {
-    background: rgb(255, 196, 0);
+    background: rgb(73, 162, 93);
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
 }
 
 .user-text2 {
@@ -168,158 +171,63 @@
     margin-left: 2%;
     margin-right: 2%;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #c7c7c7;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #000000;
     font-size: 12px;
     text-align: center;
     text-decoration: none;
 }
 
 .change-password-button:hover{
-    background-color: #F25E7A;
+    background-color: #49A25D;
+    border: 2px solid #49a25d;
+    box-shadow: 0px 6px 24px 0px rgb(73, 162, 93);
     color: #ffffff;
 }
 
+
+/***************************************************/
+/* Componente editar usuario */
+/***************************************************/
 .edit-user-section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 30%;
     border-radius: 20px;
     padding: 2%;
-    margin-left: 260px;
-    margin-right: 260px;
-    margin-top: 40px;
+    margin: 40px 20% 2%;
     font-family: Inter, sans-serif;
     color: #000000;
     border-style: solid;
-    border-color: #F25E7A;
+    border-color: #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
 }
 
-.line-div3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-bottom: 2px solid #F25E7A;
-    margin-bottom: 1%;
-}
-
-.name-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+.name-div, .secondname-div, .username-div ,.email-div, .password-div, .password2-div {
     margin-top: 10px;
     width: 100%;
-    font-size: 25px;
+    font-size: 15px;
 }
 
-.input-name {
+.input-name, .input-secondname, .input-username, .input-email, .input-password, .input-password2 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1%;
     margin-left: 2%;
-    font-size: 20px;
-    width: 30%;
-    height: 30px;
-    padding: 1%;
-    background: rgba(131, 131, 131, 0.3);
-    border: none;
-    border-radius: 100px;
-}
-
-.input-name:hover {
-    background: rgba(131, 131, 131, 0.5);
-}
-
-.secondname-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-    font-size: 25px;
-}
-
-.input-secondname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-    margin-left: 2%;
-    font-size: 20px;
-    width: 30%;
-    height: 30px;
-    padding: 1%;
-    background: rgba(131, 131, 131, 0.3);
-    border: none;
-    border-radius: 100px;
-}
-
-.input-secondname:hover {
-    background: rgba(131, 131, 131, 0.5);
-}
-
-.username-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-    font-size: 25px;
-}
-.input-username {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-    margin-left: 2%;
-    font-size: 20px;
-    width: 30%;
-    height: 30px;
-    padding: 1%;
-    background: rgba(131, 131, 131, 0.3);
-    border: none;
-    border-radius: 100px;
-}
-
-.input-username:hover {
-    background: rgba(131, 131, 131, 0.5);
-}
-
-.email-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 10px;
-    width: 100%;
-    font-size: 25px;
-}
-.input-email {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-    margin-left: 2%;
-    font-size: 20px;
+    font-size: 15px;
     width: 50%;
     height: 30px;
     padding: 1%;
     background: rgba(131, 131, 131, 0.3);
-    border: none;
+    border: 2px solid #5CBB81;
     border-radius: 100px;
 }
 
-.input-email:hover {
+.input-name:hover, .input-email:hover, .input-password:hover, .input-password2:hover {
     background: rgba(131, 131, 131, 0.5);
 }
 
@@ -343,17 +251,18 @@
     padding: 1%;
     margin-right: 10%;
     background-color: #f2f2f2;
-    border: 2px solid #F25E7A;
+    border: 2px solid #5CBB81;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     font-family: Inter, sans-serif;
-    color: #F25E7A;
+    color: #5CBB81;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
 }
 
 .button-save:hover {
-    background-color: #F25E7A;
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
     color: #ffffff;
 }
 
@@ -378,4 +287,128 @@
 .button-delete:hover {
     background-color: #5d5d5d;
     color: #ffffff;
+}
+
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+@media screen and (max-width: 768px) {
+    .section-user2 {
+        padding: 2%;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 60px;
+    }
+
+    .user-img2 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .user-complete-name, .user-email {
+        display: none;
+    }
+
+    /* Secciçon poner nueva foto de perfil */
+    .change-pic-button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+
+    /* Elemento pantalla overlay */
+    .change-pic-main-div {
+        width: 80%;
+        height: 150px;
+        font-size: 12px;
+    }
+
+    .change-pic-main-div .close-button {
+        top: 5px;
+        right: 10px;
+    }
+
+    .new-pic-input {
+        width: 100%;
+        height: 30px;
+    }
+
+    .update-button {
+        width: 30%;
+        height: 40px;
+    }
+
+    .change-password-div {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+        height: 100%;
+    }
+
+    .change-password-button {
+        margin: 0;
+        height: 10px;
+        font-size: 10px;
+    }
+
+    .user-text2 {
+        width: 100%;
+        height: 100%;
+        margin-left: 8px;
+    }
+
+    .edit-user-section {
+        height: 30%;
+        font-size: 15px;
+        margin: 40px 5px 20%;
+    }
+
+    .name-div {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .input-name {
+        font-size: 10px;
+        width: 80%;
+        height: 20px;
+    }
+
+    .secondname-div {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .input-secondname {
+        font-size: 10px;
+        width: 80%;
+        height: 20px;
+    }
+
+    .username-div {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .input-username {
+        font-size: 10px;
+        width: 80%;
+        height: 20px;
+    }
+
+    .email-div {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .input-email {
+        font-size: 10px;
+        width: 80%;;
+        height: 20px;
+    }
+
 }

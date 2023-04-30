@@ -2,118 +2,102 @@
 
   <section class="user-lists-section">
 
-    <!--Sección de listas-->
-    <div class="my-lists">
+    <!--Componente de listas-->
+    <section class="my-lists-section">
       <h2>My lists</h2>
+      <div class="line3"></div>
 
-      <div class="line-div2"></div>
-      <section class="lists-section2">
-        <!--Lista 1-->
-        <div class="list-div2">
-          <h3>List name</h3>
-          <div class="description2">
-            <p>Description</p>
-          </div>
-          <div class="dates-list2">
-            <p>Creation: xx/xx/xx</p>
-            <p> -</p>
-            <p>Ends: xx/xx/xx</p>
-          </div>
-
-          <div class="editList-button-div2">
-            <button class="editList-button2">Edit list</button>
-          </div>
-        </div>
-        <!--Lista 2-->
-        <div class="list-div2">
-          <h3>List name</h3>
-          <div class="description2">
-            <p>Description</p>
-          </div>
-          <div class="dates-list2">
-            <p>Creation: xx/xx/xx</p>
-            <p> -</p>
-            <p>Ends: xx/xx/xx</p>
-          </div>
-
-          <div class="editList-button-div2">
-            <button class="editList-button2">Edit list</button>
+      <section class="user-list-section">
+        <section class="user-list-section-inside">
+          <!--Lista 1-->
+          <div class="list-user-div">
+            <h3>List name</h3>
+            <div class="description-list-user-div">
+              <p>Description</p>
+            </div>
+            <div class="dates-user-list">
+              <p>Creation: xx/xx/xx</p>
+              <p>Ends: xx/xx/xx</p>
+            </div>
+            <button class="editList-button-user">Edit list</button>
 
           </div>
-        </div>
-        <!--Lista 3-->
-        <div class="list-div2">
-          <h3>List name</h3>
-          <div class="description2">
-            <p>Description</p>
-          </div>
-          <div class="dates-list2">
-            <p>Creation: xx/xx/xx</p>
-            <p> -</p>
-            <p>Ends: xx/xx/xx</p>
-          </div>
-
-          <div class="editList-button-div2">
-            <button class="editList-button2">Edit list</button>
+          <!--Lista 2-->
+          <div class="list-user-div">
+            <h3>List name</h3>
+            <div class="description-list-user-div">
+              <p>Description</p>
+            </div>
+            <div class="dates-user-list">
+              <p>Creation: xx/xx/xx</p>
+              <p>Ends: xx/xx/xx</p>
+            </div>
+            <button class="editList-button-user">Edit list</button>
 
           </div>
-        </div>
-        <!--Lista 4-->
-        <div class="list-div2">
-          <h3>List name</h3>
-          <div class="description2">
-            <p>Description</p>
-          </div>
-          <div class="dates-list2">
-            <p>Creation: xx/xx/xx</p>
-            <p> -</p>
-            <p>Ends: xx/xx/xx</p>
-          </div>
-
-          <div class="editList-button-div2">
-            <button class="editList-button2">Edit list</button>
+          <!--Lista 3-->
+          <div class="list-user-div">
+            <h3>List name</h3>
+            <div class="description-list-user-div">
+              <p>Description</p>
+            </div>
+            <div class="dates-user-list">
+              <p>Creation: xx/xx/xx</p>
+              <p>Ends: xx/xx/xx</p>
+            </div>
+            <button class="editList-button-user">Edit list</button>
 
           </div>
-        </div>
-        <!--Lista 5-->
-        <div class="list-div2">
-          <h3>List name</h3>
-          <div class="description2">
-            <p>Description</p>
-          </div>
-          <div class="dates-list2">
-            <p>Creation: xx/xx/xx</p>
-            <p> -</p>
-            <p>Ends: xx/xx/xx</p>
-          </div>
+          <!--Lista 4-->
+          <div class="list-user-div">
+            <h3>List name</h3>
+            <div class="description-list-user-div">
+              <p>Description</p>
+            </div>
+            <div class="dates-user-list">
+              <p>Creation: xx/xx/xx</p>
+              <p>Ends: xx/xx/xx</p>
+            </div>
+            <button class="editList-button-user">Edit list</button>
 
-          <div class="editList-button-div2">
-            <button class="editList-button2">Edit list</button>
           </div>
-        </div>
+          <!--Lista 5-->
+          <div class="list-user-div">
+            <h3>List name</h3>
+            <div class="description-list-user-div">
+              <p>Description</p>
+            </div>
+            <div class="dates-user-list">
+              <p>Creation: xx/xx/xx</p>
+              <p>Ends: xx/xx/xx</p>
+            </div>
+            <button class="editList-button-user">Edit list</button>
 
+          </div>
+        </section>
       </section>
-      <div class="line-div2"></div>
+
+      <div class="line3"></div>
 
       <button class="create-list-button">+ create list</button>
-    </div>
+    </section>
 
     <!--Lista a editar-->
-    <div class="list-view">
-      <input type="text" placeholder="Name list" name="name-list" class="name-list-input">
-      <input type="text" placeholder="Description" name="description-list" class="description-list-input">
+    <section class="list-view">
+      <div class="list-view-info">
+        <input type="text" placeholder="Name list" name="name-list" class="name-list-input">
+        <input type="text" placeholder="Description" name="description-list" class="description-list-input">
+      </div>
 
-      <!--Sección de productos-->
+      <!--Componente sección de productos-->
       <section class="gifts-section">
 
         <div class="gifts-div">
           <h3>Gifts</h3>
           <div class="add-gift-div">
-
             <div class="add-gift-button-div">
               <a class="add-gift-button" href="#gifts-products-screen">+ add gift</a>
             </div>
-
             <!--Sección overlay productos-->
             <div id="gifts-products-screen" class="gifts-products-div">
               <div class="gift-products-main-div">
@@ -121,30 +105,29 @@
 
                 <!--Parte buscador-->
                 <div class="search-bar-div">
-                  <div class="search-box-input2">
-                    <!--Dropdown-->
-                    <div class="dropdown-categories-div">
-                      <button class="categories-button">Categories</button>
-                      <div class="dropdown-content">
-                        <a href="#">Category 1</a>
-                        <a href="#">Category 2</a>
-                        <a href="#">Category 3</a>
-                      </div>
-                    </div>
-
+                  <div class="search-box-gift-input">
                     <!--Buscador-->
-                    <form class="search-box2" method="get">
-                      <input class="search2" type="search" placeholder="Look for a gift..." />
-                    </form>
+                    <form class="search-box-gift" method="get">
+                      <!--Dropdown-->
+                      <div class="dropdown-categories-div">
+                        <button class="categories-button">Categories</button>
+                        <div class="dropdown-content">
+                          <a href="#">Category 1</a>
+                          <a href="#">Category 2</a>
+                          <a href="#">Category 3</a>
+                        </div>
+                      </div>
 
-                    <!--Botón de búsqueda-->
-                    <button class="search-button2" type="submit">
-                      <img class="search-icon2" src="public/Icons/searchIcon.png">
-                    </button>
+                      <input class="search-gift" type="search" placeholder="Look for a gift..." />
+                      <!--Botón de búsqueda-->
+                      <button class="search-button-gift" type="submit">
+                        <img class="search-icon-gift" src="public/Icons/searchIcon.png">
+                      </button>
+                    </form>
                   </div>
                 </div>
 
-                <!--Parte de productos-->
+                <!--Componentes parte de productos-->
                 <div class="products-results-div">
                   <h3>Results</h3>
                   <section class="products-section">
@@ -274,19 +257,14 @@
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
                     <button class="move-button">Move</button>
-
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">Reserve</button>
-
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
               </button>
-
             </div>
-
           </div>
 
           <!--Gift 2-->
@@ -336,19 +314,14 @@
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
                     <button class="move-button">Move</button>
-
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">Reserve</button>
-
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
               </button>
-
             </div>
-
           </div>
 
           <!--Gift 3-->
@@ -398,19 +371,14 @@
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
                     <button class="move-button">Move</button>
-
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">Reserve</button>
-
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
               </button>
-
             </div>
-
           </div>
 
           <!--Gift 4-->
@@ -460,42 +428,33 @@
                     <input type="text" class="list-moved-input" placeholder="Select list...">
                     <!--Botón de mover-->
                     <button class="move-button">Move</button>
-
                   </div>
                 </div>
               </div>
 
-              <button class="booking-button-gift">Reserve</button>
-
               <button class="remove-button">
                 <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
               </button>
-
             </div>
-
           </div>
         </section>
-
-        <!--Sección de botones-->
       </section>
+
+      <!--Sección de botones-->
       <div class="list-buttons-div">
 
         <div class="save-delete-div">
-          <button class="save-list-button">
-            <span>Save list</span>
-          </button>
-
+          <button class="save-list-button">Save list</button>
           <button class="delete-list-button">Delete list</button>
         </div>
 
         <div class="date-end-div">
-          <img  class="calendar-icon" src="public/Icons/calendarIcon.png">
           <span class="text-calendar">End date:</span>
           <input type="date" placeholder="End date" name="end-date-list" class="end-date-list-input">
         </div>
       </div>
 
-    </div>
+    </section>
   </section>
 
 </template>
