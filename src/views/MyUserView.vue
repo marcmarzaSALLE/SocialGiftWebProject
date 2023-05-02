@@ -30,6 +30,7 @@
       <div class="line1"></div>
       <section class="section-template">
         <section class="section-template-inside">
+
           <!--Amigo 1-->
           <div class="friend-div">
             <Router-link class="friend-route-link" to="/friend">

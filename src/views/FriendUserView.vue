@@ -89,8 +89,8 @@
     <div class="list-view-friend-div">
 
       <h2>List name</h2>
-      <div class="description-list-div">
-        <p class="description-p">Description</p>
+      <div class="description-view-friend-div">
+        <p class="description-view-p">Description</p>
       </div>
 
       <h3>List gifts</h3>

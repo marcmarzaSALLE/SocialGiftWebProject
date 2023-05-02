@@ -2,9 +2,8 @@
 
   <section class="background-login" >
 
-    <div class="title-login">
-      <h1>Social Gift</h1>
-    </div>
+    <img class="socialGift-img-login"  src="public/icons/socialGiftBlack.png">
+
     <div class="line4"></div>
 
     <section class="login-section">
@@ -22,7 +21,7 @@
 
     <section class="section-signin">
       <RouterLink to="/Register" class="routerLink-login-button">
-        <button class="signin-button">Create your account</button>
+        <button class="signin-button">Create account</button>
       </RouterLink>
     </section>
 

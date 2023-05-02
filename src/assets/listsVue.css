@@ -49,17 +49,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: rgb(239, 239, 239);
+    background: rgb(11, 34, 55);
     border: 1px solid #0B2237;
     width: 90%;
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 20px;
     margin: 1%;
+    color: #ffffff;
 }
 
 .list-user-div:hover {
-    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
 }
 
 .description-list-user-div {
@@ -69,7 +70,9 @@
     width: 95%;
     height: 63px;
     overflow-y: auto;
-    border: 1px solid #0B2237;
+    border: 1px solid #00ff8b;
+    background: #ffffff;
+    color: black;
     padding: 1%;
     border-radius: 20px;
 }
@@ -83,7 +86,7 @@
 .editList-button-user {
     border-radius: 20px;
     background-color: #f2f2f2;
-    border: 2px solid #c5c5c5;
+    border: 2px solid #00ff8b;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     padding: 2%;
     margin-bottom: 2%;
@@ -96,8 +99,7 @@
 
 .editList-button-user:hover {
     background-color: #5CBB81;
-    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
-    border: 2px solid #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
 }
 
 .create-list-button {
@@ -172,7 +174,6 @@
     height: 320px;
     background: rgb(11, 34, 55);
     color: #ffffff;
-    border: 2px solid #5CBB81;
     border-radius: 20px;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     padding: 2%;
@@ -427,8 +428,8 @@
     height: 30%;
     background: #ffffff;
     border-radius: 20px;
-    border: #5CBB81 solid 2px;
-    box-shadow: 0px 6px 24px 0px rgb(73, 162, 93);
+    border: #00ff8b solid 2px;
+    box-shadow: 0px 6px 24px 0px rgb(63, 63, 63);
     font-family: Inter, sans-serif;
     color: #49A25D;
     font-size: 15px;
@@ -436,6 +437,7 @@
 }
 
 .add-product-button:hover {
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
     background-color: #49A25D;
     color: #ffffff;
 }
@@ -654,7 +656,7 @@
     height: 50px;
     border-radius: 20px;
     background: #ffffff;
-    border: #5CBB81 solid 2px;
+    border: #00ff8b solid 2px;
     font-family: Inter, sans-serif;
     color: #5CBB81;
     font-size: 15px;
@@ -841,7 +843,6 @@
     .editList-button-user {
         border-radius: 20px;
         background-color: #f2f2f2;
-        border: 2px solid #c5c5c5;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
         font-family: Inter, sans-serif;
         color: #000000;
@@ -851,7 +852,7 @@
 
     .editList-button-user:hover {
         background-color: #5CBB81;
-        box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+        box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
         color: #000000;
     }
 
@@ -860,7 +861,6 @@
         height: 40px;
         border-radius: 20px;
         background-color: #f2f2f2;
-        border: 2px solid #5CBB81;
         box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
         font-family: Inter, sans-serif;
         color: #5CBB81;

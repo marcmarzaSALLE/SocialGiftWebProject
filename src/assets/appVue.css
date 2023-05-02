@@ -1,9 +1,9 @@
-
 /* Header */
 header {
     position: fixed;
     width: 100%;
 }
+
 /***************************************************/
 /* Sección elementos header 1 */
 /***************************************************/
@@ -18,20 +18,17 @@ header {
     height: 80px;
 }
 
-.image-logo-nav {
+.socialgift-link {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 0.5%;
+    margin-left: 0.7%;
     margin-right: 1%;
 }
 
-.socialgift-link {
-    color: #49a25d;
-    font-family: Inter, sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 20px;
+.socialGift-img {
+    width: 115px;
+    height: 60px;
 }
 
 /* Componente lenguaje */
@@ -61,15 +58,15 @@ header {
     justify-content: flex-start;
     align-items: flex-start;
     top: 80px;
+    height: 160px;
     padding-right: 1%;
     padding-left: 1%;
     padding-bottom: 1%;
     background-color: #5CBB81;
     border-radius: 0 0 20px 20px;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
-    transform: translateY(-150%);
-    transition: transform 0.1s cubic-bezier(0.9, 0, 0.1, 1);
-
+    transform: translateX(-250%);
+    transition: transform 0.3s cubic-bezier(0.9, 0, 0.1, 1);
 }
 
 .language-option-li {
@@ -116,7 +113,7 @@ header {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 100px;
     margin-top: 20px;
-    margin-right: 8%;
+    margin-right: 15%;
     border-color: #ffffff;
     border-style: solid;
     border-width: 1px;
@@ -189,7 +186,7 @@ header {
     cursor: pointer;
     background: #49A25D;
     border-radius: 15px;
-    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
 }
 
 .user-nav-icons {
@@ -288,7 +285,7 @@ input:checked ~ .menu-burger-items-list {
     color: #000000;
     border-radius: 15px;
     cursor: pointer;
-    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
 }
 
 .line1 {
@@ -373,7 +370,6 @@ input:checked ~ .menu-burger-items-list {
 /***************************************************/
 /* Main */
 /***************************************************/
-
 main {
     padding-top: 10px;
 }
@@ -392,7 +388,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #49A25D;
+    background-color: #5CBB81;
     color: #ffffff;
     height: 50px;
 }
@@ -417,12 +413,12 @@ footer {
 
 @media screen and (max-width: 767px) {
 
-    /*Componente elementos header 1 */
+    /* Componente elementos header 1 */
     .section-header-1 {
         display: none;
     }
 
-    /*Componente elementos header 2 */
+    /* Componente elementos header 2 */
     .section-header-2 {
         display: flex;
         justify-content: center;
