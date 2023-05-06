@@ -1,17 +1,45 @@
 <script>
 export default {
   name: "Login",
+  created() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.$router.push({ name: "MyUser" });
+    }
+  },
   data() {
     return {
-      username: "",
+      email: "",
       password: "",
     };
   },
 
   methods: {
     login() {
-      console.log("Login");
-      alert("HAS HECHO LOGIN")
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/login', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+        }),headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+          .then(response => {
+            if (response.ok) {
+              return response.json()
+            } else {
+
+              throw new Error(response.statusText)
+            }
+          })
+          .then(data => {
+            localStorage.setItem("token", data.token);
+            this.$router.push({name:'MyUser'})
+          })
+          .catch(error => {
+            alert("Usuario o contraseña incorrectos")
+          })
     },
   },
 };
@@ -28,9 +56,7 @@ export default {
       <input type="email" class="inputEmail-login" name="email" placeholder="Email or Username" v-model="email">
       <input type="password" class="inputPassword-login" name="password" placeholder="Password" v-model="password">
 
-      <RouterLink to="/MyUser" class="routerLink-login-button">
         <button class="login-button" @click="login">Log In</button>
-      </RouterLink>
     </section>
 
     <h3 class="new-user-text">Are you new in Social Gift?</h3>
