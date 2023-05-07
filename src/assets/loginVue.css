@@ -10,21 +10,10 @@
     z-index: 2;
 }
 
-/*
-.socialGift-img-login {
-    width: 700px;
-    height: 90px;
-    margin: 1%;
-       width: 49%;
-    height: 11%;
-    margin: 1%;
-}
-*/
 
 .socialGift-img-login {
     scale: 60%;
 }
-
 
 .login-section {
     display: flex;
@@ -38,7 +27,6 @@
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     margin-bottom: 1%;
 }
-
 
 .line4 {
     width: 50%;
@@ -79,8 +67,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    height: 100%;
+    width: 30%;
+    height: 30px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
     background: #0B2237;
     border: #00ff8b solid 2px;
     border-radius: 100px;
