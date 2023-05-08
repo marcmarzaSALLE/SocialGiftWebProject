@@ -4,9 +4,9 @@ import LoginView from "../components/LoginView.vue";
 export default {
   name: "Login",
   components: {
-    LoginView,
-  },
-};
+    LoginView
+  }
+}
 
 </script>
 
