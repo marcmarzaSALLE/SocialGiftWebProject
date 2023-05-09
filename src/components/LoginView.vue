@@ -3,7 +3,11 @@ import router from "@/router";
 
 export default {
   name: "Login",
-
+  created() {
+    if (localStorage.getItem("token")) {
+      router.push({ name: "MyUser" });
+    }
+  },
   data() {
     return {
       email: "",
@@ -38,6 +42,7 @@ export default {
         console.log("data: " + data)
         console.log(data.accessToken)
         localStorage.setItem("token", data.accessToken)
+
         this.getIdUser()
 
       })
@@ -68,6 +73,7 @@ export default {
         console.log("data: " + data[0].id)
         //console.log(data.accessToken)
         localStorage.setItem("idUser", data[0].id)
+        //Guardar password encryptada
         router.push({name:"MyUser"})
       })
     },
