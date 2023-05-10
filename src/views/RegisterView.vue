@@ -1,34 +1,17 @@
-<template>
-
-  <section class="background-signin" >
-
-    <div class="title-create-account">
-      <h1>Join Social Gift</h1>
-    </div>
-
-    <div class="line4"></div>
-
-    <section class="register-section">
-      <input type="text" class="name-account" name="name" placeholder="Name">
-      <input type="text" class="secondname-account" name="secondname" placeholder="Second name">
-      <input type="text" class="username-account" name="username" placeholder="Username">
-      <input type="email" class="email-account" name="email" placeholder="Email">
-      <input type="password" class="password-account" name="password" placeholder="Password">
-      <input type="password" class="password2-account" name="password2" placeholder="Repeat password">
-
-      <RouterLink to="/MyUser" class="routerLink-register">
-        <button class="register-button">Create account</button>
-      </RouterLink>
-    </section>
-  </section>
-
-</template>
-
 <script>
+import RegisterView from "../components/RegisterViewComponent.vue";
+
 export default {
-  name: "RegisterView"
+  name: "Register",
+  components: {
+    RegisterView
+  }
 }
 </script>
+
+<template class="register">
+  <RegisterView/>
+</template>
 
 <style scoped>
 
