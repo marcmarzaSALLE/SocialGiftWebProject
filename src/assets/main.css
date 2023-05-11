@@ -1,12 +1,12 @@
 @import './normalize.css';
-@import './appVue.css';
-@import './userVue.css';
-@import './editUserVue.css';
-@import './editPasswordVue.css';
-@import './loginVue.css';
-@import './listsVue.css';
-@import './registerVue.css';
-@import './messagesVue.css';
-@import './friendUserVue.css';
+@import './App.css';
+@import './MyUser.css';
+@import './EditUser.css';
+@import './EditPassword.css';
+@import './Login.css';
+@import './MyList.css';
+@import './Register.css';
+@import './Messages.css';
+@import './FriendUser.css';
 
 

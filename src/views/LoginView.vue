@@ -1,5 +1,5 @@
 <script>
-import LoginView from "../components/LoginView.vue";
+import LoginView from "../components/LoginViewComponent.vue";
 
 export default {
   name: "Login",
