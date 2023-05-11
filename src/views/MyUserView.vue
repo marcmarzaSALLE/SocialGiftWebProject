@@ -13,16 +13,7 @@ export default {
 
   <!--Componente del usuario-->
   <section class="section-user">
-    <img class="user-img" src="public/Icons/imageUserPic.png">
-
-    <div class="user-data">
-
-      <UserInfo/>
-
-      <nav class="edit-profile-nav">
-        <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
-      </nav>
-    </div>
+    <UserInfo/>
   </section>
 
   <!--Componente de los elementos del usuario-->

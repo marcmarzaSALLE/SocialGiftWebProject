@@ -8,7 +8,8 @@ export default {
     return{
       username: '',
       fullName: '',
-      email: ''
+      email: '',
+      image: '',
     }
 
   },
@@ -50,6 +51,8 @@ export default {
             this.username = data.name
             this.fullName = data.last_name
             this.email = data.email
+            console.log(data.image)
+            this.image = data.image
           })
 
     },
@@ -60,13 +63,20 @@ export default {
 </script>
 
 <template>
-  <div class="user-info" >
-    <h2 class="user-username">{{ username }}</h2>
-    <h3 class="user-complete-name">{{ fullName }}</h3>
-    <p class="user-email">{{ email }}</p>
-  </div>
+  <img class="user-img" src="image" alt="">
+  <div class="user-data">
+    <div class="user-info">
+      <h2 class="user-username">{{ username }}</h2>
+      <h3 class="user-complete-name">{{ fullName }}</h3>
+      <p class="user-email">{{ email }}</p>
+    </div>
 
-  <div class="user-info-mobile">
-    <p class="user-username">Username</p>
+    <div class="user-info-mobile">
+      <p class="user-username">Username</p>
+    </div>
+
+    <nav class="edit-profile-nav">
+      <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
+    </nav>
   </div>
 </template>
