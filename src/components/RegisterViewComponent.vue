@@ -3,6 +3,11 @@ import router from "@/router";
 
 export default {
   name: "Register",
+  created() {
+    if (localStorage.getItem("token")) {
+      localStorage.removeItem("token")
+    }
+  },
   data() {
     return {
       name: "",
