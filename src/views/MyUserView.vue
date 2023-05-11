@@ -1,19 +1,23 @@
-<template>
+<script>
+import UserInfo from "../components/UserInfoComponent.vue";
+
+export default {
+  name: "MyUser",
+  components: {
+    UserInfo
+  }
+}
+</script>
+
+<template class="myUser">
 
   <!--Componente del usuario-->
   <section class="section-user">
     <img class="user-img" src="public/Icons/imageUserPic.png">
 
     <div class="user-data">
-      <div class="user-info">
-        <h2 class="user-username">Username</h2>
-        <h3 class="user-complete-name">Firstname Secondname</h3>
-        <p class="user-email">username@email.com</p>
-      </div>
 
-      <div class="user-info-mobile">
-        <p class="user-username">Username</p>
-      </div>
+      <UserInfo/>
 
       <nav class="edit-profile-nav">
         <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
@@ -226,12 +230,6 @@
   </section>
 
 </template>
-
-<script>
-export default {
-  name: "MyUserView"
-}
-</script>
 
 <style scoped>
 
