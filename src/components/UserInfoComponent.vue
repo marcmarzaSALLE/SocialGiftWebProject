@@ -68,7 +68,7 @@ export default {
     </div>
 
     <div class="user-info-mobile">
-      <p class="user-username">Username</p>
+      <p class="user-username">{{ username }}</p>
     </div>
 
     <nav class="edit-profile-nav">
