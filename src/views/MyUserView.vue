@@ -3,6 +3,7 @@ import UserInfo from "../components/UserInfoComponent.vue";
 import FriendsList from "../components/UserFriendsComponent.vue";
 import BookingsList from "../components/UserBookingsComponent.vue";
 import UserLists from "../components/UserListsComponent.vue";
+import router from "@/router";
 export default {
   name: "MyUser",
   components: {
@@ -10,6 +11,11 @@ export default {
     FriendsList,
     BookingsList,
     UserLists,
+  },
+  created() {
+    if(!localStorage.getItem("token")) {
+      router.push({ name: "Login" });
+    }
   }
 }
 </script>

@@ -459,8 +459,13 @@
 
 </template>
 <script>
+import router from "@/router";
 export default {
-  name: "MyListView"
+  name: "MyListView",
+  created() {
+    if (!localStorage.getItem("token")) {
+      router.push("/Login");
+    }  }
 }
 </script>
 <style scoped>

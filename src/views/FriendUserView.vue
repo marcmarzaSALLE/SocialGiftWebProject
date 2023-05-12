@@ -199,8 +199,14 @@
 </template>
 
 <script>
+import router from "@/router";
 export default {
-  name: "MyUserView"
+  name: "MyUserView",
+  created() {
+    if(!localStorage.getItem("token")) {
+      router.push({ name: "Login" });
+    }
+  },
 }
 </script>
 

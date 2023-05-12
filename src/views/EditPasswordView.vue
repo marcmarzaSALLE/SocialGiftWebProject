@@ -52,7 +52,15 @@
 </template>
 
 <script>
-
+import router from "@/router";
+export default {
+  name: "EditPasswordView",
+  created() {
+    if(!localStorage.getItem("token")) {
+      router.push({ name: "Login" });
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -57,30 +57,7 @@
     <section className="section-header-2">
 
       <!--Componente menu hamburguesa-->
-      <div className="menu-burger">
-
-        <input type="checkbox" id="burger-menu" className="burger-menu-input">
-        <label htmlFor="burger-menu" className="burger-menu-label"><img className="burger-icon"
-                                                                        src="public/Icons/burgerMenuIcon.png"></label>
-
-        <!--Desplegable-->
-        <nav className="menu-burger-items-list">
-          <h2 className="menu-burger-title">My Account</h2>
-          <RouterLink class="menu-burger-link" to="/MyUser">My account</RouterLink>
-          <RouterLink class="menu-burger-link" to="/friend">Friends</RouterLink>
-          <RouterLink to="/EditUser" class="menu-burger-link">Edit profile</RouterLink>
-          <RouterLink to="/EditPassword" class="menu-burger-link">Change password</RouterLink>
-          <RouterLink class="menu-burger-link" to="/Login">Log out</RouterLink>
-
-          <div className="line1"></div>
-          <h2 className="menu-burger-title">Messages</h2>
-          <RouterLink class="menu-burger-link" to="/Messages">Go to chat</RouterLink>
-
-          <div className="line1"></div>
-          <h2 className="menu-burger-title">My Lists</h2>
-          <RouterLink class="menu-burger-link" to="/MyLists">Create new list</RouterLink>
-        </nav>
-      </div>
+      <DesplegableComponent/>
 
       <!--Componente buscador versión móvil-->
       <div className="search-box-input-mobile">
@@ -140,9 +117,16 @@
 
 </template>
 
-<script setup>
+<script>
 import {RouterLink, RouterView} from 'vue-router'
+import DesplegableComponent from "./components/DesplegableComponent.vue";
 
+export default {
+  name: 'App',
+  components: {
+    DesplegableComponent,
+  }
+}
 </script>
 
 
