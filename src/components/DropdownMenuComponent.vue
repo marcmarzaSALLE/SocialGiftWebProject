@@ -32,11 +32,9 @@ export default {
 
 <template>
   <div className="menu-burger">
-
     <input type="checkbox" id="burger-menu" className="burger-menu-input">
     <label htmlFor="burger-menu" className="burger-menu-label"><img className="burger-icon"
                                                                     src="public/Icons/burgerMenuIcon.png"></label>
-
     <!--Desplegable-->
     <nav className="menu-burger-items-list">
       <h2 className="menu-burger-title">My Account</h2>
@@ -56,8 +54,6 @@ export default {
     </nav>
   </div>
 </template>
-
-
 
 <style scoped>
 

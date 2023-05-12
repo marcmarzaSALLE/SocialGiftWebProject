@@ -45,7 +45,7 @@ const router = createRouter({
             name: 'Messages',
             component: Messages
         },{
-            path: '/friend',
+            path: '/friend/:id',
             name: 'friend',
             component: friend
         }

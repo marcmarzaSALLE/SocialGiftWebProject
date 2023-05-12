@@ -15,7 +15,6 @@ export default {
     }
   },
   methods: {
-
     login() {
       fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/login', {
         method: 'POST',

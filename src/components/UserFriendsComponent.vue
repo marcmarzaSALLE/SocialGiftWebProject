@@ -3,75 +3,85 @@ import router from "@/router";
 
 export default {
   name: "FriendsList",
+  data() {
+    return {
+      friends: [],
+      message: null,
+    }
+  },
+  created() {
+    if (localStorage.getItem("token")) {
+      this.getFriends()
+    } else {
+      router.push({ name: "Login" });
+    }
+  },
+
+  methods: {
+    getFriends() {
+      let id = localStorage.getItem("idUser")
+      console.log(id)
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id + '/friends', {
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+      .then(data => data.json()) // Convertir la respuesta a JSON
+      .then(json => {
+        console.log("data: " + json)
+        this.friends = json // Asignar la lista de amigos a la variable friends
+      })
+      .catch(error => {
+        console.log("error: " + error)
+      })
+    },
+    unfollowFriend(friendId) {
+      console.log("unfollowFriend: " + friendId)
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/friends/'+ friendId, {
+        method: 'DELETE',
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+        .then(response => {
+          console.log("ok: " + response.ok)
+          console.log("status: " + response.status)
+          console.log("status text: " + response.statusText)
+          if (response.status === 200) {
+            return response.json()
+          } else {
+            throw new Error(response.statusText)
+          }
+        })
+        .then(data => {
+          console.log("data: " + data)
+          this.getFriends()
+        })
+        .catch(error => {
+          console.log("error: " + error)
+        })
+    }
+  }
 }
 </script>
 
 <template>
-  <h2>Friends</h2>
-  <div class="line1"></div>
-  <section class="section-template">
-    <section class="section-template-inside">
+  <section class="section-template-inside">
+    <div v-for="friend in friends" :key="friend.id" class="friend-div">
+      <router-link :to="{ name: 'friend', params: { id: friend.id } }" class="friend-route-link">
+        <img class="friend-img" :src="friend.image">
+        <div class="friend-text">
+          <p class="friend-username">{{ friend.email }}</p>
+          <p class="friend-name">{{ friend.name }} {{ friend.last_name }}</p>
+        </div>
+      </router-link>
+      <button class="friend-button" @click="unfollowFriend(friend.id)">Unfollow</button>
 
-      <!--Amigo 1-->
-      <div class="friend-div">
-        <Router-link class="friend-route-link" to="/friend">
-          <img class="friend-img" src="public/Icons/imageUserPic.png">
-          <div class="friend-text">
-            <p class="friend-username">username</p>
-            <p class="friend-name">Firstname Secondname</p>
-          </div>
-        </Router-link>
-        <button class="friend-button">Unfollow</button>
-      </div>
-
-      <!--Amigo 2-->
-      <div class="friend-div">
-        <Router-link class="friend-route-link" to="/friend">
-          <img class="friend-img" src="public/Icons/imageUserPic.png">
-          <div class="friend-text">
-            <p class="friend-username">username</p>
-            <p class="friend-name">Firstname Secondname</p>
-          </div>
-        </Router-link>
-        <button class="friend-button">Unfollow</button>
-      </div>
-
-      <!--Amigo 3-->
-      <div class="friend-div">
-        <Router-link class="friend-route-link" to="/friend">
-          <img class="friend-img" src="public/Icons/imageUserPic.png">
-          <div class="friend-text">
-            <p class="friend-username">username</p>
-            <p class="friend-name">Firstname Secondname</p>
-          </div>
-        </Router-link>
-        <button class="friend-button">Unfollow</button>
-      </div>
-
-      <!--Amigo 4-->
-      <div class="friend-div">
-        <Router-link class="friend-route-link" to="/friend">
-          <img class="friend-img" src="public/Icons/imageUserPic.png">
-          <div class="friend-text">
-            <p class="friend-username">username</p>
-            <p class="friend-name">Firstname Secondname</p>
-          </div>
-        </Router-link>
-        <button class="friend-button">Unfollow</button>
-      </div>
-
-      <!--Amigo 5-->
-      <div class="friend-div">
-        <Router-link class="friend-route-link" to="/friend">
-          <img class="friend-img" src="public/Icons/imageUserPic.png">
-          <div class="friend-text">
-            <p class="friend-username">username</p>
-            <p class="friend-name">Firstname Secondname</p>
-          </div>
-        </Router-link>
-        <button class="friend-button">Unfollow</button>
-      </div>
-    </section>
+      <div v-if="message" class="message">{{ message }}</div>
+    </div>
   </section>
-  <div class="line1"></div>
 </template>

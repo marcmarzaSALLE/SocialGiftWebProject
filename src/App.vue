@@ -119,7 +119,7 @@
 
 <script>
 import {RouterLink, RouterView} from 'vue-router'
-import DesplegableComponent from "./components/DesplegableComponent.vue";
+import DesplegableComponent from "./components/DropdownMenuComponent.vue";
 
 export default {
   name: 'App',

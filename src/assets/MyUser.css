@@ -110,11 +110,12 @@
     box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
     padding: 3%;
 }
-
+/*
 .section-template:hover {
     box-shadow: inset 0px 4px 8px rgb(92, 187, 129);
-    transition: color 0.5s ease;
+
 }
+ */
 
 .section-template-inside{
     width: 380px;
