@@ -1,10 +1,15 @@
 <script>
 import UserInfo from "../components/UserInfoComponent.vue";
-
+import FriendsList from "../components/UserFriendsComponent.vue";
+import BookingsList from "../components/UserBookingsComponent.vue";
+import UserLists from "../components/UserListsComponent.vue";
 export default {
   name: "MyUser",
   components: {
-    UserInfo
+    UserInfo,
+    FriendsList,
+    BookingsList,
+    UserLists,
   }
 }
 </script>

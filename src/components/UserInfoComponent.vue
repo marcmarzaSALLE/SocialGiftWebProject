@@ -16,7 +16,7 @@ export default {
   created() {
     if (localStorage.getItem("token")) {
       this.getUserInfo()
-    }else{
+    } else {
       router.push({ name: "Login" });
     }
   },
@@ -31,35 +31,31 @@ export default {
           "Authorization": 'Bearer ' + localStorage.getItem("token"),
           "Content-Type": 'application/json'
         }
-
       })
-          .then(response => {
-            console.log("ok: " + response.ok)
-            console.log("status: " + response.status)
-            console.log("status text: " + response.statusText)
-            if (response.status === 200) {
-              return response.json()
-            } else {
-              throw new Error(response.statusText)
-            }
-          })
-          .then(data => {
-            console.log("data: " + data)
-            console.log(data.name)
-            console.log(data.last_name)
-            console.log(data.email)
-            this.username = data.name
-            this.fullName = data.last_name
-            this.email = data.email
-            console.log(data.image)
-            this.image = data.image
-          })
-
+      .then(response => {
+        console.log("ok: " + response.ok)
+        console.log("status: " + response.status)
+        console.log("status text: " + response.statusText)
+        if (response.status === 200) {
+          return response.json()
+        } else {
+          throw new Error(response.statusText)
+        }
+      })
+      .then(data => {
+        console.log("data: " + data)
+        console.log(data.name)
+        console.log(data.last_name)
+        console.log(data.email)
+        this.username = data.name
+        this.fullName = data.last_name
+        this.email = data.email
+        console.log(data.image)
+        this.image = data.image
+      })
     },
-
   },
 }
-
 </script>
 
 <template>
