@@ -123,6 +123,15 @@
     overflow-y: auto;
 }
 
+.message-section-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: #5d5d5d;
+}
+
 /* Componente de la sección de amigos */
 .friend-div {
     display: flex;

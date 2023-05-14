@@ -71,6 +71,10 @@ export default {
 
 <template>
   <section class="section-template-inside">
+    <div class="message-section-div" v-if="friends.length === 0">
+      <p>Hey! You haven't added any friends yet</p>
+    </div>
+
     <div v-for="friend in friends" :key="friend.id" class="friend-div">
       <router-link :to="{ name: 'friend', params: { id: friend.id } }" class="friend-route-link">
         <img class="friend-img" :src="friend.image">
@@ -80,8 +84,6 @@ export default {
         </div>
       </router-link>
       <button class="friend-button" @click="unfollowFriend(friend.id)">Unfollow</button>
-
-      <div v-if="message" class="message">{{ message }}</div>
     </div>
   </section>
 </template>

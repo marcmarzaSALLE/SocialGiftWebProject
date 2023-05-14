@@ -3,66 +3,91 @@ import router from "@/router";
 
 export default {
   name: "BookingsList",
-}
+  data() {
+    return{
+      bookings: [],
+    }
+  },
+  created() {
+    if (localStorage.getItem("token")) {
+      this.getBookedGifts()
+    } else {
+      router.push({ name: "Login" });
+    }
+  },
+
+  methods: {
+    getBookedGifts() {
+        let id = localStorage.getItem("idUser")
+        console.log(id)
+        fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/'+ id + '/gifts/reserved',  {
+          headers: {
+            "accept": "application/json",
+            "Authorization": 'Bearer ' + localStorage.getItem("token"),
+            "Content-Type": 'application/json'
+          }
+        })
+        .then(data => data.json()) // Convertir la respuesta a JSON
+        .then(json => {
+          console.log("data: " + json)
+          this.bookings = json // Asignar la lista de reservas a la variable bookings
+          // Hacer una solicitud para obtener información de cada regalo
+          this.bookings.forEach((booking, index) => {
+            fetch('https://balandrau.salle.url.edu/i3/mercadoexpress/api/v1/products/' + booking.id, {
+              headers: {
+                "accept": "application/json",
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                "Content-Type": 'application/json'
+              }
+            })
+            // Hacer una solicitud para obtener el usuario de cada regalo
+            /*
+            fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/' + booking.id + '/user', {
+              headers: {
+                "accept": "application/json",
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                "Content-Type": 'application/json'
+              }
+            })
+
+
+              .then(response => response.json())
+              .then(data => {
+                // Asignar la información del regalo a la reserva correspondiente
+                this.bookings[index].giftInfo = data
+                this.bookings[index].userGift = data
+              })
+              .catch(error => {
+                console.log("error: " + error)
+              })
+
+             */
+          })
+        })
+        .catch(error => {
+          console.log("error: " + error)
+        })
+      },
+    }
+  }
 </script>
 
 <template>
-  <h2>Bookings</h2>
-  <div class="line1"></div>
-  <section class="section-template">
-    <section class="section-template-inside">
-      <!--Reserva 1-->
-      <div class="booking-div">
-        <img class="booking-img" src="public/Icons/imageProduct.png">
-        <div class="booking-text">
-          <p>Gift_ID</p>
-          <p>Product name</p>
-          <p>Priority</p>
-          <p>WishList_ID</p>
-          <p>Friend_id</p>
-        </div>
-        <button class="unbook-button">Unbook</button>
-      </div>
+  <section class="section-template-inside">
+    <div class="message-section-div" v-if="bookings.length === 0">
+      <p>Hey! You haven't booked any gifts yet</p>
+    </div>
 
-      <!--Reserva 2-->
-      <div class="booking-div">
-        <img class="booking-img" src="public/Icons/imageProduct.png">
-        <div class="booking-text">
-          <p>Gift_ID</p>
-          <p>Product name</p>
-          <p>Priority</p>
-          <p>WishList_ID</p>
-          <p>Friend_id</p>
-        </div>
-        <button class="unbook-button">Unbook</button>
+    <div v-for="booking in bookings" :key="booking.id" class="booking-div">
+      <img class="booking-img" src="booking.giftInfo.photo">
+      <div class="booking-text">
+        <p>Gift_ID: {{ booking.id }}</p>
+        <p>Product name: {{ booking.giftInfo.name }}</p>
+        <p>Priority: {{ booking.priority }}</p>
+        <p>WishList_ID: {{ booking.wishlist_id }}</p>
+        <p>Friend_id: {{booking}}</p>
       </div>
-
-      <!--Reserva 3-->
-      <div class="booking-div">
-        <img class="booking-img" src="public/Icons/imageProduct.png">
-        <div class="booking-text">
-          <p>Gift_ID</p>
-          <p>Product name</p>
-          <p>Priority</p>
-          <p>WishList_ID</p>
-          <p>Friend_id</p>
-        </div>
-        <button class="unbook-button">Unbook</button>
-      </div>
-
-      <!--Reserva 4-->
-      <div class="booking-div">
-        <img class="booking-img" src="public/Icons/imageProduct.png">
-        <div class="booking-text">
-          <p>Gift_ID</p>
-          <p>Product name</p>
-          <p>Priority</p>
-          <p>WishList_ID</p>
-          <p>Friend_id</p>
-        </div>
-        <button class="unbook-button">Unbook</button>
-      </div>
-    </section>
+      <button class="unbook-button">Unbook</button>
+    </div>
   </section>
-  <div class="line1"></div>
 </template>
