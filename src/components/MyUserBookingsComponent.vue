@@ -55,8 +55,6 @@ export default {
                 "Content-Type": 'application/json'
               }
             })
-
-
               .then(response => response.json())
               .then(data => {
                 // Asignar la información del regalo a la reserva correspondiente
@@ -65,8 +63,6 @@ export default {
               .catch(error => {
                 console.log("error: " + error)
               })
-
-             
           })
         })
         .catch(error => {
