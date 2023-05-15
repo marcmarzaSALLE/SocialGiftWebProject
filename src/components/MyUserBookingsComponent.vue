@@ -41,7 +41,7 @@ export default {
               }
             })
             // Hacer una solicitud para obtener el usuario de cada regalo
-            /*
+
             fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/' + booking.id + '/user', {
               headers: {
                 "accept": "application/json",
@@ -61,7 +61,7 @@ export default {
                 console.log("error: " + error)
               })
 
-             */
+             
           })
         })
         .catch(error => {

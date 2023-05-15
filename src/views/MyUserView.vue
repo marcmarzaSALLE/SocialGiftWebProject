@@ -1,8 +1,8 @@
 <script>
-import UserInfo from "../components/UserInfoComponent.vue";
-import FriendsList from "../components/UserFriendsComponent.vue";
-import BookingsList from "../components/UserBookingsComponent.vue";
-import UserLists from "../components/UserListsComponent.vue";
+import UserInfo from "../components/MyUserInfoComponent.vue";
+import FriendsList from "../components/MyUserFriendsComponent.vue";
+import BookingsList from "../components/MyUserBookingsComponent.vue";
+import UserLists from "../components/MyUserListsComponent.vue";
 import router from "@/router";
 export default {
   name: "MyUser",
