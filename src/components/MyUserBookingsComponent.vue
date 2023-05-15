@@ -29,16 +29,22 @@ export default {
         })
         .then(data => data.json()) // Convertir la respuesta a JSON
         .then(json => {
-          console.log("data: " + json)
           this.bookings = json // Asignar la lista de reservas a la variable bookings
           // Hacer una solicitud para obtener información de cada regalo
           this.bookings.forEach((booking, index) => {
-            fetch('https://balandrau.salle.url.edu/i3/mercadoexpress/api/v1/products/' + booking.id, {
+            fetch(booking.product_url, {
               headers: {
-                "accept": "application/json",
-                "Authorization": 'Bearer ' + localStorage.getItem("token"),
                 "Content-Type": 'application/json'
               }
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Asignar la información del regalo a la reserva correspondiente
+              this.bookings[index].giftInfo = data
+              console.log("ID DEL PRODUCTO: " + this.bookings[index].giftInfo.name)
+            })
+            .catch(error => {
+              console.log("error: " + error)
             })
             // Hacer una solicitud para obtener el usuario de cada regalo
 
@@ -54,7 +60,6 @@ export default {
               .then(response => response.json())
               .then(data => {
                 // Asignar la información del regalo a la reserva correspondiente
-                this.bookings[index].giftInfo = data
                 this.bookings[index].userGift = data
               })
               .catch(error => {
@@ -85,7 +90,7 @@ export default {
         <p>Product name: {{ booking.giftInfo.name }}</p>
         <p>Priority: {{ booking.priority }}</p>
         <p>WishList_ID: {{ booking.wishlist_id }}</p>
-        <p>Friend_id: {{booking}}</p>
+        <p>Friend_id: {{booking.userGift.name + " " + booking.userGift.last_name}}</p>
       </div>
       <button class="unbook-button">Unbook</button>
     </div>

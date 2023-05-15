@@ -39,7 +39,6 @@ export default {
     <nav className="menu-burger-items-list">
       <h2 className="menu-burger-title">My Account</h2>
       <RouterLink class="menu-burger-link" to="/MyUser" @click="myUser">My account</RouterLink>
-      <RouterLink class="menu-burger-link" to="/friend" @click="myFriend">Friends</RouterLink>
       <RouterLink to="/EditUser" class="menu-burger-link" @click="editProfile">Edit profile</RouterLink>
       <RouterLink to="/EditPassword" class="menu-burger-link" @click="editPassword">Change password</RouterLink>
       <RouterLink class="menu-burger-link" to="/Login" @click="logout">Log out</RouterLink>

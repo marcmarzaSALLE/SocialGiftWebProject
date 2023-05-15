@@ -70,19 +70,7 @@
       </div>
 
       <!--Componente notificaciones -->
-      <div className="notifications">
-        <input type="checkbox" id="notifications" className="notifications-input">
-        <label htmlFor="notifications" className="notifications-label"><img className="notifications-icon"
-                                                                            src="public/Icons/notificationIcon.png"></label>
-
-        <nav className="notifications-items-list">
-          <h2 className="notifications-title">Notifications</h2>
-          <!--Notificacion 1-->
-          <div className="notification-banner">
-            <!--Aqui van la información de la notificacion-->
-          </div>
-        </nav>
-      </div>
+      <notificationsComponent/>
 
     </section>
 
@@ -120,11 +108,13 @@
 <script>
 import {RouterLink, RouterView} from 'vue-router'
 import DesplegableComponent from "./components/DropdownMenuComponent.vue";
+import notificationsComponent from "@/components/NotificationsComponent.vue";
 
 export default {
   name: 'App',
   components: {
     DesplegableComponent,
+    notificationsComponent
   }
 }
 </script>
