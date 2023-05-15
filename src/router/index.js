@@ -17,7 +17,7 @@ const router = createRouter({
             name: 'home',
             component: HomeView
         },{
-            path: '/MyLists:id',
+            path: '/MyLists',
             name: 'MyLists',
             component: MyListView
         },{

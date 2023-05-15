@@ -34,6 +34,12 @@ export default {
         .catch(error => {
           console.log("error: " + error)
         })
+    },
+
+    saveListId(id) {
+      console.log("11111111idList: " + id)
+      localStorage.setItem("idList", id)
+      console.log("22222222idList: " + localStorage.getItem("idList"))
     }
   }
 }
@@ -54,7 +60,7 @@ export default {
         <p>Ends: {{ wishlist.end_date.substring(0, 10).replace(/-/g, '/') }}</p>
       </div>
 
-      <button class="editList-button-user">Edit list</button>
+      <button class="editList-button-user" onclick=saveListId(wishlist.id)>Edit list</button>
     </div>
   </section>
 

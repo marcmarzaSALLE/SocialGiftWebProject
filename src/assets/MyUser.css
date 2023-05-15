@@ -26,7 +26,6 @@
     height: 150px;
     border-radius: 100px;
     border: 1px solid #00ff8b;
-
 }
 
 .user-data {
@@ -88,6 +87,7 @@
     box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
     font-family: Inter, sans-serif;
     font-weight: normal;
+    background: #ffffff;
 }
 
 .elements-template {
