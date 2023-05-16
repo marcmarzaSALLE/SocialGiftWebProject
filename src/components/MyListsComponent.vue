@@ -36,9 +36,7 @@ export default {
           })
     },
     saveListId(id) {
-      console.log("11111111idList: " + id)
       localStorage.setItem("idList", id)
-      console.log("22222222idList: " + localStorage.getItem("idList"))
     }
   }
 }

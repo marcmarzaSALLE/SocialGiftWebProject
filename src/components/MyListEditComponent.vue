@@ -13,8 +13,8 @@ export default {
   },
   methods: {
     getWishlistInfo() {
-      let idList = this.$route.params.id
-      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/' + idList, {
+      let idList = localStorage.getItem("idList")
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
         headers: {
           "accept": "application/json",
           "Authorization": 'Bearer ' + localStorage.getItem("token"),
@@ -30,21 +30,15 @@ export default {
           console.log("error: " + error)
         })
     }
-
   }
-
 }
 </script>
 
 <template>
 
-  <div v-if="$route.params.id === null">
-    <p>Hey! You haven't created any list yet</p>
-  </div>
-
   <!-- Información lista -->
   <div class="list-view-info">
-    <input type="text" name="{{wishlist.name}}" class="name-list-input">
+    <input type="text" placeholder="{{wishlist.name}}" name="name-list" class="name-list-input">
     <input type="text" placeholder="{{wishlist.description}}" name="description-list" class="description-list-input">
   </div>
 

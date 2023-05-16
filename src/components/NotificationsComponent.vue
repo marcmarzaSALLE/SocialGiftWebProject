@@ -92,9 +92,6 @@ export default {
           <button class="notification-banner-button-decline" @click="declineRequest(friends.id)">Decline</button>
         </div>
       </div>
-      <div class="message-section-div" v-if="friends.length === 0">
-        <p>Hey! You don't have any friend requests</p>
-      </div>
     </nav>
   </div>
 </template>
