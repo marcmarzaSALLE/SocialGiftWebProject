@@ -3,8 +3,14 @@ import router from "@/router";
 
 export default {
   name: "ListEdit",
-
-
+  created() {
+    if (localStorage.getItem("token")) {
+      console.log("ID LISTA: " + localStorage.getItem("idList"))
+      this.getWishlistInfo()
+    } else {
+      router.push({ name: "Login" });
+    }
+  },
   methods: {
     getWishlistInfo() {
       let idList = this.$route.params.id

@@ -12,7 +12,7 @@ export default {
     if (localStorage.getItem("token")) {
       this.getWishlists()
     } else {
-      router.push({ name: "Login" });
+      router.push({name: "Login"});
     }
   },
   methods: {
@@ -26,16 +26,15 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-        .then(data => data.json()) // Convertir la respuesta a JSON
-        .then(json => {
-          console.log("data: " + json)
-          this.wishlists = json // Asignar la lista de deseos a la variable wishlists
-        })
-        .catch(error => {
-          console.log("error: " + error)
-        })
+          .then(data => data.json()) // Convertir la respuesta a JSON
+          .then(json => {
+            console.log("data: " + json)
+            this.wishlists = json // Asignar la lista de deseos a la variable wishlists
+          })
+          .catch(error => {
+            console.log("error: " + error)
+          })
     },
-
     saveListId(id) {
       console.log("11111111idList: " + id)
       localStorage.setItem("idList", id)
@@ -53,14 +52,14 @@ export default {
 
   <section class="user-list-section-inside">
     <div v-for="wishlist in wishlists" :key="wishlist.id" class="list-user-div">
-      <p>{{wishlist.name}}</p>
-      <div class="description-list-user-div"><p>{{wishlist.description}}</p></div>
+      <p>{{ wishlist.name }}</p>
+      <div class="description-list-user-div"><p>{{ wishlist.description }}</p></div>
       <div class="dates-user-list">
         <p>Creation: {{ wishlist.creation_date.substring(0, 10).replace(/-/g, '/') }}</p>
         <p>Ends: {{ wishlist.end_date.substring(0, 10).replace(/-/g, '/') }}</p>
       </div>
 
-      <button class="editList-button-user" onclick=saveListId(wishlist.id)>Edit list</button>
+      <button class="editList-button-user" @click=saveListId(wishlist.id)>Edit list</button>
     </div>
   </section>
 
