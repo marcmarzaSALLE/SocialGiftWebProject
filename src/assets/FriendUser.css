@@ -125,10 +125,6 @@
     padding: 3%;
 }
 
-.lists-section:hover {
-    box-shadow: inset 0px 5px 18px rgba(0, 255, 139, 0.5);
-}
-
 .list-section-inside {
     display: flex;
     align-items: center;

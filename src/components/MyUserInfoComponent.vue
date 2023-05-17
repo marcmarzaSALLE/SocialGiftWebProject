@@ -59,7 +59,7 @@ export default {
 </script>
 
 <template>
-  <img class="user-img" src="image" alt="">
+  <img class="user-img" :src="image" alt="">
   <div class="user-data">
     <div class="user-info">
       <h2 class="user-username">{{ username }}</h2>

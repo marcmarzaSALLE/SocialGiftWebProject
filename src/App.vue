@@ -1,13 +1,36 @@
+<script>
+import {RouterLink, RouterView} from 'vue-router'
+import DesplegableComponent from "./components/DropdownMenuComponent.vue";
+import notificationsComponent from "./components/NotificationsComponent.vue";
+
+export default {
+  name: 'App',
+  components: {
+    DesplegableComponent,
+    notificationsComponent
+  },
+  data() {
+    return {
+      isLoggedIn: false,
+    }
+  },
+  created() {
+    if (localStorage.getItem("token")) {
+      this.isLoggedIn = true;
+
+    }
+  }
+}
+</script>
+
 <template>
 
-  <header>
+  <header v-if="isLoggedIn">
     <!--Sección del header1-->
     <section className="section-header-1">
 
       <!--Componente logo-->
-      <RouterLink to="/MyUser" class="socialgift-link"><img className="socialGift-img"
-                                                            src="public/icons/socialGift.png"></RouterLink>
-
+      <RouterLink to="/MyUser" class="socialgift-link"><img className="socialGift-img" src="public/icons/socialGift.png"></RouterLink>
       <!--Componente languajes-->
       <div className="languages-div">
         <input type="checkbox" id="languages-menu" className="languages-menu-input">
@@ -71,16 +94,14 @@
 
       <!--Componente notificaciones -->
       <notificationsComponent/>
-
     </section>
-
   </header>
 
   <main>
     <RouterView/>
   </main>
 
-  <footer>
+  <footer v-if="isLoggedIn">
     <div className="section-footer1">
       <p>Socialgift - by Marc Marca & Younes Bouahmed</p>
     </div>
@@ -91,7 +112,7 @@
     </div>
   </footer>
 
-  <nav className="user-nav-footer">
+  <nav className="user-nav-footer" v-if="isLoggedIn">
     <div className="user-nav-div">
       <RouterLink to="/MyLists"><img className="user-nav-icons" src="public/Icons/myListIcon.png"></RouterLink>
     </div>
@@ -105,18 +126,5 @@
 
 </template>
 
-<script>
-import {RouterLink, RouterView} from 'vue-router'
-import DesplegableComponent from "./components/DropdownMenuComponent.vue";
-import notificationsComponent from "@/components/NotificationsComponent.vue";
-
-export default {
-  name: 'App',
-  components: {
-    DesplegableComponent,
-    notificationsComponent
-  }
-}
-</script>
 
 

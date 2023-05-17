@@ -9,6 +9,7 @@ export default {
     }
   },
   created() {
+    console.log("tokenddd: " + localStorage.getItem("token"))
     if (localStorage.getItem("token")) {
       this.getWishlists()
     } else {

@@ -1,7 +1,6 @@
 <script>
 export default {
   name: "DesplegableComponent",
-
   methods: {
     logout(){
       localStorage.removeItem("token");
@@ -25,7 +24,6 @@ export default {
     createList(){
       this.$router.push("/MyLists");
     }
-
   }
 };
 </script>

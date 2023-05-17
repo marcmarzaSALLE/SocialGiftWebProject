@@ -12,10 +12,10 @@ export default {
     FriendListView,
   },
   created() {
-    if(!localStorage.getItem("token")) {
+    if (!localStorage.getItem("token")) {
       router.push({ name: "Login" });
     }
-  }
+  },
 }
 </script>
 
@@ -28,7 +28,15 @@ export default {
   <!--Componente de listas y regalos-->
   <section class="section-friend-items">
     <!--Componente listas-->
-    <FriendLists/>
+    <div class="friend-lists-div">
+      <h2>Lists</h2>
+      <div class="line2"></div>
+      <section class="lists-section">
+        <FriendLists/>
+      </section>
+      <div class="line2"></div>
+    </div>
+
     <!--Componente de lista en vista-->
     <FriendListView/>
   </section>

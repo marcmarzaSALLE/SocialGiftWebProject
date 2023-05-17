@@ -383,6 +383,7 @@ input:checked ~ .menu-burger-items-list {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    font-size: 13px;
 }
 
 .notification-banner-button-accept {
@@ -408,11 +409,10 @@ input:checked ~ .menu-burger-items-list {
     margin: 5px;
 }
 
-.notification-banner-button-de1:hover {
-    background-color: #5CBB81;
+.notification-banner-button-decline:hover {
+    background-color: #b7b7b7;
     box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
 }
-
 
 
 /***************************************************/
