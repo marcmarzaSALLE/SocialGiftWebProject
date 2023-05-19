@@ -9,15 +9,25 @@ export default {
     ListsView,
     ListEdit,
   },
+  data() {
+    return {
+      selectedWishlist: null
+    };
+  },
   created() {
     if (!localStorage.getItem("token")) {
       router.push("/Login");
+    }
+  },
+  methods: {
+    onEditList(wishlist) {
+      this.selectedWishlist = wishlist;
     }
   }
 }
 </script>
 
-<template class="myLists">
+<template>
 
   <section class="user-lists-section">
 
@@ -27,7 +37,7 @@ export default {
       <div class="line3"></div>
 
       <section class="user-list-section">
-        <ListsView/>
+        <ListsView  @edit-list="onEditList"/>
       </section>
       <div class="line3"></div>
       <button class="create-list-button">+ create list</button>
@@ -35,7 +45,7 @@ export default {
 
     <!--Lista a editar-->
     <section class="list-view">
-      <ListEdit/>
+      <ListEdit :wishlist="selectedWishlist"/>
     </section>
   </section>
 

@@ -9,7 +9,6 @@ export default {
     }
   },
   created() {
-    console.log("tokenddd: " + localStorage.getItem("token"))
     if (localStorage.getItem("token")) {
       this.getWishlists()
     } else {
@@ -36,14 +35,14 @@ export default {
             console.log("error: " + error)
           })
     },
-    saveListId(id) {
-      localStorage.setItem("idList", id)
+    editList(wishlist) {
+      this.$emit('edit-list', wishlist);
     }
   }
 }
 </script>
 
-<template class="listsView">
+<template>
 
   <div class="message-section-div" v-if="wishlists.length === 0">
     <p>Hey! You haven't created any list yet</p>
@@ -58,7 +57,7 @@ export default {
         <p>Ends: {{ wishlist.end_date.substring(0, 10).replace(/-/g, '/') }}</p>
       </div>
 
-      <button class="editList-button-user" @click=saveListId(wishlist.id)>Edit list</button>
+      <button class="editList-button-user" @click="editList(wishlist)">Edit list</button>
     </div>
   </section>
 

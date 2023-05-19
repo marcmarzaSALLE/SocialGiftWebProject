@@ -8,8 +8,7 @@ export default {
       wishlists: [],
     }
   },
-  beforeMount() {
-    console.log("token mywishlist: " + localStorage.getItem("token"))
+  created() {
     if (localStorage.getItem("token")) {
       this.getWishlists()
     } else {
@@ -20,10 +19,12 @@ export default {
   methods: {
     getWishlists() {
       let id = localStorage.getItem("idUser")
-      console.log('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id + '/wishlists')
+      console.log(id)
       fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id + '/wishlists', {
         headers: {
+          "accept": "application/json",
           "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
         }
       })
       .then(data => data.json()) // Convertir la respuesta a JSON

@@ -80,7 +80,7 @@ export default {
     </div>
 
     <div v-for="booking in bookings" :key="booking.id" class="booking-div">
-      <img class="booking-img" src="booking.giftInfo.photo">
+      <img class="booking-img" :src="booking.giftInfo.photo">
       <div class="booking-text">
         <p>Gift_ID: {{ booking.id }}</p>
         <p>Product name: {{ booking.giftInfo.name }}</p>

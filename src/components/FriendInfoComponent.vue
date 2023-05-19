@@ -33,6 +33,34 @@ export default {
           console.log("error: " + error);
         });
     },
+
+    unfollowFriend(id) {
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/friends/'+ id, {
+        method: 'DELETE',
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+        .then(response => {
+          console.log("ok: " + response.ok)
+          console.log("status: " + response.status)
+          console.log("status text: " + response.statusText)
+          if (response.status === 200) {
+            return response.json()
+          } else {
+            throw new Error(response.statusText)
+          }
+        })
+        .then(data => {
+          console.log("data: " + data)
+          this.getFriends()
+        })
+        .catch(error => {
+          console.log("error: " + error)
+        })
+    }
   }
 }
 
@@ -54,7 +82,7 @@ export default {
     <!--Componente botones del amigo-->
     <div class="friend-buttons-div">
       <router-link class="message-button" to="/Messages">Message</router-link>
-      <button class="unfollow-button">Unfollow</button>
+      <button class="unfollow-button" @click="unfollowFriend(friendId)">Unfollow</button>
     </div>
   </div>
 </template>
