@@ -19,6 +19,7 @@ export default {
   created() {
     if (localStorage.getItem("token")) {
       this.getWishlistInfo();
+      this.getGiftsWishlist();
     } else {
       router.push({ name: "Login" });
     }
@@ -26,7 +27,6 @@ export default {
   methods: {
     getWishlistInfo() {
         const idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
-
         fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
           headers: {
             "accept": "application/json",

@@ -3,6 +3,38 @@ import router from "@/router";
 
 export default {
   name: "ListGifts",
+  props: {
+    gifts: {
+      type: Array,
+      required: true
+    },
+    gift: {
+      type: Object,
+      required: true
+    }
+  },
+  methods:{
+    async getGiftsWishlist(){
+      const  idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
+      for(let i = 0; i < this.wishlist.gifts.length; i++){
+        await fetch(this.wishlist.gifts[i].product_url,{
+          headers:{
+            "Content-Type": 'application/json'
+          }
+        })
+            .then(data => data.json()) // Convertir la respuesta a JSON
+            .then(json => {
+              console.log("REGALO: " + json.id + " " + json.name + " " + json.price + " " + json.photo + " " + json.link);
+              this.gift = json;// Asignar el regalo a la variable gift
+              this.gifts.push(this.gift);
+            })
+            .catch(error => {
+              console.log("error: " + error);
+            });
+
+      }
+    }
+  }
 
 }
 </script>
