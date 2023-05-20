@@ -1,30 +1,30 @@
 <script>
 import router from "@/router";
+import AddGift from "./MyListOtherComponents/AddGiftComponent.vue";
+import ListGifts from "./MyListOtherComponents/ListGiftsComponent.vue";
+
 
 export default {
   name: "ListEdit",
+  components: {
+    AddGift,
+    ListGifts,
+  },
   props: {
     wishlist: {
       type: Object,
       required: true
     }
   },
-  data() {
-    return {
-      editedName: "",
-      editedDescription: ""
-    };
-  },
   created() {
     if (localStorage.getItem("token")) {
-      this.getWishlistInfo()
+      this.getWishlistInfo();
     } else {
       router.push({ name: "Login" });
     }
   },
   methods: {
     getWishlistInfo() {
-      if (this.wishlist && this.wishlist.id) {
         const idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
 
         fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
@@ -37,21 +37,12 @@ export default {
           .then(data => data.json()) // Convertir la respuesta a JSON
           .then(json => {
             console.log("data: " + json);
-            // Realizar acciones con los datos de la lista, como actualizar variables o mostrarlos en la interfaz
-
+            this.wishlist = json; // Asignar la lista de deseos a la variable wishlists
           })
           .catch(error => {
             console.log("error: " + error);
           });
-      }
     },
-    saveChanges() {
-      // Aquí puedes implementar la lógica para guardar los cambios realizados por el usuario
-      const updatedName = this.editedName;
-      const updatedDescription = this.editedDescription;
-
-      // Realiza una llamada a la API para actualizar los datos de la lista con los valores actualizados
-    }
   }
 }
 </script>
@@ -60,12 +51,41 @@ export default {
 
   <!-- Información lista -->
   <div class="list-view-info" v-if="wishlist">
-    <input v-model="editedName"  type="text" placeholder="wishlist.name" name="name-list" class="name-list-input">
-    <input  v-model="editedDescription" type="text" placeholder="wishlist.description" name="description-list" class="description-list-input">
-    <p>{{wishlist.name}}</p>
+    <input v-model="wishlist.name" type="text" placeholder="Enter name" name="name-list" class="name-list-input">
+    <input v-model="wishlist.description" type="text" placeholder="Enter description" name="description-list" class="description-list-input">
   </div>
+
+  <!--Componente sección de productos-->
+  <section class="gifts-section" v-if="wishlist">
+
+    <div class="gifts-div">
+      <h3>Gifts</h3>
+      <!-- Componente añadir regalo -->
+      <AddGift/>
+    </div>
+
+    <!--Regalos-->
+    <section class="gifts-view-section">
+      <ListGifts/>
+    </section>
+
+  </section>
+
+  <!--Sección de botones-->
+  <div class="list-buttons-div" v-if="wishlist">
+
+    <div class="save-delete-div">
+      <button class="save-list-button">Save list</button>
+      <button class="delete-list-button">Delete list</button>
+    </div>
+
+    <div class="date-end-div">
+      <span class="text-calendar">End date:</span>
+      <input type="date" placeholder="End date" name="end-date-list" class="end-date-list-input">
+    </div>
+  </div>
+
   <div v-else>
     <p>Select a list to edit</p>
   </div>
-
 </template>

@@ -37,6 +37,11 @@ export default {
       })
     },
 
+    saveList(wishlist) {
+      console.log(wishlist)
+      localStorage.setItem("wishlist", JSON.stringify(wishlist))
+      router.push({ name: "MyLists" });
+    }
   }
 }
 </script>
@@ -57,7 +62,7 @@ export default {
       </div>
 
       <div class="editList-button-div">
-        <RouterLink class="editList-button" :to="{name: 'MyLists', params: {id: wishlist.id}}">Edit list</RouterLink>
+        <button class="editList-button" @click="saveList(wishlist)" >Edit list</button>
       </div>
     </div>
   </section>

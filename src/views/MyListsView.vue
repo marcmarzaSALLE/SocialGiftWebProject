@@ -17,11 +17,16 @@ export default {
   created() {
     if (!localStorage.getItem("token")) {
       router.push("/Login");
+    } else {
+      this.getListFromLocalStorage();
     }
   },
   methods: {
     onEditList(wishlist) {
       this.selectedWishlist = wishlist;
+    },
+    getListFromLocalStorage() {
+      this.selectedWishlist= JSON.parse(localStorage.getItem("wishlist"));
     }
   }
 }
