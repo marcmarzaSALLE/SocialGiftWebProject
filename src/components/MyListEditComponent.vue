@@ -19,7 +19,7 @@ export default {
   created() {
     if (localStorage.getItem("token")) {
       this.getWishlistInfo();
-      this.getGiftsWishlist();
+
     } else {
       router.push({ name: "Login" });
     }
@@ -66,7 +66,7 @@ export default {
 
     <!--Regalos-->
     <section class="gifts-view-section">
-      <ListGifts/>
+        <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist" />
     </section>
 
   </section>

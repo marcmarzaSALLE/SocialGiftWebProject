@@ -26,14 +26,16 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-          .then(data => data.json()) // Convertir la respuesta a JSON
-          .then(json => {
-            console.log("data: " + json)
-            this.wishlists = json // Asignar la lista de deseos a la variable wishlists
-          })
-          .catch(error => {
-            console.log("error: " + error)
-          })
+     .then(data => data.json()) // Convertir la respuesta a JSON
+     .then(json => {
+         console.log("data: " + json)
+         this.wishlists = json // Asignar la lista de deseos a la variable wishlists
+         // Guardamos las listas en el local storage
+         localStorage.setItem("wishlistsSaved", JSON.stringify(this.wishlists))
+     })
+     .catch(error => {
+         console.log("error: " + error)
+     })
     },
     editList(wishlist) {
       this.$emit('edit-list', wishlist);

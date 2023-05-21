@@ -6,10 +6,7 @@ export default {
 
   data() {
     return{
-      username: '',
-      fullName: '',
-      email: '',
-      image: '',
+     userInfo:{}
     }
 
   },
@@ -32,26 +29,15 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-      .then(response => {
-        console.log("ok: " + response.ok)
-        console.log("status: " + response.status)
-        console.log("status text: " + response.statusText)
-        if (response.status === 200) {
-          return response.json()
-        } else {
-          throw new Error(response.statusText)
-        }
+      .then(data => data.json()) // Convertir la respuesta a JSON
+      .then(json => {
+        console.log("data: " + json)
+        this.userInfo = json // Asignar la lista de deseos a la variable wishlists
+        //Guardamos el userInfor en el localStorage
+        localStorage.setItem("userInfo", JSON.stringify(this.userInfo))
       })
-      .then(data => {
-        console.log("data: " + data)
-        console.log(data.name)
-        console.log(data.last_name)
-        console.log(data.email)
-        this.username = data.name
-        this.fullName = data.last_name
-        this.email = data.email
-        console.log(data.image)
-        this.image = data.image
+      .catch(error => {
+        console.log("error: " + error)
       })
     },
   },
@@ -59,16 +45,15 @@ export default {
 </script>
 
 <template>
-  <img class="user-img" :src="image" alt="">
+  <img class="user-img" :src="userInfo.image" alt="">
   <div class="user-data">
     <div class="user-info">
-      <h2 class="user-username">{{ username }}</h2>
-      <h3 class="user-complete-name">{{ fullName }}</h3>
-      <p class="user-email">{{ email }}</p>
+      <h2 class="user-username">{{ userInfo.name +" "+userInfo.last_name }}</h2>
+      <p class="user-email">{{ userInfo.email }}</p>
     </div>
 
     <div class="user-info-mobile">
-      <p class="user-username">{{ username }}</p>
+      <p class="user-username">{{ userInfo.email }}</p>
     </div>
 
     <nav class="edit-profile-nav">

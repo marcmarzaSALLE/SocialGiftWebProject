@@ -24,6 +24,9 @@ export default {
   methods: {
     onEditList(wishlist) {
       this.selectedWishlist = wishlist;
+      // Guardar la lista seleccionada en el local storage
+      localStorage.setItem("wishlist", JSON.stringify(this.selectedWishlist));
+
     },
     getListFromLocalStorage() {
       this.selectedWishlist= JSON.parse(localStorage.getItem("wishlist"));

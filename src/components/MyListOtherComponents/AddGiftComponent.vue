@@ -97,7 +97,7 @@ export default {
               <div class="product-data-div">
                 <span>Product: {{ product.name }}</span>
                 <span>Description: {{ product.description }}</span>
-                <span>Link: {{ product.link }}</span>
+                <span>Link: <a :href="product.link" target="_blank">Click here!</a></span>
                 <span>Price: {{ product.price }}</span>
                 <span>Acitve: {{ product.isActive }}</span>
               </div>

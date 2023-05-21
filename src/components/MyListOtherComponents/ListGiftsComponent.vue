@@ -4,36 +4,94 @@ import router from "@/router";
 export default {
   name: "ListGifts",
   props: {
-    gifts: {
-      type: Array,
-      required: true
-    },
-    gift: {
-      type: Object,
-      required: true
-    }
-  },
-  methods:{
-    async getGiftsWishlist(){
-      const  idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
-      for(let i = 0; i < this.wishlist.gifts.length; i++){
-        await fetch(this.wishlist.gifts[i].product_url,{
-          headers:{
-            "Content-Type": 'application/json'
-          }
-        })
-            .then(data => data.json()) // Convertir la respuesta a JSON
-            .then(json => {
-              console.log("REGALO: " + json.id + " " + json.name + " " + json.price + " " + json.photo + " " + json.link);
-              this.gift = json;// Asignar el regalo a la variable gift
-              this.gifts.push(this.gift);
-            })
-            .catch(error => {
-              console.log("error: " + error);
-            });
-
+      gifts: {
+          type: Array,
+          required: true
+      },
+      wishlistToEdit: {
+          type: Object,
+          required: true
       }
-    }
+  },
+  created() {
+      if (localStorage.getItem("token")) {
+          this.getWishlistsFromLocalStorage();
+      } else {
+          router.push({ name: "Login" });
+      }
+  },
+  data() {
+      return {
+        wishlists:[],
+        selectedWishlist: ""
+      };
+  },
+  methods: {
+      getWishlistsFromLocalStorage() {
+          this.wishlists = JSON.parse(localStorage.getItem("wishlistsSaved"));
+      },
+
+      selectWishlist(wishlist) {
+          this.selectedWishlist = wishlist;
+      },
+
+      moveGift(wishlistToMoveId, giftToMoveId) {
+          //Cambiamos el ID del regalo de lista
+          fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftToMoveId, {
+              method: "PUT",
+              headers: {
+                  "accept": "application/json",
+                  "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                  "Content-Type": 'application/json'
+              }
+          })
+          .then(response => {
+              if (response.ok) {
+                  // Cambio de lista exitoso, eliminar el regalo de la lista actual
+                  this.gifts = this.gifts.filter(gift => gift.id !== giftToMoveId);
+                  // Mostrar un mensaje de éxito en la interfaz de usuario
+                  alert("Gift moved successfully")
+              } else {
+                  // Error al cambiar de lista el regalo, mostrar un mensaje de error en la interfaz de usuario
+                  throw new Error("Failed to move gift");
+              }
+          })
+
+      },
+      deleteGift(giftDeletedId) {
+          console.log("giftDeletedId: " + giftDeletedId)
+          fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/"+ giftDeletedId, {
+              method: "DELETE",
+              headers: {
+                  "accept": "application/json",
+                  "Authorization": 'Bearer ' + localStorage.getItem("token"),
+                  "Content-Type": 'application/json'
+              }
+          })
+          .then(response => {
+              if (response.ok) {
+                  // Eliminación exitosa, eliminar el regalo de la lista actual
+                  this.gifts = this.gifts.filter(gift => gift.id !== giftDeletedId);
+                  // Mostrar un mensaje de éxito en la interfaz de usuario
+                  alert("Gift deleted successfully");
+              } else {
+                  // Error al eliminar el regalo, mostrar un mensaje de error en la interfaz de usuario
+                  throw new Error("Failed to delete gift");
+              }
+          })
+          .catch(error => {
+              // Mostrar un mensaje de error en la interfaz de usuario
+              alert("An error occurred while deleting the gift");
+              console.error(error);
+          });
+      }
+  },
+  computed: {
+      filteredWishlists() {
+          return this.wishlists.filter(
+              (wishlist) => wishlist.id !== this.wishlistToEdit.id
+          );
+      }
   }
 
 }
@@ -41,7 +99,7 @@ export default {
 
 <template>
   <!--Gift-->
-  <div class="gift-post-div">
+  <div class="gift-post-div" v-for="gift in gifts" :key="gift.id">
 
     <!--Sección de datos-->
     <div class="gift-info-div">
@@ -51,10 +109,10 @@ export default {
 
       <div class="gift-data-div">
         <div class="gift-information-div">
-          <span>Gift_ID</span>
-          <span>Product_ID</span>
-          <span>Priority</span>
-          <span>Price</span>
+          <span>Gift ID: {{gift.id}}</span>
+          <span>Product url: <a :href="gift.url" target="_blank">click here!</a></span>
+          <span>Priority: {{gift.priority}}</span>
+          <span>Booked: {{gift.booked}}</span>
         </div>
       </div>
     </div>
@@ -77,21 +135,19 @@ export default {
             <div class="dropdown-list-div">
               <button class="list-button">Lists</button>
               <div class="dropdown-list">
-                <a href="#">List 1</a>
-                <a href="#">List 2</a>
-                <a href="#">List 3</a>
+                  <a class="dropdown-lists-names" v-for="wishlist in filteredWishlists" :key="wishlist.id" @click="selectWishlist(wishlist)">{{ wishlist.name }}</a>
               </div>
             </div>
 
             <!--Select list-->
-            <input type="text" class="list-moved-input" placeholder="Select list...">
+            <input v-model="selectedWishlist.name" type="text" class="list-moved-input" placeholder="Select list...">
             <!--Botón de mover-->
-            <button class="move-button">Move</button>
+            <button class="move-button" @click="moveGift(selectWishlist)">Move</button>
           </div>
         </div>
       </div>
 
-      <button class="remove-button">
+      <button class="remove-button" @click="deleteGift(gift.id)">
         <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
       </button>
     </div>

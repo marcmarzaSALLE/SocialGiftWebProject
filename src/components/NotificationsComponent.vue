@@ -61,13 +61,12 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-          .then(data => data.json()) // Convertir la respuesta a JSON
-          .then(json => {
-            if (json.success === true) {
-              this.friends = this.friends.filter(friend => friend.id !== friendId);
+      .then(data => data.json()) // Convertir la respuesta a JSON
+      .then(json => {
+          if (json.success === true) {this.friends = this.friends.filter(friend => friend.id !== friendId);
               console.log("data: " + "AMIGO ELIMINADO")
-            }
-          })
+          }
+      })
     }
   }
 }
