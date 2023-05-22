@@ -21,19 +21,19 @@ export default {
       this.getWishlistInfo();
 
     } else {
-      router.push({ name: "Login" });
+      router.push({name: "Login"});
     }
   },
   methods: {
     getWishlistInfo() {
-        const idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
-        fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
-          headers: {
-            "accept": "application/json",
-            "Authorization": 'Bearer ' + localStorage.getItem("token"),
-            "Content-Type": 'application/json'
-          }
-        })
+      const idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
           .then(data => data.json()) // Convertir la respuesta a JSON
           .then(json => {
             console.log("data: " + json);
@@ -43,6 +43,34 @@ export default {
             console.log("error: " + error);
           });
     },
+
+    deleteWishList() {
+      if (confirm("Are you sure you want to delete this list?")) {
+        console.log("delete");
+        fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/" + this.wishlist.id, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+            },
+          })
+              .then(response => {
+
+                console.log("DELETE RESPONSE: " + response)
+                if (response.success===true) {
+                  console.log("DELETE OK")
+                  alert("List deleted successfully");
+                  router.push({name: "MyLists"});
+                } else {
+                  throw new Error("Failed to delete list");
+                }
+              })
+              .catch(error => {
+                console.log(error);
+              })
+      }
+    },
+
   }
 }
 </script>
@@ -52,7 +80,8 @@ export default {
   <!-- Información lista -->
   <div class="list-view-info" v-if="wishlist">
     <input v-model="wishlist.name" type="text" placeholder="Enter name" name="name-list" class="name-list-input">
-    <input v-model="wishlist.description" type="text" placeholder="Enter description" name="description-list" class="description-list-input">
+    <input v-model="wishlist.description" type="text" placeholder="Enter description" name="description-list"
+           class="description-list-input">
   </div>
 
   <!--Componente sección de productos-->
@@ -66,7 +95,7 @@ export default {
 
     <!--Regalos-->
     <section class="gifts-view-section">
-        <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist" />
+      <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist"/>
     </section>
 
   </section>
@@ -76,7 +105,7 @@ export default {
 
     <div class="save-delete-div">
       <button class="save-list-button">Save list</button>
-      <button class="delete-list-button">Delete list</button>
+      <button class="delete-list-button" @click="deleteWishList">Delete list</button>
     </div>
 
     <div class="date-end-div">
