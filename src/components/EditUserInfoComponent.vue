@@ -9,13 +9,6 @@ export default {
             required: true,
         }
     },
-
-    created() {
-        if(!localStorage.getItem("token")) {
-            router.push({ name: "Login" });
-
-        }
-    },
 }
 </script>
 

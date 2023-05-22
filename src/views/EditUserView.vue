@@ -4,7 +4,6 @@ import EditUserInfo from "../components/EditUserInfoComponent.vue";
 import EditUserFields from "../components/EditUserFieldsComponent.vue";
 export default {
     name: "EditUserView",
-
     components: {
         EditUserInfo,
         EditUserFields,

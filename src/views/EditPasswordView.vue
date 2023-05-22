@@ -1,67 +1,50 @@
-<template>
-
-  <!--Section User-->
-  <section class="section-user3">
-    <img class="user-img" src="public/Icons/imageUserPic.png">
-
-    <div class="user-data">
-      <div class="user-info">
-        <h2 class="user-username">Username</h2>
-        <h3 class="user-complete-name">Firstname Secondname</h3>
-        <p class="user-email">username@email.com</p>
-      </div>
-
-      <div class="user-info-mobile">
-        <p class="user-username">Username</p>
-      </div>
-
-      <nav class="edit-profile-nav">
-        <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>
-      </nav>
-
-    </div>
-  </section>
-
-  <!-- Section Edit User -->
-  <section class="edit-user-password">
-
-    <h2>Edit password</h2>
-    <div class="line3"></div>
-
-    <div class="password-div">
-      <span class="password-span">Current password:</span>
-      <input type="password" class="input-password" name="password" placeholder="Current password">
-    </div>
-
-    <div class="new-password-div">
-      <span class="new-password-span">New password:</span>
-      <input type="password" class="input-new-password" name="new-password" placeholder="New password">
-    </div>
-
-    <div class="confirm-password-div">
-      <span class="confirm-password-span">Confirm password:</span>
-      <input type="password" class="input-confirm-password" name="confirm-password" placeholder="Confirm password">
-    </div>
-
-    <div class="buttons-edit-div2">
-      <button class="button-save2">Save</button>
-    </div>
-
-  </section>
-
-</template>
-
 <script>
 import router from "@/router";
+import EditPasswordInfo from "../components/EditPasswordInfoComponent.vue";
+import EditPasswordFields from "../components/EditPasswordFieldsComponent.vue";
+
 export default {
   name: "EditPasswordView",
+  components: {
+    EditPasswordInfo,
+    EditPasswordFields,
+  },
+  data() {
+    return {
+      userInfo:{}
+    };
+  },
   created() {
     if(!localStorage.getItem("token")) {
       router.push({ name: "Login" });
+    } else {
+      this.getUserInfo();
+    }
+  },
+  methods: {
+    getUserInfo() {
+      this.userInfo = JSON.parse(localStorage.getItem("userInfo"));
     }
   }
 }
 </script>
+
+
+<template>
+
+  <!--Section User-->
+  <section class="section-user3">
+    <EditPasswordInfo :userInfo="userInfo"/>
+  </section>
+
+  <!-- Section Edit User -->
+  <section class="edit-user-password">
+    <EditPasswordFields :userInfo="userInfo"/>
+  </section>
+
+</template>
+
+
 
 <style scoped>
 
