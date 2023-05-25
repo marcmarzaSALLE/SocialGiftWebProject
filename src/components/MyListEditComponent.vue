@@ -3,7 +3,6 @@ import router from "@/router";
 import AddGift from "./MyListOtherComponents/AddGiftComponent.vue";
 import ListGifts from "./MyListOtherComponents/ListGiftsComponent.vue";
 
-
 export default {
   name: "ListEdit",
   components: {
@@ -14,16 +13,24 @@ export default {
     wishlist: {
       type: Object,
       required: true
+    },
+    wishlists: {
+      type: Array,
+      required: true
+    },
+    showList: {
+      type: Boolean,
+      required: true
     }
   },
   created() {
     if (localStorage.getItem("token")) {
       this.getWishlistInfo();
-
     } else {
-      router.push({name: "Login"});
+      router.push({ name: "Login" });
     }
   },
+
   methods: {
     getWishlistInfo() {
       const idList = this.wishlist.id; // Obtener el ID de la lista desde el prop
@@ -34,78 +41,81 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-          .then(data => data.json()) // Convertir la respuesta a JSON
-          .then(json => {
-            console.log("data: " + json);
-            this.wishlist = json; // Asignar la lista de deseos a la variable wishlists
-          })
-          .catch(error => {
-            console.log("error: " + error);
-          });
+        .then(data => data.json()) // Convertir la respuesta a JSON
+        .then(json => {
+          console.log("data: " + json);
+
+          this.wishlist.name = json.name;
+          this.wishlist.description = json.description;
+          this.wishlist.end_date = json.end_date;
+          this.wishlist.gifts = json.gifts;
+
+        })
+        .catch(error => {
+          console.log("error: " + error);
+        });
     },
 
-    deleteWishList() {
-      if (confirm("Are you sure you want to delete this list?")) {
-        console.log("delete");
-        fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/" + this.wishlist.id, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              "Authorization": "Bearer " + localStorage.getItem("token"),
-            },
-          })
-              .then(response => {
-
-                console.log("DELETE RESPONSE: " + response)
-                if (response.success===true) {
-                  console.log("DELETE OK")
-                  alert("List deleted successfully");
-                  router.push({name: "MyLists"});
-                } else {
-                  throw new Error("Failed to delete list");
-                }
-              })
-              .catch(error => {
-                console.log(error);
-              })
-      }
+    deleteWishlist() {
+      this.$emit("list-deleted"); // Emitir el evento "list-deleted"
+      this.$emit('show-list', false);
     },
 
-  }
+    saveWishlist() {
+      const idList = this.wishlist.id;
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/' + idList, {
+        method: "PUT",
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(this.wishlist)
+      })
+        .then(response => {
+          if (response.ok) {
+            alert("Wishlist saved successfully");
+          } else {
+            throw new Error("Failed to save wishlist");
+          }
+        })
+        .catch(error => {
+          alert("An error occurred while saving the wishlist");
+          console.error(error);
+        });
+    },
+  },
 }
 </script>
 
 <template>
 
   <!-- Información lista -->
-  <div class="list-view-info" v-if="wishlist">
+  <div class="list-view-info" v-if="showList">
     <input v-model="wishlist.name" type="text" placeholder="Enter name" name="name-list" class="name-list-input">
-    <input v-model="wishlist.description" type="text" placeholder="Enter description" name="description-list"
-           class="description-list-input">
+    <input v-model="wishlist.description" type="text" placeholder="Enter description" name="description-list" class="description-list-input">
   </div>
 
   <!--Componente sección de productos-->
-  <section class="gifts-section" v-if="wishlist">
-
+  <section class="gifts-section" v-if="showList">
     <div class="gifts-div">
       <h3>Gifts</h3>
       <!-- Componente añadir regalo -->
-      <AddGift/>
+      <AddGift :wishlistToEdit="wishlist"/>
     </div>
 
     <!--Regalos-->
     <section class="gifts-view-section">
-      <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist"/>
+      <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist" :wishlists="wishlists"/>
     </section>
-
   </section>
 
   <!--Sección de botones-->
-  <div class="list-buttons-div" v-if="wishlist">
+  <div class="list-buttons-div" v-if="showList">
 
     <div class="save-delete-div">
-      <button class="save-list-button">Save list</button>
-      <button class="delete-list-button" @click="deleteWishList">Delete list</button>
+      <button class="save-list-button" @click="saveWishlist">Save list</button>
+      <button class="delete-list-button" @click="deleteWishlist">Delete list</button>
     </div>
 
     <div class="date-end-div">
@@ -114,7 +124,8 @@ export default {
     </div>
   </div>
 
-  <div v-else>
+  <div v-if="!showList">
     <p>Select a list to edit</p>
   </div>
+
 </template>

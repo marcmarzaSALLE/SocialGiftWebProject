@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       wishlists: [],
+      showListEdit: true,
     }
   },
   created() {
@@ -40,8 +41,10 @@ export default {
     saveList(wishlist) {
       console.log(wishlist)
       localStorage.setItem("wishlist", JSON.stringify(wishlist))
+      localStorage.setItem("showListEdit", this.showListEdit)
       router.push({ name: "MyLists" });
     }
+
   }
 }
 </script>

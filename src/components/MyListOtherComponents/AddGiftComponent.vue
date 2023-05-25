@@ -3,15 +3,23 @@ import router from "@/router";
 
 export default {
   name: "AddGift",
+  props: {
+    wishlist: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       products:[],
       categories:[],
+      selectedCategory: null,
     };
   },
 
   created() {
       this.getAllProducts();
+      this.getAllCategories();
   },
 
   methods: {
@@ -48,7 +56,15 @@ export default {
       .catch(error => {
         console.log("error: " + error)
       })
+    },
+    selectCategory(category) {
+      this.selectedCategory = category;
+    },
+
+    addGiftToList(product) {
+
     }
+
   }
 
 }
@@ -74,11 +90,11 @@ export default {
               <div class="dropdown-categories-div">
                 <button class="categories-button">Categories</button>
                 <div class="dropdown-content">
-                  <a v-for="category in categories" :key="category.id" href="#">{{category.name}}</a>
+                  <a class="category-name" v-for="category in categories" :key="category.id" @click="selectCategory(category)">{{category.name}}</a>
                 </div>
               </div>
 
-              <input class="search-gift" type="search" placeholder="Look for a gift..." />
+              <input class="search-gift" type="search" placeholder="Look for a gift..."/>
               <!--Botón de búsqueda-->
               <button class="search-button-gift" type="submit">
                 <img class="search-icon-gift" src="../../../public/Icons/searchIcon.png">
@@ -97,12 +113,12 @@ export default {
               <div class="product-data-div">
                 <span>Product: {{ product.name }}</span>
                 <span>Description: {{ product.description }}</span>
-                <span>Link: <a :href="product.link" target="_blank">Click here!</a></span>
+                <span>Link: <a :href="product.link" target="_blank">click here</a></span>
                 <span>Price: {{ product.price }}</span>
                 <span>Acitve: {{ product.isActive }}</span>
               </div>
 
-              <button class="add-product-button">Add</button>
+              <button class="add-product-button" @click="addGiftToList(products)">Add</button>
             </div>
 
           </section>

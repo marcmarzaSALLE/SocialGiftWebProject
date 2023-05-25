@@ -6,6 +6,7 @@ export default {
   data() {
     return{
       bookings: [],
+      defaultImage:'https://balandrau.salle.url.edu/i3/repositoryimages/photo/779bbabc-04ad-4195-8acf-d6e55cf6f243.jpg'
     }
   },
   created() {
@@ -41,7 +42,13 @@ export default {
             .then(data => {
               // Asignar la información del regalo a la reserva correspondiente
               this.bookings[index].giftInfo = data
+             console.log("IMAGEN "+this.bookings[index].giftInfo.photo);
               console.log("ID DEL PRODUCTO: " + this.bookings[index].giftInfo.name)
+
+              if (this.bookings[index].giftInfo.photo === null){
+                this.bookings[index].giftInfo.photo = this.defaultImage;
+              }
+
             })
             .catch(error => {
               console.log("error: " + error)
@@ -69,6 +76,9 @@ export default {
           console.log("error: " + error)
         })
       },
+      imageError(photo){
+        photo = this.defaultImage;
+      }
     }
   }
 </script>
@@ -80,7 +90,7 @@ export default {
     </div>
 
     <div v-for="booking in bookings" :key="booking.id" class="booking-div">
-      <img class="booking-img" :src="booking.giftInfo.photo">
+      <img class="booking-img" alt="NOIMG" :src="booking.giftInfo.photo" @error="imageError(booking.giftInfo.photo)">
       <div class="booking-text">
         <p>Gift_ID: {{ booking.id }}</p>
         <p>Product name: {{ booking.giftInfo.name }}</p>

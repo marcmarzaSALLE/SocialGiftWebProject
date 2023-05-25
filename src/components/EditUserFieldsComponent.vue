@@ -107,11 +107,6 @@ export default {
         <input type="text" class="input-email" name="email" :placeholder="userInfo.email">
     </div>
 
-    <div class="username-div">
-        <span class="username-span">Username:</span>
-        <input type="text" class="input-username" name="username" placeholder="username">
-    </div>
-
     <div class="buttons-edit-div">
         <button class="button-save" @click="saveChanges">Save</button>
         <button class="button-delete" @click="deleteAccount">Delete account</button>

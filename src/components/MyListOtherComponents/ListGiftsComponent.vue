@@ -11,81 +11,89 @@ export default {
       wishlistToEdit: {
           type: Object,
           required: true
+      },
+      wishlists: {
+          type: Array,
+          required: true
       }
   },
   created() {
       if (localStorage.getItem("token")) {
-          this.getWishlistsFromLocalStorage();
+
       } else {
           router.push({ name: "Login" });
       }
   },
   data() {
       return {
-        wishlists:[],
-        selectedWishlist: ""
+        wishlistToMove: ""
       };
   },
   methods: {
-      getWishlistsFromLocalStorage() {
-          this.wishlists = JSON.parse(localStorage.getItem("wishlistsSaved"));
-      },
+    deleteGift(giftDeleted) {
+      console.log("giftDeletedId: " + giftDeleted.id);
+      fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftDeleted.id, {
+        method: "DELETE",
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+        .then(response => {
+          if (response.ok) {
+            // Eliminación exitosa, eliminar el regalo de la lista actual
+            const index = this.gifts.findIndex(gift => gift.id === giftDeleted.id);
+            if (index !== -1) {
+              this.gifts.splice(index, 1);
+            }
+            alert("Gift deleted successfully");
+          } else {
+            throw new Error("Failed to delete gift");
+          }
+        })
+        .catch(error => {
+          alert("An error occurred while deleting the gift");
+          console.error(error);
+        });
+    },
 
-      selectWishlist(wishlist) {
-          this.selectedWishlist = wishlist;
-      },
+    selectedWishlist(wishlist) {
+      this.wishlistToMove = wishlist;
+    },
 
-      moveGift(wishlistToMoveId, giftToMoveId) {
-          //Cambiamos el ID del regalo de lista
-          fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftToMoveId, {
-              method: "PUT",
-              headers: {
-                  "accept": "application/json",
-                  "Authorization": 'Bearer ' + localStorage.getItem("token"),
-                  "Content-Type": 'application/json'
-              }
-          })
-          .then(response => {
-              if (response.ok) {
-                  // Cambio de lista exitoso, eliminar el regalo de la lista actual
-                  this.gifts = this.gifts.filter(gift => gift.id !== giftToMoveId);
-                  // Mostrar un mensaje de éxito en la interfaz de usuario
-                  alert("Gift moved successfully")
-              } else {
-                  // Error al cambiar de lista el regalo, mostrar un mensaje de error en la interfaz de usuario
-                  throw new Error("Failed to move gift");
-              }
-          })
+    moveGift(selectedWishlist, giftToMove) {
+      // Cambiar el ID de la lista del regalo
+      giftToMove.wishlist_id = selectedWishlist.id;
 
-      },
-      deleteGift(giftDeletedId) {
-          console.log("giftDeletedId: " + giftDeletedId)
-          fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/"+ giftDeletedId, {
-              method: "DELETE",
-              headers: {
-                  "accept": "application/json",
-                  "Authorization": 'Bearer ' + localStorage.getItem("token"),
-                  "Content-Type": 'application/json'
-              }
-          })
-          .then(response => {
-              if (response.ok) {
-                  // Eliminación exitosa, eliminar el regalo de la lista actual
-                  this.gifts = this.gifts.filter(gift => gift.id !== giftDeletedId);
-                  // Mostrar un mensaje de éxito en la interfaz de usuario
-                  alert("Gift deleted successfully");
-              } else {
-                  // Error al eliminar el regalo, mostrar un mensaje de error en la interfaz de usuario
-                  throw new Error("Failed to delete gift");
-              }
-          })
-          .catch(error => {
-              // Mostrar un mensaje de error en la interfaz de usuario
-              alert("An error occurred while deleting the gift");
-              console.error(error);
-          });
-      }
+      fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftToMove.id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + localStorage.getItem("token"),
+        },
+        body: JSON.stringify(giftToMove)
+      })
+        .then(response => {
+          if (response.ok) {
+            // Eliminación exitosa, eliminar el regalo de la lista actual
+            const index = this.gifts.findIndex(gift => gift.id === giftToMove.id);
+            if (index !== -1) {
+              this.gifts.splice(index, 1);
+            }
+            alert("Gift moved successfully");
+            window.location.reload();
+          } else {
+            throw new Error("Failed to move gift");
+          }
+        })
+        .catch(error => {
+          alert("An error occurred while moving the gift");
+          console.error(error);
+        });
+    },
   },
+
   computed: {
       filteredWishlists() {
           return this.wishlists.filter(
@@ -93,13 +101,17 @@ export default {
           );
       }
   }
-
 }
 </script>
 
 <template>
+
+  <div class="message-gifts" v-if="gifts.length === 0">
+    <p>There are no gifts in this list.</p>
+  </div>
+
   <!--Gift-->
-  <div class="gift-post-div" v-for="gift in gifts" :key="gift.id">
+  <div class="gift-post-div" v-for="gift in gifts" :key="gift.id" v-else>
 
     <!--Sección de datos-->
     <div class="gift-info-div">
@@ -135,19 +147,19 @@ export default {
             <div class="dropdown-list-div">
               <button class="list-button">Lists</button>
               <div class="dropdown-list">
-                  <a class="dropdown-lists-names" v-for="wishlist in filteredWishlists" :key="wishlist.id" @click="selectWishlist(wishlist)">{{ wishlist.name }}</a>
+                  <a class="dropdown-lists-names" v-for="wishlist in filteredWishlists" :key="wishlist.id" @click="selectedWishlist(wishlist)">{{ wishlist.name }}</a>
               </div>
             </div>
 
             <!--Select list-->
-            <input v-model="selectedWishlist.name" type="text" class="list-moved-input" placeholder="Select list...">
+            <input v-model="wishlistToMove.name" type="text" class="list-moved-input" placeholder="Select list...">
             <!--Botón de mover-->
-            <button class="move-button" @click="moveGift(selectWishlist)">Move</button>
+            <button class="move-button" @click="moveGift(wishlistToMove, gift)">Move</button>
           </div>
         </div>
-      </div>
+      </div>l
 
-      <button class="remove-button" @click="deleteGift(gift.id)">
+      <button class="remove-button" @click="deleteGift(gift)">
         <img class="remove-gift-icon" src="public/Icons/removeGiftIcon.png">
       </button>
     </div>

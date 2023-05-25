@@ -63,6 +63,12 @@
     box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
 }
 
+.selected-list {
+    background: rgb(232, 232, 232);
+    color: black;
+    border: 1px solid #84ff00;
+}
+
 .description-list-user-div {
     display: flex;
     justify-content: flex-start;
@@ -308,6 +314,7 @@
     color: #ffffff;
     font-size: 15px;
     text-align: center;
+    z-index: 2;
 }
 
 .dropdown-content {
@@ -320,15 +327,30 @@
     align-items: flex-start;
     flex-direction: column;
     position: absolute;
-    height: 100%;
-    top: 70px;
-    padding: 10px;
-    margin-left: 84px;
+    height: 300px;
+    top: 42px;
+    margin-left: 80px;
+    padding: 20px 10px 10px;
     border-radius: 0 20px 20px 20px;
     background-color: #49A25D;
     color: #E2EEF7;
     min-width: 160px;
     z-index: 1;
+    overflow-y: auto;
+}
+
+.category-name {
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    padding: 1%;
+}
+
+.category-name:hover {
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    padding: 1% 3%;
 }
 
 .search-box-gift {
@@ -453,6 +475,11 @@
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     background: rgb(255, 255, 255);
+}
+
+.message-gifts {
+    margin: 2%;
+    color: #878787;
 }
 
 .gift-post-div {
@@ -647,7 +674,7 @@
     flex-direction: column;
     position: absolute;
     height: 100%;
-    top: 130px;
+    top: 132px;
     padding: 10px;
     margin-left: 80px;
     border-radius: 0 20px 20px 20px;
