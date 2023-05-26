@@ -19,17 +19,17 @@ export default {
   },
   created() {
       if (localStorage.getItem("token")) {
-
       } else {
           router.push({ name: "Login" });
       }
   },
   data() {
       return {
-        wishlistToMove: ""
+        wishlistToMove: "",
       };
   },
   methods: {
+
     deleteGift(giftDeleted) {
       console.log("giftDeletedId: " + giftDeleted.id);
       fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftDeleted.id, {
@@ -82,7 +82,7 @@ export default {
               this.gifts.splice(index, 1);
             }
             alert("Gift moved successfully");
-            window.location.reload();
+            this.$emit("gift-change");
           } else {
             throw new Error("Failed to move gift");
           }
@@ -122,7 +122,7 @@ export default {
       <div class="gift-data-div">
         <div class="gift-information-div">
           <span>Gift ID: {{gift.id}}</span>
-          <span>Product url: <a :href="gift.url" target="_blank">click here!</a></span>
+          <span>Product url: <a :href="gift.product_url" target="_blank">click here</a></span>
           <span>Priority: {{gift.priority}}</span>
           <span>Booked: {{gift.booked}}</span>
         </div>

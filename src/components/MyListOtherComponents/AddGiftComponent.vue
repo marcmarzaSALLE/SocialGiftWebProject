@@ -14,9 +14,10 @@ export default {
       products:[],
       categories:[],
       selectedCategory: null,
+      selectedPriority: null,
+      searchInput: null,
     };
   },
-
   created() {
       this.getAllProducts();
       this.getAllCategories();
@@ -40,6 +41,26 @@ export default {
         console.log("error: " + error)
       })
     },
+
+    getProductsBySearch() {
+      fetch("https://balandrau.salle.url.edu/i3/mercadoexpress/api/v1/products/search?s=" + this.searchInput, {
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+        .then(data => data.json()) // Convertir la respuesta a JSON
+        .then(json => {
+          console.log("data: " + json)
+          this.products = json // Asignar la lista de deseos a la variable wishlists
+        })
+        .catch(error => {
+          console.log("error: " + error)
+        })
+      this.searchInput = null;
+    },
+
     getAllCategories() {
       fetch("https://balandrau.salle.url.edu/i3/mercadoexpress/api/v1/categories", {
         headers: {
@@ -57,16 +78,55 @@ export default {
         console.log("error: " + error)
       })
     },
+
     selectCategory(category) {
       this.selectedCategory = category;
+      this.searchInput = category.name;
     },
 
     addGiftToList(product) {
+      const priority = window.prompt("Please enter the priority of the gift:\n(1 - High, 2 - Medium, 3 - Low)");
 
-    }
+      // Validar y asignar la prioridad ingresada por el usuario
+      let giftPriority;
+      if (priority === null) {
+        return; // El usuario ha cancelado la operación, salir del método
+      } else if (priority === "1" || priority === "2" || priority === "3") {
+        giftPriority = parseInt(priority);
+      } else {
+        alert("Invalid priority. Please enter a valid priority \n(1 - High, 2 - Medium, 3 - Low).");
+        return; // Salir del método si la prioridad ingresada es inválida
+      }
 
+      // Crear el objeto gift
+      const gift = {
+        wishlist_id: this.wishlist.id,
+        product_url: product.link,
+        priority: giftPriority
+      };
+
+      fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts", {
+        method: "POST",
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        },
+        body: JSON.stringify(gift)
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Gift added successfully!");
+          this.$emit("gift-added");
+        } else {
+          alert("Error adding gift. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.log("error: " + error)
+      })
+    },
   }
-
 }
 </script>
 
@@ -79,13 +139,13 @@ export default {
     <!--Sección overlay AddGift-->
     <div id="gifts-products-screen" class="gifts-products-div">
       <div class="gift-products-main-div">
-        <a class="close-button" href="#">&times;</a>
+        <a class="close-button" href="#" @click="getAllProducts">&times;</a>
 
         <!--Parte buscador-->
         <div class="search-bar-div">
           <div class="search-box-gift-input">
             <!--Buscador-->
-            <form class="search-box-gift" method="get">
+            <div class="search-box-gift" >
               <!--Dropdown-->
               <div class="dropdown-categories-div">
                 <button class="categories-button">Categories</button>
@@ -94,12 +154,12 @@ export default {
                 </div>
               </div>
 
-              <input class="search-gift" type="search" placeholder="Look for a gift..."/>
+              <input class="search-gift" type="text" v-model="searchInput" placeholder="Look for a gift..."/>
               <!--Botón de búsqueda-->
-              <button class="search-button-gift" type="submit">
+              <button class="search-button-gift" @click="getProductsBySearch()">
                 <img class="search-icon-gift" src="../../../public/Icons/searchIcon.png">
               </button>
-            </form>
+            </div>
           </div>
         </div>
 
@@ -115,10 +175,9 @@ export default {
                 <span>Description: {{ product.description }}</span>
                 <span>Link: <a :href="product.link" target="_blank">click here</a></span>
                 <span>Price: {{ product.price }}</span>
-                <span>Acitve: {{ product.isActive }}</span>
               </div>
 
-              <button class="add-product-button" @click="addGiftToList(products)">Add</button>
+              <button class="add-product-button" @click="addGiftToList(product)">Add</button>
             </div>
 
           </section>

@@ -3,20 +3,24 @@ import router from "@/router";
 
 export default {
   name: "FriendLists",
+  props: {
+    friend: {
+      type: Object,
+      required: true
+    }
+  },
   data() {
     return {
       wishlists: [],
     };
   },
   created() {
-    const friendId = this.$route.params.id;
-    console.log("friendId: " + friendId);
-    this.getFriendLists(friendId);
+    this.getFriendLists();
   },
 
   methods: {
-    getFriendLists(id) {
-      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id + '/wishlists', {
+    getFriendLists() {
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + this.friend.id + '/wishlists', {
         headers: {
           "accept": "application/json",
           "Authorization": 'Bearer ' + localStorage.getItem("token"),

@@ -23,6 +23,7 @@ export default {
       required: true
     }
   },
+
   created() {
     if (localStorage.getItem("token")) {
       this.getWishlistInfo();
@@ -49,11 +50,14 @@ export default {
           this.wishlist.description = json.description;
           this.wishlist.end_date = json.end_date;
           this.wishlist.gifts = json.gifts;
-
         })
         .catch(error => {
           console.log("error: " + error);
         });
+    },
+
+    giftChange() {
+      this.$emit("gift-change");
     },
 
     deleteWishlist() {
@@ -101,12 +105,12 @@ export default {
     <div class="gifts-div">
       <h3>Gifts</h3>
       <!-- Componente añadir regalo -->
-      <AddGift :wishlistToEdit="wishlist"/>
+      <AddGift :wishlist="wishlist" @gift-added="getWishlistInfo"/>
     </div>
 
     <!--Regalos-->
     <section class="gifts-view-section">
-      <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist" :wishlists="wishlists"/>
+      <ListGifts :gifts="wishlist.gifts" :wishlistToEdit="wishlist" :wishlists="wishlists" @gift-change="giftChange"/>
     </section>
   </section>
 
@@ -120,7 +124,7 @@ export default {
 
     <div class="date-end-div">
       <span class="text-calendar">End date:</span>
-      <input type="date" placeholder="End date" name="end-date-list" class="end-date-list-input">
+      <input v-model="wishlist.end_date" type="date" placeholder="End date" name="end-date-list" class="end-date-list-input">
     </div>
   </div>
 

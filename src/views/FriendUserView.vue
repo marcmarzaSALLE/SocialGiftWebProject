@@ -12,9 +12,33 @@ export default {
     FriendListView,
   },
   created() {
-    if (!localStorage.getItem("token")) {
-      router.push({ name: "Login" });
-    }
+    const friendId = this.$route.params.id;
+    console.log("friendId: " + friendId);
+    this.getFriendInfo(friendId);
+  },
+  data() {
+    return {
+      friend: {},
+    };
+  },
+  methods: {
+    getFriendInfo(id) {
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id, {
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+
+      })
+        .then((data) => data.json())
+        .then((json) => {
+          this.friend = json;
+        })
+        .catch((error) => {
+          console.log("error: " + error);
+        });
+    },
   },
 }
 </script>
@@ -22,7 +46,7 @@ export default {
 <template>
   <!--Componente del amigo-->
   <section class="section-friend">
-    <FriendInfo/>
+    <FriendInfo :friend="friend"/>
   </section>
 
   <!--Componente de listas y regalos-->
@@ -32,7 +56,7 @@ export default {
       <h2>Lists</h2>
       <div class="line2"></div>
       <section class="lists-section">
-        <FriendLists/>
+        <FriendLists :friend="friend"/>
       </section>
       <div class="line2"></div>
     </div>

@@ -37,14 +37,6 @@ export default {
         console.log("error: " + error)
       })
     },
-
-    saveList(wishlist) {
-      console.log(wishlist)
-      localStorage.setItem("wishlist", JSON.stringify(wishlist))
-      localStorage.setItem("showListEdit", this.showListEdit)
-      router.push({ name: "MyLists" });
-    }
-
   }
 }
 </script>
@@ -62,10 +54,6 @@ export default {
       <div class="dates-list">
         <p>Creation: {{ wishlist.creation_date.substring(0, 10).replace(/-/g, '/') }}</p>
         <p>Ends: {{ wishlist.end_date.substring(0, 10).replace(/-/g, '/') }}</p>
-      </div>
-
-      <div class="editList-button-div">
-        <button class="editList-button" @click="saveList(wishlist)" >Edit list</button>
       </div>
     </div>
   </section>

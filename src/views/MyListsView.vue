@@ -29,7 +29,6 @@ export default {
       router.push("/Login");
     } else {
       this.getWishlists();
-      this.getListFromLocalStorage();
     }
   },
   methods: {
@@ -85,7 +84,11 @@ export default {
         return; // Salir de la función si no hay una lista seleccionada
       }
 
-      if (confirm("Are you sure you want to delete this list?")) {
+      if (this.selectedWishlist.gifts.length > 0) {
+       this.deleteAllGifts();
+      }
+
+      if (confirm("Are you sure you want to delete this list? Deleting this list will also delete all the associated gifts.")) {
         console.log("delete");
         fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/wishlists/" + this.selectedWishlist.id, {
           method: "DELETE",
@@ -110,20 +113,41 @@ export default {
       }
     },
 
-    onEditList(wishlist) {
-      this.selectedWishlist = wishlist;
-      // Guardar la lista seleccionada en el local storage
-      localStorage.setItem("wishlist", JSON.stringify(this.selectedWishlist));
+    deleteAllGifts() {
+      const giftIds = this.selectedWishlist.gifts.map(gift => gift.id);
+      Promise.all(
+        giftIds.map(giftId =>
+          fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftId, {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": "Bearer " + localStorage.getItem("token"),
+            },
+          })
+        )
+      )
+        .then(responses => {
+          if (responses.every(response => response.ok)) {
+            console.log("All gifts deleted successfully");
+            this.deleteWishlist();
+          } else {
+            console.log("Some gifts failed to delete");
+            throw new Error("Failed to delete some gifts");
+          }
+      })
+        .catch(error => {
+          console.log(error);
+        });
     },
 
-    getListFromLocalStorage() {
-      this.selectedWishlist = JSON.parse(localStorage.getItem("wishlist"));
-      this.showListEdit = localStorage.getItem("showListEdit");
+    onEditList(wishlist) {
+      this.selectedWishlist = wishlist;
     },
 
     setShowListEdit(value) {
       this.showListEdit = value;
-    }
+    },
+
   }
 }
 </script>
@@ -146,7 +170,7 @@ export default {
 
     <!--Lista a editar-->
     <section class="list-view">
-      <ListEdit :wishlist="selectedWishlist" :wishlists="wishlists" :showList="showListEdit" @list-deleted="deleteSelectedWishList" @show-list="setShowListEdit"/>
+      <ListEdit :wishlist="selectedWishlist" :wishlists="wishlists" :showList="showListEdit" @list-deleted="deleteSelectedWishList" @show-list="setShowListEdit" @gift-change="getWishlists"/>
     </section>
   </section>
 

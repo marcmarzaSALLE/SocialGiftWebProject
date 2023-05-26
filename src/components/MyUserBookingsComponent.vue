@@ -35,6 +35,8 @@ export default {
           this.bookings.forEach((booking, index) => {
             fetch(booking.product_url, {
               headers: {
+                "accept": "application/json",
+                "Authorization": 'Bearer ' + localStorage.getItem("token"),
                 "Content-Type": 'application/json'
               }
             })
@@ -42,7 +44,7 @@ export default {
             .then(data => {
               // Asignar la información del regalo a la reserva correspondiente
               this.bookings[index].giftInfo = data
-             console.log("IMAGEN "+this.bookings[index].giftInfo.photo);
+              console.log("IMAGEN "+this.bookings[index].giftInfo.photo);
               console.log("ID DEL PRODUCTO: " + this.bookings[index].giftInfo.name)
 
               if (this.bookings[index].giftInfo.photo === null){
@@ -53,8 +55,8 @@ export default {
             .catch(error => {
               console.log("error: " + error)
             })
-            // Hacer una solicitud para obtener el usuario de cada regalo
 
+            // Hacer una solicitud para obtener el usuario de cada regalo
             fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/' + booking.id + '/user', {
               headers: {
                 "accept": "application/json",
@@ -92,11 +94,11 @@ export default {
     <div v-for="booking in bookings" :key="booking.id" class="booking-div">
       <img class="booking-img" alt="NOIMG" :src="booking.giftInfo.photo" @error="imageError(booking.giftInfo.photo)">
       <div class="booking-text">
-        <p>Gift_ID: {{ booking.id }}</p>
+        <p>Gift ID: {{ booking.id }}</p>
         <p>Product name: {{ booking.giftInfo.name }}</p>
         <p>Priority: {{ booking.priority }}</p>
-        <p>WishList_ID: {{ booking.wishlist_id }}</p>
-        <p>Friend_id: {{booking.userGift.name + " " + booking.userGift.last_name}}</p>
+        <p>WishList ID: {{ booking.wishlist_id }}</p>
+        <p>Friend: {{booking.userGift.name + " " + booking.userGift.last_name}}</p>
       </div>
       <button class="unbook-button">Unbook</button>
     </div>

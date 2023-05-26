@@ -25,9 +25,7 @@ export default {
       this.$emit('show-list', true);
 
       // Setear el atributo 'selected' en 'true' para la lista seleccionada
-
       this.selectedListId = wishlist.id;
-      localStorage.setItem("selectedListId", wishlist.id);
     },
 
   }
