@@ -2,12 +2,14 @@
 import {RouterLink, RouterView} from 'vue-router'
 import DesplegableComponent from "./components/DropdownMenuComponent.vue";
 import notificationsComponent from "./components/NotificationsComponent.vue";
+import searchUserComponent from "./components/SearchUserComponent.vue";
 
 export default {
   name: 'App',
   components: {
     DesplegableComponent,
-    notificationsComponent
+    notificationsComponent,
+    searchUserComponent
   },
   data() {
     return {
@@ -30,7 +32,8 @@ export default {
     <section className="section-header-1">
 
       <!--Componente logo-->
-      <RouterLink to="/MyUser" class="socialgift-link"><img className="socialGift-img" src="public/icons/socialGift.png"></RouterLink>
+      <RouterLink to="/MyUser" class="socialgift-link"><img className="socialGift-img"
+                                                            src="public/icons/socialGift.png"></RouterLink>
       <!--Componente languajes-->
       <div className="languages-div">
         <input type="checkbox" id="languages-menu" className="languages-menu-input">
@@ -52,14 +55,7 @@ export default {
       </div>
 
       <!--Componente buscador-->
-      <div className="search-box-input">
-        <form className="search-box" method="get">
-          <input className="search-input" type="search" placeholder="Look for a friend..."/>
-          <button className="search-button" type="submit">
-            <img className="search-icon" src="public/Icons/searchIcon.png">
-          </button>
-        </form>
-      </div>
+      <searchUserComponent/>
 
       <!--Componente navegación usuario-->
       <nav className="user-nav-header">

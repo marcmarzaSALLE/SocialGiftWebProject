@@ -13,7 +13,7 @@ export default {
     if (localStorage.getItem("token")) {
       this.getFriends()
     } else {
-      router.push({ name: "Login" });
+      router.push({name: "Login"});
     }
   },
 
@@ -28,42 +28,43 @@ export default {
           "Content-Type": 'application/json'
         }
       })
-      .then(data => data.json()) // Convertir la respuesta a JSON
-      .then(json => {
-        console.log("data: " + json)
-        this.friends = json // Asignar la lista de amigos a la variable friends
-      })
-      .catch(error => {
-        console.log("error: " + error)
-      })
+          .then(data => data.json()) // Convertir la respuesta a JSON
+          .then(json => {
+            console.log("data: " + json)
+            this.friends = json // Asignar la lista de amigos a la variable friends
+          })
+          .catch(error => {
+            console.log("error: " + error)
+          })
     },
-    unfollowFriend(friendId) {
-      console.log("unfollowFriend: " + friendId)
-      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/friends/'+ friendId, {
-        method: 'DELETE',
-        headers: {
-          "accept": "application/json",
-          "Authorization": 'Bearer ' + localStorage.getItem("token"),
-          "Content-Type": 'application/json'
-        }
-      })
-        .then(response => {
-          console.log("ok: " + response.ok)
-          console.log("status: " + response.status)
-          console.log("status text: " + response.statusText)
-          if (response.status === 200) {
-            return response.json()
-          } else {
-            throw new Error(response.statusText)
+    unfollowFriend(friend) {
+      if (confirm("If you change your mind, you will need to resubmit a request to follow: " + friend.name + " " + friend.last_name)) {
+        fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/friends/' + friend.id, {
+          method: 'DELETE',
+          headers: {
+            "accept": "application/json",
+            "Authorization": 'Bearer ' + localStorage.getItem("token"),
+            "Content-Type": 'application/json'
           }
         })
-        .then(data => {
-          console.log("data: " + data)
-          this.getFriends()
-        })
-        .catch(error => {
-          console.log("error: " + error)
-        })
+            .then(response => {
+              console.log("ok: " + response.ok)
+              console.log("status: " + response.status)
+              console.log("status text: " + response.statusText)
+              if (response.status === 200) {
+                return response.json()
+              } else {
+                throw new Error(response.statusText)
+              }
+            })
+            .then(data => {
+              console.log("data: " + data)
+              this.getFriends()
+            })
+            .catch(error => {
+              console.log("error: " + error)
+            })
+      }
     },
   }
 }
@@ -83,7 +84,7 @@ export default {
           <p class="friend-name">{{ friend.name }} {{ friend.last_name }}</p>
         </div>
       </router-link>
-      <button class="friend-button" @click="unfollowFriend(friend.id)">Unfollow</button>
+      <button class="friend-button" @click="unfollowFriend(friend)">Unfollow</button>
     </div>
   </section>
 </template>
