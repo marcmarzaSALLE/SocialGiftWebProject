@@ -141,7 +141,24 @@ export default {
     },
 
     onEditList(wishlist) {
-      this.selectedWishlist = wishlist;
+      this.selectedWishlist = wishlist
+      this.getGiftsInfo();
+    },
+
+    getGiftsInfo() {
+      this.selectedWishlist.gifts.forEach(gift => {
+        fetch(gift.product_url)
+          .then(response => response.json())
+          .then(data => {
+            gift.name = data.name;
+            gift.description = data.description;
+            gift.image = data.photo;
+            gift.price = data.price;
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      });
     },
 
     setShowListEdit(value) {

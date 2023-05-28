@@ -11,34 +11,50 @@ export default {
     FriendLists,
     FriendListView,
   },
-  created() {
-    const friendId = this.$route.params.id;
-    console.log("friendId: " + friendId);
-    this.getFriendInfo(friendId);
-  },
   data() {
     return {
-      friend: {},
+      friendId:"",
+      selectedWishlist: {},
+      showList: false,
     };
   },
+  created() {
+    if (localStorage.getItem("token")) {
+      this.friendId = this.$route.params.id;
+      console.log("friendId: " +  this.friendId);
+    } else {
+      router.push({ name: "Login" });
+    }
+  },
   methods: {
-    getFriendInfo(id) {
-      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + id, {
-        headers: {
-          "accept": "application/json",
-          "Authorization": 'Bearer ' + localStorage.getItem("token"),
-          "Content-Type": 'application/json'
-        }
-
-      })
-        .then((data) => data.json())
-        .then((json) => {
-          this.friend = json;
-        })
-        .catch((error) => {
-          console.log("error: " + error);
-        });
+    onSeeList(wishlist) {
+      this.selectedWishlist = wishlist;
+      this.getGiftsInfo();
     },
+
+    setShowList(value) {
+      this.showList = value;
+    },
+
+    getGiftsInfo() {
+      this.selectedWishlist.gifts.forEach(gift => {
+        fetch(gift.product_url)
+          .then(response => response.json())
+          .then(data => {
+            gift.name = data.name;
+            gift.description = data.description;
+            gift.link = data.link;
+            gift.image = data.photo;
+            gift.price = data.price;
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      });
+    },
+
+
+
   },
 }
 </script>
@@ -46,7 +62,7 @@ export default {
 <template>
   <!--Componente del amigo-->
   <section class="section-friend">
-    <FriendInfo :friend="friend"/>
+    <FriendInfo :friendId="friendId"/>
   </section>
 
   <!--Componente de listas y regalos-->
@@ -56,13 +72,15 @@ export default {
       <h2>Lists</h2>
       <div class="line2"></div>
       <section class="lists-section">
-        <FriendLists :friend="friend"/>
+        <FriendLists :friendId="friendId" @see-list="onSeeList" @show-list="setShowList"/>
       </section>
       <div class="line2"></div>
     </div>
 
-    <!--Componente de lista en vista-->
-    <FriendListView/>
+    <section class="list-view-friend">
+      <!--Componente de lista en vista-->
+      <FriendListView :wishlist="selectedWishlist" :showList="showList"/>
+    </section>
   </section>
 </template>
 

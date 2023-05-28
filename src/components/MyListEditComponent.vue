@@ -26,7 +26,7 @@ export default {
 
   created() {
     if (localStorage.getItem("token")) {
-      this.getWishlistInfo();
+      this.getWishlistInfo()
     } else {
       router.push({ name: "Login" });
     }
@@ -50,6 +50,8 @@ export default {
           this.wishlist.description = json.description;
           this.wishlist.end_date = json.end_date;
           this.wishlist.gifts = json.gifts;
+
+          this.$emit("gift-change");
         })
         .catch(error => {
           console.log("error: " + error);

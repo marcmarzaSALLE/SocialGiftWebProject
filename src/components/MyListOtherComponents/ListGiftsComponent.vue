@@ -15,12 +15,13 @@ export default {
       wishlists: {
           type: Array,
           required: true
-      }
+      },
   },
   created() {
       if (localStorage.getItem("token")) {
+
       } else {
-          router.push({ name: "Login" });
+        router.push({ name: "Login" });
       }
   },
   data() {
@@ -47,6 +48,7 @@ export default {
             if (index !== -1) {
               this.gifts.splice(index, 1);
             }
+            this.$emit("gift-change");
             alert("Gift deleted successfully");
           } else {
             throw new Error("Failed to delete gift");
@@ -116,7 +118,7 @@ export default {
     <!--Sección de datos-->
     <div class="gift-info-div">
       <div class="gift-img-div">
-        <img class="gift-img" src="public/Icons/imageProduct.png">
+        <img class="gift-img" :src="gift.image ? gift.image : 'public/Icons/imageProduct.png'">
       </div>
 
       <div class="gift-data-div">
@@ -125,6 +127,9 @@ export default {
           <span>Product url: <a :href="gift.product_url" target="_blank">click here</a></span>
           <span>Priority: {{gift.priority}}</span>
           <span>Booked: {{gift.booked}}</span>
+          <span v-if="gift.name">Name: {{gift.name}}</span>
+          <span v-if="gift.description">Description: {{gift.description}}</span>
+          <span v-if="gift.price">Price: {{gift.price}}</span>
         </div>
       </div>
     </div>

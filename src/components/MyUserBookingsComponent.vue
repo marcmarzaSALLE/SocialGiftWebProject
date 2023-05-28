@@ -80,7 +80,29 @@ export default {
       },
       imageError(photo){
         photo = this.defaultImage;
-      }
+      },
+
+    unbookGift(giftId) {
+      fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/"+ giftId +"/book", {
+        method: "DELETE",
+        headers: {
+          "accept": "application/json",
+          "Authorization": 'Bearer ' + localStorage.getItem("token"),
+          "Content-Type": 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          alert("Gift unbooked successfully")
+          this.getBookedGifts()
+        } else {
+          alert("Error unbooking gift")
+        }
+      })
+      .catch(error => {
+        console.log("error: " + error)
+      })
+    }
     }
   }
 </script>
@@ -100,7 +122,7 @@ export default {
         <p>WishList ID: {{ booking.wishlist_id }}</p>
         <p>Friend: {{booking.userGift.name + " " + booking.userGift.last_name}}</p>
       </div>
-      <button class="unbook-button">Unbook</button>
+      <button class="unbook-button" @click="unbookGift(booking.id)">Unbook</button>
     </div>
   </section>
 </template>

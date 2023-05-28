@@ -4,7 +4,7 @@ import router from "@/router";
 export default {
   name: "FriendLists",
   props: {
-    friend: {
+    friendId: {
       type: Object,
       required: true
     }
@@ -12,15 +12,15 @@ export default {
   data() {
     return {
       wishlists: [],
+      selectedListId: null
     };
   },
   created() {
     this.getFriendLists();
   },
-
   methods: {
     getFriendLists() {
-      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + this.friend.id + '/wishlists', {
+      fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/' + this.friendId + '/wishlists', {
         headers: {
           "accept": "application/json",
           "Authorization": 'Bearer ' + localStorage.getItem("token"),
@@ -35,6 +35,11 @@ export default {
         .catch(error => {
           console.log("error: " + error)
         })
+    },
+    seeList(wishlist) {
+      this.$emit('see-list', wishlist)
+      this.$emit('show-list', true);
+      this.selectedListId = wishlist.id
     }
   }
 }
@@ -48,7 +53,7 @@ export default {
     </div>
 
     <!--Lista -->
-    <div v-for="wishlist in wishlists" :key="wishlist.id" class="list-friend-div">
+    <div v-for="wishlist in wishlists" :key="wishlist.id" @click="seeList(wishlist)" :class="['list-friend-div', { 'selected-list': wishlist.id === this.selectedListId }]">
       <p>{{wishlist.name}}</p>
       <div class="description-list-friend-div"><p>{{wishlist.description}}</p></div>
       <div class="dates-friend-list">

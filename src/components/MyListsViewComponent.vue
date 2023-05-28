@@ -23,8 +23,6 @@ export default {
     editList(wishlist) {
       this.$emit('edit-list', wishlist);
       this.$emit('show-list', true);
-
-      // Setear el atributo 'selected' en 'true' para la lista seleccionada
       this.selectedListId = wishlist.id;
     },
 

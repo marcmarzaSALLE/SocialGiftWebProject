@@ -101,7 +101,7 @@ export default {
       // Crear el objeto gift
       const gift = {
         wishlist_id: this.wishlist.id,
-        product_url: product.link,
+        product_url: "https://balandrau.salle.url.edu/i3/mercadoexpress/api/v1/products/" + product.id,
         priority: giftPriority
       };
 
