@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       friends: [],
+      showResults: false,
     }
   },
   created() {
@@ -67,30 +68,42 @@ export default {
               console.log("data: " + "AMIGO ELIMINADO")
           }
       })
-    }
+    },
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen; // Invertir el estado del menú al hacer clic en el checkbox
+      this.showResults = !this.showResults;
+    },
+
+    truncateText(text, maxLength) {
+      if (text.length <= maxLength) {
+        return text;
+      } else {
+        return text.substring(0, maxLength) + '...';
+      }
+    },
   }
 }
 </script>
 <template>
-  <div className="notifications">
-    <input type="checkbox" id="notifications" className="notifications-input">
-    <label htmlFor="notifications" className="notifications-label"><img className="notifications-icon"
-                                                                        src="public/Icons/notificationIcon.png"></label>
+  <div class="notifications">
+    <input type="checkbox" id="notifications" class="notifications-input" @click="toggleMenu">
+    <label for="notifications" class="notifications-label"><img class="notifications-icon" src="public/Icons/notificationIcon.png"></label>
 
-    <nav className="notifications-items-list">
-      <h2 className="notifications-title">Notifications</h2>
+    <nav class="notifications-items-list" :class="{ 'hide-results-notifications': !showResults, 'show-results-menu-notifications': showResults}">
+      <h2 class="notifications-title">Notifications</h2>
 
       <div class="notification-message-section-div" v-if="friends.length === 0">
-        <p>Hey! No friend requests yet</p>
+        <p>Hey! No friends requests yet</p>
       </div>
       <!--Notificacion -->
-      <div className="notification-banner" v-if="friends.length!==0" v-for="friends in friends" :key="friends.id">
-        <p>{{ friends.name + " " + friends.last_name }}</p>
+      <div class="notification-banner" v-if="friends.length!==0" v-for="friends in friends" :key="friends.id">
+        <p class="friend-banner-name">{{truncateText(friend.name+" "+friend.last_name,20)}}</p>
         <div class="notification-banner-buttons">
           <button class="notification-banner-button-accept" @click="acceptRequest(friends.id)">Accept</button>
           <button class="notification-banner-button-decline" @click="declineRequest(friends.id)">Decline</button>
         </div>
       </div>
+
     </nav>
   </div>
 </template>

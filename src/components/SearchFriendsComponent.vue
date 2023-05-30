@@ -43,7 +43,7 @@ export default {
     searchFriends() {
       if (this.searchQuery === '') {
         this.searchResults = []; // Vaciar los resultados si la búsqueda está vacía
-        this.showResults = false;
+        this.showResults = !this.showResults;
         return;
       }
 
@@ -74,7 +74,10 @@ export default {
 
     viewFriend(friendId) {
       if (this.isFriend(friendId)) {
-        router.push({ name: "friend", params: { id: friendId } });
+        //Recargar la página con el perfil del amigo
+        window.location.href = `/friend/${friendId}`;
+        this.showResults = false;
+        this.searchQuery = '';
       } else {
         alert("To see his profile you have to be his friend");
         router.push({ name: "MyUser" }); // Reemplaza "Home" con la ruta correcta de tu página principal
@@ -149,7 +152,7 @@ export default {
 
 
   <!-- Resultados de búsqueda -->
-  <div class="search-results-div" :class="{ 'show-results': showResults }" v-if="showResults">
+  <div class="search-results-div" :class="{ 'show-results-search': showResults, 'hidde-results-search': !showResults }">
     <h3>Friend search results</h3>
 
     <nav class="friends-search-results">

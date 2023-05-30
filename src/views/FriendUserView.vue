@@ -21,7 +21,7 @@ export default {
   created() {
     if (localStorage.getItem("token")) {
       this.friendId = this.$route.params.id;
-      console.log("friendId: " +  this.friendId);
+      console.log("fffffffffriendId: " +  this.friendId);
     } else {
       router.push({ name: "Login" });
     }
