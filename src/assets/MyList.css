@@ -1,0 +1,867 @@
+.user-lists-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 160px;
+    margin-bottom: 2%;
+    font-family: Inter, sans-serif;
+    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.4);
+}
+
+/***************************************************/
+/* Componente listas */
+/***************************************************/
+.my-lists-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px 0px 10px 10px;
+    height: 100%;
+}
+
+.line2 {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background-color: var(--greensg);
+}
+
+.user-list-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
+    padding: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.user-list-section-inside {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.list-user-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--bluesg);
+    border: 2px solid var(--bluesg);
+    width: 95%;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 1%;
+    color: #ffffff;
+}
+
+.list-user-div:hover {
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+}
+
+.selected-user-list {
+    background: rgb(244, 244, 244);
+    color: black;
+    border: 2px solid var(--fluorsg);
+}
+
+.description-list-user-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 97%;
+    height: 63px;
+    overflow-y: auto;
+    background: #ffffff;
+    color: black;
+    border: 2px solid var(--fluorsg);
+    padding: 1%;
+    border-radius: 20px;
+}
+
+.dates-user-list {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    font-size: 12px;
+}
+
+.editList-button-user {
+    border-radius: 100px;
+    background-color: #ffffff;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 2%;
+    color: #000000;
+    font-size: 12px;
+}
+
+.editList-button-user:hover {
+    background-color: var(--greensg);
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+}
+
+.create-list-button {
+    border-radius: 100px;
+    background-color: #ffffff;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 1.5%;
+    margin-top: 2%;
+}
+
+.create-list-button:hover {
+    background-color: var(--greensg);
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+    color: #000000;
+}
+
+/***************************************************/
+/* Componente lista en vista */
+/***************************************************/
+.list-view {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    width: 70%;
+    margin: 10px 10px 10px 40px;
+}
+
+.list-view-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+    margin-bottom: 1%;
+}
+
+.name-list-input {
+    height: 10px;
+    border-radius: 100px;
+    padding: 2%;
+    border: 2px solid #e8e8e8;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.description-list-input {
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #e8e8e8;;
+    padding: 2%;
+    overflow-y: auto;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.gifts-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--bluesg);
+    color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.gifts-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    color: #ffffff;
+}
+
+.add-gift-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Boton añadir regalo */
+.add-gift-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 20px;
+    border-radius: 100px;
+    color: #000000;
+    background: #ffffff;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    text-align: center;
+}
+
+.add-gift-button:hover {
+    background-color: var(--greensg);
+    border: 2px solid var(--fluorsg);
+    color: #000000;
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+}
+
+/* Componente pantalla overlay de regalos */
+.gifts-products-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 200ms;
+}
+.gifts-products-div:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.gift-products-main-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--bluesg);
+    border-radius: 20px;
+    color: #ffffff;
+    width: 70%;
+    height: 430px;
+    position: relative;
+}
+
+.gift-products-main-div .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fafafa;
+}
+.gift-products-main-div .close-button:hover {
+    color: var(--fluorsg);
+}
+
+/* Componente elemento buscador */
+.search-gift-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border: var(--fluorsg) 1px solid;
+}
+
+.categories-button {
+    height: 40px;
+    border-radius: 100px;
+    background: var(--bluesg);
+    border: 1px solid var(--fluorsg);
+    color: #ffffff;
+    z-index: 2;
+}
+
+.categories-button:hover {
+    background-color: var(--bluesg);
+    border: 1px solid var(--greensg);
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-categories-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-categories-div:hover .dropdown-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    top: 50px;
+    margin-left: 62px;
+    border-radius: 0 20px 20px 20px;
+    background-color: var(--greensg);
+    border: 1px solid var(--fluorsg);
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.category-name {
+    text-decoration: none;
+    color: white;
+    margin-top: 15px;
+    margin-left: 10px;
+    padding: 2%;
+}
+
+.category-name:hover {
+    background: #ffffff;
+    color: #000;
+    border-radius: 100px;
+    padding: 2%;
+}
+
+.search-gift-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border-radius: 100px;
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+.search-button-gift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    border: var(--fluorsg) 1px solid;
+    background: var(--bluesg);
+    width: 50px;
+    height: 100%;
+}
+
+.search-button-gift:hover {
+    border: var(--fluorsg) 1px solid;
+    background: var(--greensg);
+}
+
+.search-icon-gift {
+    width: 16px;
+    height: 16px;
+}
+
+.products-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    height: 65%;
+    border-radius: 20px;
+    padding: 1%;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ff8b' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    box-shadow: inset 0px 10px 18px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--fluorsg);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.product-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 95%;
+    background: #ffffff;
+    border: 1px solid var(--fluorsg);
+    color: black;
+    border-radius: 20px;
+    padding: 2%;
+    margin: 5px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.product-data-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+}
+
+.add-product-button {
+    background: #ffffff;
+    border-radius: 100px;
+    border: var(--fluorsg) solid 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+}
+
+.add-product-button:hover {
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+    background-color: var(--greensg);
+    color: #ffffff;
+}
+
+/* Componente regalos en vista */
+.gifts-list-view-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+
+    width: 100%;
+    height: 260px;
+
+
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+
+    border: 2px solid var(--fluorsg);
+    overflow-x: auto;
+}
+
+.message-gifts {
+    margin: 2%;
+    color: #878787;
+}
+
+.gift-post-div {
+    margin: 1%;
+}
+
+.gift-img {
+    display: flex;
+    width: 250px;
+    height: 200px;
+    border: rgba(0, 0, 0, 0.15) solid 2px;
+    border-radius: 20px;
+}
+
+.gift-data-div {
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+    border: var(--fluorsg) solid 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ff8b' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: #000000;
+    font-size: 15px;
+}
+
+.gift-info-text {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.gift-post-div:hover .gift-data-div {
+    display: flex;
+}
+
+.gift-post-div:hover .gift-img {
+    display: none;
+}
+
+/* Gift post buttons */
+.gift-buttons-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.move-gift-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.move-gift-button:hover {
+    background: #a0a0a0;
+}
+
+.move-gift-icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* Elemento pantalla overlay de mover regalo */
+.move-gift-background-div {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.move-gift-background-div:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.move-gift-main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--bluesg);
+    border-radius: 20px;
+    color: #ffffff;
+    width: 500px;
+    height: 150px;
+    padding: 1%;
+    position: relative;
+}
+
+.move-gift-main-div .close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.move-gift-main-div .close-button:hover {
+    color: var(--fluorsg);
+}
+
+.move-gift-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 100px;
+    border: var(--fluorsg) solid 1px;
+}
+
+/* Elemento dropdown mover regalo */
+.dropdown-list-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background: var(--bluesg);
+    border: var(--fluorsg) solid 1px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.dropdown-list {
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    width: 220px;
+    height: 100%;
+    top: 132px;
+    margin-left: 142px;
+    padding: 10px;
+    border-radius: 0 20px 20px 20px;
+    background-color: var(--greensg);
+    border: var(--fluorsg) solid 1px;
+    color: #ffffff;
+    z-index: 1;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.dropdown-lists-names {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 15px;
+    padding: 2%;
+}
+
+.dropdown-lists-names:hover {
+    background: #ffffff;
+    color: #000;
+    border-radius: 20px;
+    padding: 2%;
+}
+
+.dropdown-list-div:hover .dropdown-list {
+    display: flex;
+}
+
+.list-moved-input {
+    width: 100%;
+    height: 90%;
+    border-radius: 100px;
+    padding-left: 2%;
+    background: none;
+    border: none;
+}
+
+.move-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 100px;
+    background: #ffffff;
+    border: var(--fluorsg) solid 2px;
+}
+
+.move-button:hover {
+    background-color: var(--greensg);
+    box-shadow: 0px 0px 10px 0px var(--fluorsg);
+    color: #ffffff;
+}
+
+/* Boton eliminar regalo */
+.remove-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+}
+
+.remove-button:hover {
+    background: #a0a0a0;
+}
+
+.remove-gift-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.list-buttons-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save-delete-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.save-list-button {
+    border-radius: 100px;
+    background: #ffffff;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.save-list-button:hover {
+    background-color: var(--greensg);
+    color: #ffffff;
+}
+
+.delete-list-button {
+    border-radius: 100px;
+    background: #ffffff;
+    border: 2px solid #8e8e8e;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+}
+
+.delete-list-button:hover {
+    background: #8e8e8e;
+    color: #ffffff;
+}
+
+.date-end-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-calendar {
+    color: var(--greensg);
+    font-size: 15px;
+}
+
+.end-date-list-input {
+    border-radius: 20px;
+    border: var(--greensg) solid 2px;
+}
+
+
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+@media screen and (max-width: 825px) {
+    .user-lists-section {
+        flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 80px;
+        box-shadow: none;
+    }
+
+    /***************************************************/
+    /* Componente listas */
+    /***************************************************/
+    .my-lists-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px;
+    }
+
+    .user-list-section {
+        width: 95%;
+    }
+
+    .user-list-section-inside {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto;
+    }
+
+    .list-user-div {
+        justify-content: center;
+
+        padding: 5px;
+        border-radius: 20px;
+        margin: 1%;
+        color: #ffffff;
+    }
+
+    .name-list-user-div {
+        height: 30px;
+    }
+
+    .description-list-user-div {
+        width: 230px;
+    }
+
+    /***************************************************/
+    /* Componente lista en vista */
+    /***************************************************/
+    .list-view {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 97%;
+        margin: 0;
+    }
+
+    .list-view-info {
+        align-items: center;
+        width: 97%;
+        flex-direction: column;
+        margin-bottom: 0.5%;
+    }
+
+    .name-list-input {
+        width: 97%;
+        height: 30px;
+        margin-bottom: 1%;
+    }
+
+    .description-list-input {
+        width: 97%;
+        height: 50px;
+        margin-bottom: 3%;
+    }
+
+    .gifts-section {
+        width: 97%;
+    }
+
+    /* Elemento pantalla overlay de regalos */
+    .gift-products-main-div {
+        width: 90%;
+        height: 60%;
+        position: relative;
+    }
+
+    .search-bar-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 20%;
+    }
+
+    /* Elemento buscador */
+    .search-box-gift-input {
+        width: 80%;
+        height: 40px;
+    }
+
+    .dropdown-categories-div:hover .dropdown-content {
+        height: 40%;
+        top: 47px;
+        overflow-y: auto;
+    }
+
+    .product-div {
+        font-size: 10px;
+        margin: 2px;
+    }
+
+    .add-product-button {
+        font-size: 10px;
+    }
+
+    /* Componente pantalla overlay de mover regalo */
+    .move-gift-main-div {
+        width: 80%;
+    }
+
+    .move-gift-bar {
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Elemento botones lista */
+    .list-buttons-div {
+        width: 97%;
+        height: 50px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
+}
+
+

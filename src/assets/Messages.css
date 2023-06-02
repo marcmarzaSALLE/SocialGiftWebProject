@@ -1,0 +1,323 @@
+/* Varriable de colores */
+:root {
+    --bluesg: #051928;
+    --whitesg: #ffffff;
+    --greensg: #5CBB81;
+    --fluorsg: #00ff8b;
+}
+
+.message-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    margin-bottom: 60px;
+    font-family: Inter, sans-serif;
+}
+
+.contacts-sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding: 1%;
+    background:  var(--bluesg);
+}
+
+.search-contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    background: #ffffff;
+    border: var(--fluorsg) solid 1px;
+    border-radius: 100px;
+}
+
+.search-contact-input {
+    width: 100%;
+    height: 100%;
+    padding-left: 1%;
+    background: none;
+    border: none;
+    border-radius: 100px;
+    color: #000000;
+}
+
+.search-contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    border-radius: 100px;
+    border: none;
+    background: none;
+}
+
+.search-contact-icon {
+    width: 15px;
+    height: 15px;
+}
+
+/***************************************************/
+/* Componente de la sección de contactos */
+/***************************************************/
+.contacts-view-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ff8b' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-color: white;
+    border-radius: 20px;
+    padding: 1%;
+    margin-top: 10px;
+    box-shadow: inset 0px 5px 18px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.message-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 95%;
+    height: 65px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: rgba(92, 187, 129, 0) solid 2px;
+    padding: 1%;
+    background: #ffffff;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 10px;
+}
+
+.selected-contact {
+    background-color: var(--bluesg);
+    color: var(--whitesg);
+}
+
+.contact-div:hover {
+    border: var(--fluorsg) solid 2px;
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+}
+
+.contact-img {
+    width: 60px;
+    height: 60px;
+    border: var(--fluorsg) solid 2px;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.contact-name-message {
+    width: 190px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.send-contact-icon {
+    width: 13px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+/***************************************************/
+/* Componentes de la sección de chat */
+/***************************************************/
+.chat-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 800px;
+    height: 600px;
+    padding: 1%;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-right: 10px;
+    background: #ffffff;
+    border: var(--fluorsg) solid 1px;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+}
+
+.chat-contact-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-family: Inter, sans-serif;
+    background: #f4f4f4;
+    color: #000000;
+}
+
+.contact-name-h {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.chating-section {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    color: #000000;
+    padding-bottom: 1%;
+    box-shadow: inset 0px 1px 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.user-messages-div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+
+.friend-messages-div {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2%;
+}
+
+.message-content-user {
+    background: var(--greensg);
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.message-content-friend {
+    background: #e3e3e3;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+.time-stamp {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.send-message-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background: #ececec;
+    border: none;
+}
+
+.send-message-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    background: none;
+    border-radius: 20px;
+    border: rgba(255, 255, 255, 0) solid 2px;
+}
+.send-message-button:hover {
+    background: var(--greensg);
+    border: var(--fluorsg) solid 2px;
+}
+
+.send-message-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.send-message-input {
+    width: 100%;
+    background: none;
+    padding-left: 1%;
+    overflow-y: auto;
+    border-radius: 20px;
+    color: #000000;
+    font-size: 15px;
+    border: none;
+}
+
+
+
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+@media screen and (max-width: 825px) {
+    .message-section {
+        flex-direction: column;
+        margin-top: 60px;
+        margin-bottom: 60px;
+
+    }
+
+    .contacts-sections {
+        width: 97%;
+        height: 90%;
+        margin-left: 0px;
+    }
+
+    .search-contact-form {
+        width: 100%;
+        height: 30px;
+    }
+
+    .search-contact-input {
+        width: 90%;
+        height: 100%;
+    }
+
+    /***************************************************/
+    /* Componente de la sección de contactos */
+    /***************************************************/
+    .contacts-view-section {
+        flex-direction: row;
+
+        margin-top: 10px;
+        width: 97%;
+    }
+
+    .contact-div {
+        width: 250px;
+        margin-top: 0px;
+        margin-left: 1%;
+    }
+
+    .contact-img {
+        margin-right: 10px;
+    }
+
+    /***************************************************/
+    /* Componentes de la sección de chat */
+    /***************************************************/
+    .chat-section {
+        width: 97%;
+        height: 500px;
+        margin: 10px 0px 30px;
+    }
+}
+
+

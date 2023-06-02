@@ -1,0 +1,433 @@
+/* Varriable de colores */
+:root {
+    --bluesg: #051928;
+    --whitesg: #ffffff;
+    --greensg: #49A25D;
+    --fluorsg: #00ff8b;
+}
+
+/***************************************************/
+/* Componente elementos perfil usuario */
+/***************************************************/
+.section-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bbbbbb' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.user-info-container {
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bluesg);
+    border: var(--fluorsg) solid 2px;
+    border-radius: 20px;
+    padding: 1%;
+    box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
+    font-family: Inter, sans-serif;
+    color: #ffffff;
+}
+
+.user-img {
+    width: 150px;
+    height: 150px;
+    background: white;
+    border-radius: 100px;
+    border: 2px solid var(--fluorsg);
+}
+
+.user-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+    margin-left: 5%;
+    border-radius: 15px;
+}
+
+.user-username-mobile {
+    display: none;
+}
+
+.edit-profile-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.edit-profile-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 80px;
+    height: 15px;
+    padding: 1%;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--fluorsg);
+    font-size: 15px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.edit-profile-button:hover{
+    background-color: var(--greensg);
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+    color: #000000;
+}
+
+/***************************************************/
+/* Componente elementos del usuario */
+/***************************************************/
+.section-user-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 6px 24px 0px rgb(47, 47, 47);
+    font-family: Inter, sans-serif;
+    font-weight: normal;
+    background: #ffffff;
+}
+
+.elements-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.line1 {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background-color: var(--greensg);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.section-template {
+    border-radius: 20px;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 3%;
+}
+
+.section-template-inside {
+    width: 380px;
+    height: 450px;
+    overflow-y: auto;
+}
+
+.message-section-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    color: #5d5d5d;
+}
+
+/***************************************************/
+/* Componente de la sección de amigos */
+/***************************************************/
+.friend-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bluesg);
+    border-radius: 20px;
+    margin: 2%;
+}
+
+.friend-div:hover {
+    box-shadow: 0px 2px 13px var(--fluorsg);
+}
+
+.friend-route-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 70px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.friend-img {
+    width: 65px;
+    height: 65px;
+    border: 2px solid var(--fluorsg);
+    border-radius: 100px;
+    margin-right: 2%;
+}
+
+.friend-text {
+    width: 80%;
+    font-size: 13px;
+    margin-left: 5px;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.friend-button {
+    width: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100px;
+    background-color: #f2f2f2;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    padding: 1.5%;
+}
+
+.friend-button:hover {
+    background-color: #5CBB81;
+    box-shadow: 0px 6px 24px 0px rgb(92, 187, 129);
+}
+
+/***************************************************/
+/* Componentes de la sección de reservas */
+/***************************************************/
+.booking-div {
+    display: flex;
+    align-items: center;
+    background: var(--bluesg);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 2%;
+}
+
+.booking-div:hover {
+    box-shadow: 0px 2px 13px 0px var(--fluorsg);
+}
+
+.booking-img {
+    width: 130px;
+    height: 120px;
+    border-radius: 15px;
+    border: 2px solid var(--fluorsg);
+    margin-right: 5px;
+}
+
+.booking-text {
+    width: 100%;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.unbook-button {
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: 2px solid var(--fluorsg);
+    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    margin-left: 5px;
+    padding: 1.5%;
+}
+
+.unbook-button:hover {
+    background-color: var(--greensg);
+    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
+}
+
+/***************************************************/
+/* Componentes de la sección de listas */
+/***************************************************/
+.list-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--bluesg);
+    padding: 5px;
+    border-radius: 20px;
+    margin: 2%;
+    color: #ffffff;
+}
+
+.list-div:hover {
+    box-shadow: 0px 2px 13px 0px var(--greensg);
+}
+
+.description-list-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 95%;
+    height: 63px;
+    border: var(--fluorsg) solid 2px;
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 1%;
+    border-radius: 20px;
+    color: #000000;
+}
+
+.dates-list {
+    display: flex;
+    justify-content: space-around;
+    width: 95%;
+    font-size: 12px;
+}
+
+/***********************************************/
+/*************Version mobile********************/
+/***********************************************/
+@media screen and (max-width: 830px) {
+    .section-user {
+        padding-bottom: 20px;
+    }
+
+    .user-info-container {
+        width: 90%;
+        margin-top: 60px;
+        padding: 10px;
+    }
+
+    .user-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .user-data {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 70px;
+        margin-left: 2%;
+    }
+
+    .user-username {
+        width: 80%;
+        font-size: 20px;
+    }
+
+    .user-email {
+        display: none;
+    }
+
+    .edit-profile-nav {
+        width: 70px;
+    }
+
+    .edit-profile-button {
+        width: 60px;
+        height: 15px;
+        font-size: 12px;
+    }
+
+    /***************************************************/
+    /* Componente elementos del usuario */
+    /***************************************************/
+    .section-user-items {
+        flex-direction: column;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 80px;
+        box-shadow: none;
+        border-top: 2px solid var(--bluesg);
+    }
+
+    .elements-template {
+        margin-bottom: 0px;
+        width: 95%;
+    }
+
+    .section-template {
+        display: flex;
+        justify-content: center;
+
+        width: 95%;
+        border-radius: 20px;
+        box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
+        padding: 1%;
+    }
+
+    .section-template-inside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: unset;
+        border-radius: 20px;
+    }
+
+    /***************************************************/
+    /* Componente de la sección de amigos */
+    /***************************************************/
+    .friend-div {
+        display: flex;
+
+        background: var(--bluesg);
+        border-radius: 20px;
+        margin: 1%;
+    }
+
+    .friend-text{
+        width: 160px;
+    }
+
+    /***************************************************/
+    /* Componentes de la sección de reservas */
+    /***************************************************/
+    .booking-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1%;
+    }
+
+    .booking-img {
+        display: none;
+    }
+
+    .booking-text {
+        width: 200px;
+        height: 130px;
+        font-size: 12px;
+        color: #ffffff;
+    }
+
+    .unbook-button {
+        margin-left: 0px;
+    }
+
+    /***************************************************/
+    /* Componentes de la sección de listas */
+    /***************************************************/
+    .list-div {
+        height: 150px;
+        margin: 1%;
+        font-size: 12px;
+    }
+
+    .name-list-p {
+        overflow-x: auto;
+    }
+
+    .description-list-div {
+        width: 200px;
+        padding: 0%;
+    }
+
+    .dates-list {
+        font-size: 10px;
+    }
+}
+
