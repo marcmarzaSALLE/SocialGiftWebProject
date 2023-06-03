@@ -1,11 +1,3 @@
-/* Varriable de colores */
-:root {
-    --bluesg: #051928;
-    --whitesg: #ffffff;
-    --greensg: #49A25D;
-    --fluorsg: #00ff8b;
-}
-
 /***************************************************/
 /* Componente elementos perfil usuario */
 /***************************************************/
@@ -43,14 +35,22 @@
 .user-data {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
     width: 600px;
+    height: 150px;
     margin-left: 5%;
-    border-radius: 15px;
 }
 
-.user-username-mobile {
-    display: none;
+.user-username {
+    width: 100%;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.user-email {
+    width: 100%;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .edit-profile-nav {
@@ -115,7 +115,6 @@
 .section-template {
     border-radius: 20px;
     box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5);
-    padding: 3%;
 }
 
 .section-template-inside {
@@ -315,10 +314,11 @@
     .user-username {
         width: 80%;
         font-size: 20px;
+        margin-top: 0px;
     }
 
     .user-email {
-        display: none;
+       display: none;
     }
 
     .edit-profile-nav {

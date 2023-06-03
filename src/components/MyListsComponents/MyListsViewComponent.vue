@@ -38,11 +38,11 @@ export default {
 </script>
 
 <template>
-  <div class="message-section-div" v-if="wishlists.length === 0">
-    <p>Hey! You haven't created any list yet</p>
-  </div>
-
   <section class="user-list-section-inside">
+    <div class="message-section-div" v-if="wishlists.length === 0">
+      <p>Hey! You haven't created any list yet</p>
+    </div>
+
     <div v-for="wishlist in wishlists" :key="wishlist.id" :class="['list-user-div', { 'selected-user-list': wishlist.id === this.selectedListId }]">
       <p class="name-list-user-div">{{truncateText(wishlist.name, 40)}}</p>
 

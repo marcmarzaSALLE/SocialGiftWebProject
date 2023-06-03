@@ -1,9 +1,9 @@
 <script>
-import FriendInfo from "../components/FriendInfoComponent.vue";
-import FriendLists from "../components/FriendListsComponent.vue";
-import FriendListView from "../components/FriendListViewComponent.vue";
-
 import router from "@/router";
+import FriendInfo from "../components/FriendComponents/FriendInfoComponent.vue";
+import FriendLists from "../components/FriendComponents/FriendListsComponent.vue";
+import FriendListView from "../components/FriendComponents/FriendListViewComponent.vue";
+
 export default {
   name: "FriendUser",
   components: {
@@ -21,7 +21,6 @@ export default {
   created() {
     if (localStorage.getItem("token")) {
       this.friendId = this.$route.params.id;
-      console.log("fffffffffriendId: " +  this.friendId);
     } else {
       router.push({ name: "Login" });
     }
@@ -52,9 +51,6 @@ export default {
           });
       });
     },
-
-
-
   },
 }
 </script>
@@ -69,12 +65,12 @@ export default {
   <section class="section-friend-items">
     <!--Componente listas-->
     <div class="friend-lists-div">
-      <h2>Lists</h2>
-      <div class="line2"></div>
+      <h2>Wishlists</h2>
+      <div class="line3"></div>
       <section class="lists-section">
         <FriendLists :friendId="friendId" @see-list="onSeeList" @show-list="setShowList"/>
       </section>
-      <div class="line2"></div>
+      <div class="line3"></div>
     </div>
 
     <section class="list-view-friend">
@@ -84,6 +80,3 @@ export default {
   </section>
 </template>
 
-<style scoped>
-
-</style>

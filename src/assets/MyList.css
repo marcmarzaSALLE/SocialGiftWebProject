@@ -1,12 +1,11 @@
 .user-lists-section {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-direction: row;
     margin-top: 160px;
-    margin-bottom: 2%;
+    margin-bottom: 50px;
     font-family: Inter, sans-serif;
-    box-shadow: 0px 6px 30px 0px rgba(0, 0, 0, 0.4);
 }
 
 /***************************************************/
@@ -17,15 +16,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 10px 0px 10px 10px;
-    height: 100%;
+    margin: 10px 0px 10px 20px;
 }
 
 .line2 {
     width: 100%;
+    background-color: var(--greensg);
     height: 3px;
     border-radius: 100px;
-    background-color: var(--greensg);
 }
 
 .user-list-section {
@@ -39,10 +37,16 @@
     margin-bottom: 10px;
 }
 
+.message-section-div {
+    margin: 10px;
+}
+
 .user-list-section-inside {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
+    width: 380px;
     height: 500px;
     overflow-y: auto;
     border-radius: 20px;
@@ -131,7 +135,7 @@
     align-items: stretch;
     flex-direction: column;
     width: 70%;
-    margin: 10px 10px 10px 40px;
+    margin: 10px 20px 10px 40px;
 }
 
 .list-view-info {
@@ -420,18 +424,26 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-
     width: 100%;
     height: 260px;
-
-
-    box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 10px 18px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
     background: rgb(255, 255, 255);
-
     border: 2px solid var(--fluorsg);
     overflow-x: auto;
 }
+
+.gifts-list-section-inside {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 260px;
+    overflow-x: auto;
+    margin: 5px;
+}
+
 
 .message-gifts {
     margin: 2%;
@@ -728,8 +740,9 @@
 /***********************************************/
 @media screen and (max-width: 825px) {
     .user-lists-section {
+        align-items: center;
         flex-direction: column;
-        margin-top: 30px;
+        margin-top: 40px;
         margin-bottom: 80px;
         box-shadow: none;
     }
@@ -738,50 +751,53 @@
     /* Componente listas */
     /***************************************************/
     .my-lists-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
         width: 100%;
-        margin: 10px;
+        margin: 0px;
     }
 
     .user-list-section {
         width: 95%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding: 0;
+        border: #5CBB81 solid 1px;
     }
 
     .user-list-section-inside {
         flex-direction: row;
         width: 100%;
-        height: 100%;
+        height: 220px;
         overflow-x: auto;
     }
 
     .list-user-div {
         justify-content: center;
-
-        padding: 5px;
+        width: 300px;
+        height: 200px;
+        padding: 2px;
         border-radius: 20px;
         margin: 1%;
-        color: #ffffff;
     }
 
     .name-list-user-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
         height: 30px;
     }
 
     .description-list-user-div {
-        width: 230px;
+        width: 97%;
     }
 
     /***************************************************/
     /* Componente lista en vista */
     /***************************************************/
     .list-view {
-        justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 97%;
+        width: 100%;
         margin: 0;
     }
 

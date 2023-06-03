@@ -1,7 +1,7 @@
 <script>
 import router from "@/router";
-import EditPasswordInfo from "../components/EditPasswordInfoComponent.vue";
-import EditPasswordFields from "../components/EditPasswordFieldsComponent.vue";
+import EditPasswordInfo from "../components/EditUser&PasswordComponents/EditPasswordInfoComponent.vue";
+import EditPasswordFields from "../components/EditUser&PasswordComponents/EditPasswordFieldsComponent.vue";
 
 export default {
   name: "EditPasswordView",
@@ -31,7 +31,6 @@ export default {
 
 
 <template>
-
   <!--Section User-->
   <section class="section-user3">
     <EditPasswordInfo :userInfo="userInfo"/>

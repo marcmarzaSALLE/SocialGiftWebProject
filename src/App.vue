@@ -96,7 +96,7 @@ export default {
 
   <footer v-if="isLoggedIn">
     <div class="section-footer1">
-      <p>Socialgift - by Marc Marça & Younes Bouahmed</p>
+      <p>Socialgift - by Marc Marza & Younes Bouahmed</p>
     </div>
 
     <div class="section-footer2">

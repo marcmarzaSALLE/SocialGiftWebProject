@@ -44,8 +44,8 @@ export default {
   <section class="user-info-container">
     <img class="user-img" :src="userInfo.image">
     <div class="user-data">
-      <h2 class="user-username">{{ userInfo.name +" "+userInfo.last_name }}</h2>
-      <h2 class="user-email">{{ userInfo.email }}</h2>
+      <span class="user-username">{{ userInfo.name +" "+userInfo.last_name }}</span>
+      <span class="user-email">{{ userInfo.email }}</span>
 
       <nav class="edit-profile-nav">
         <RouterLink class="edit-profile-button" to="/EditUser">Edit profile</RouterLink>

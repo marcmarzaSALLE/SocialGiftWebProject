@@ -21,7 +21,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 50%;
-    background: #0B2237;
+    background: var(--bluesg);
     border-radius: 20px;
     font-family: Inter, sans-serif;
     box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
@@ -47,9 +47,9 @@
     padding: 1%;
     background: rgba(131, 131, 131, 0.3);
     border-radius: 100px;
-    border: #49A25D solid 1px;
+    border: var(--fluorsg) solid 2px;
     margin-top: 20px;
-    color: #f2f2f2;
+    color: #ffffff;
 }
 
 
@@ -75,17 +75,16 @@
     margin-top: 30px;
     margin-bottom: 30px;
 
-    background: #0B2237;
-    border: #00ff8b solid 2px;
+    background: none;
+    border: var(--fluorsg) solid 2px;
     border-radius: 100px;
     font-size: 20px;
     color: #ffffff;
-    font-family: Inter, sans-serif;
 }
 
 .login-button:hover {
-    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
-    background: #49A25D;
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+    background: var(--greensg);
 }
 
 .new-user-text {
@@ -106,7 +105,7 @@
     width: 50%;
     height: 10%;
     border-radius: 20px;
-    background: #0B2237;
+    background: var(--bluesg);
 }
 
 .signin-button {
@@ -115,8 +114,8 @@
     align-items: center;
     height: 30px;
     padding: 2%;
-    background: #0B2237;
-    border: #00ff8b solid 2px;
+    background: none;
+    border: var(--fluorsg) solid 2px;
     border-radius: 100px;
     font-size: 20px;
     color: #ffffff;
@@ -124,8 +123,8 @@
 }
 
 .signin-button:hover {
-    background: #49a25d;
-    box-shadow: 0px 6px 24px 0px rgb(0, 255, 139);
+    box-shadow: 0px 6px 24px 0px var(--fluorsg);
+    background: var(--greensg);
 }
 
 /***********************************************/

@@ -130,7 +130,6 @@ export default {
         });
     },
 
-
     onEditList(wishlist) { // Selecciona una lista para editar
       this.selectedWishlist = wishlist
       this.getGiftsInfo();
@@ -155,7 +154,6 @@ export default {
     setShowListEdit(value) {
       this.showListEdit = value;
     },
-
   }
 }
 </script>
@@ -179,7 +177,3 @@ export default {
     </section>
   </section>
 </template>
-
-<style scoped>
-
-</style>

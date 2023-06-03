@@ -114,61 +114,62 @@ export default {
 </script>
 
 <template>
-  <div class="message-gifts" v-if="gifts.length === 0">
-    <p>There are no gifts in this list.</p>
-  </div>
+  <section class="gifts-list-section-inside">
+    <div class="message-gifts" v-if="gifts.length === 0">
+      <p>There are no gifts in this list.</p>
+    </div>
 
-  <!--Gift-->
-  <div class="gift-post-div" v-for="gift in gifts" :key="gift.id" v-else>
-    <!--Sección de datos-->
-    <img class="gift-img" :src="gift.image ? gift.image : 'public/Icons/imageProduct.png'">
+    <!--Gift-->
+    <div class="gift-post-div" v-for="gift in gifts" :key="gift.id" v-else>
+      <!--Sección de datos-->
+      <img class="gift-img" :src="gift.image ? gift.image : 'public/Icons/imageProduct.png'">
 
+        <div class="gift-data-div">
+          <span class="gift-info-text">Gift ID: {{gift.id}}</span>
+          <span class="gift-info-text">Product url: <a :href="gift.product_url" target="_blank">click here</a></span>
+          <span class="gift-info-text" v-if="gift.name">Name: {{gift.name}}</span>
+          <span class="gift-info-text" v-if="gift.description">Description: {{truncateText(gift.description, 60)}}</span>
+          <span class="gift-info-text" v-if="gift.price">Price: {{gift.price}}</span>
 
-      <div class="gift-data-div">
-        <span class="gift-info-text">Gift ID: {{gift.id}}</span>
-        <span class="gift-info-text">Product url: <a :href="gift.product_url" target="_blank">click here</a></span>
-        <span class="gift-info-text" v-if="gift.name">Name: {{gift.name}}</span>
-        <span class="gift-info-text" v-if="gift.description">Description: {{truncateText(gift.description, 60)}}</span>
-        <span class="gift-info-text" v-if="gift.price">Price: {{gift.price}}</span>
+          <span class="gift-info-text" v-if="gift.booked === 1">This gift is booked</span>
+          <span class="gift-info-text" v-if="gift.booked === 0">This gift is not booked</span>
+        </div>
+      <!--Sección de botones-->
+      <div class="gift-buttons-div">
 
-        <span class="gift-info-text" v-if="gift.booked === 1">This gift is booked</span>
-        <span class="gift-info-text" v-if="gift.booked === 0">This gift is not booked</span>
-      </div>
-    <!--Sección de botones-->
-    <div class="gift-buttons-div">
+        <!--Boton mover regalo-->
+        <div class="move-gift-button">
+          <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="../../../../public/Icons/moveGiftIcon.png"></a>
+        </div>
 
-      <!--Boton mover regalo-->
-      <div class="move-gift-button">
-        <a class="move-gift-icon-anchor" href="#move-gift-screen"><img class="move-gift-icon" src="../../../../public/Icons/moveGiftIcon.png"></a>
-      </div>
+        <!--Sección overlay mover regalo-->
+        <div id="move-gift-screen" class="move-gift-background-div">
+          <div class="move-gift-main-div">
+            <a class="close-button" href="#">&times;</a>
+            <h3>Move to:</h3>
+            <div class="move-gift-bar">
 
-      <!--Sección overlay mover regalo-->
-      <div id="move-gift-screen" class="move-gift-background-div">
-        <div class="move-gift-main-div">
-          <a class="close-button" href="#">&times;</a>
-          <h3>Move to:</h3>
-          <div class="move-gift-bar">
-
-            <!--Dropdown list to move-->
-            <div class="dropdown-list-div">
-              <button class="list-button">Lists</button>
-              <div class="dropdown-list">
-                  <a class="dropdown-lists-names" v-for="wishlist in filteredWishlists" :key="wishlist.id" @click="selectedWishlist(wishlist)">{{truncateText( wishlist.name, 35)}}</a>
+              <!--Dropdown list to move-->
+              <div class="dropdown-list-div">
+                <button class="list-button">Lists</button>
+                <div class="dropdown-list">
+                    <a class="dropdown-lists-names" v-for="wishlist in filteredWishlists" :key="wishlist.id" @click="selectedWishlist(wishlist)">{{truncateText( wishlist.name, 35)}}</a>
+                </div>
               </div>
-            </div>
 
-            <!--Select list-->
-            <input v-model="wishlistToMove.name" type="text" class="list-moved-input" placeholder="Select list...">
-            <!--Botón de mover-->
-            <button class="move-button" @click="moveGift(wishlistToMove, gift)">Move</button>
+              <!--Select list-->
+              <input v-model="wishlistToMove.name" type="text" class="list-moved-input" placeholder="Select list...">
+              <!--Botón de mover-->
+              <button class="move-button" @click="moveGift(wishlistToMove, gift)">Move</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!--Boton eliminar regalo-->
-      <button class="remove-button" @click="deleteGift(gift)">
-        <img class="remove-gift-icon" src="../../../../public/Icons/removeGiftIcon.png">
-      </button>
+        <!--Boton eliminar regalo-->
+        <button class="remove-button" @click="deleteGift(gift)">
+          <img class="remove-gift-icon" src="../../../../public/Icons/removeGiftIcon.png">
+        </button>
+      </div>
     </div>
-  </div>
+  </section>
 </template>

@@ -82,8 +82,8 @@ export default {
       <router-link :to="{ name: 'friend', params: { id: friend.id } }" class="friend-route-link">
         <img class="friend-img" :src="friend.image">
         <div class="friend-text">
-          <p class="friend-username">{{truncateText(friend.email,30)}}</p>
-          <p class="friend-search-name">{{truncateText(friend.name+" "+friend.last_name,20)}}</p>
+          <p class="friend-username-p">{{truncateText(friend.email,30)}}</p>
+          <p class="friend-search-name-p">{{truncateText(friend.name+" "+friend.last_name,20)}}</p>
         </div>
       </router-link>
       <button class="friend-button" @click="unfollowFriend(friend.id)">Unfollow</button>

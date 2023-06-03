@@ -53,7 +53,7 @@ export default {
 
 <template>
   <h2>Edit password</h2>
-  <div class="line3"></div>
+  <div class="line6"></div>
 
   <div class="password-div">
     <span class="password-span">Current password:</span>

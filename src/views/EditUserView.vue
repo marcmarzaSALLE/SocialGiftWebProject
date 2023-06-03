@@ -1,7 +1,7 @@
 <script>
 import router from "@/router";
-import EditUserInfo from "../components/EditUserInfoComponent.vue";
-import EditUserFields from "../components/EditUserFieldsComponent.vue";
+import EditUserInfo from "../components/EditUser&PasswordComponents/EditUserInfoComponent.vue";
+import EditUserFields from "../components/EditUser&PasswordComponents/EditUserFieldsComponent.vue";
 export default {
     name: "EditUserView",
     components: {
@@ -29,8 +29,7 @@ export default {
 </script>
 
 <template>
-
-  <!--Section User-->
+  <!--Componente del usuario-->
   <section class="section-user2">
    <EditUserInfo :userInfo="userInfo"/>
   </section>
@@ -39,9 +38,4 @@ export default {
   <section class="edit-user-section">
     <EditUserFields  :userInfo="userInfo"/>
   </section>
-
 </template>
-
-<style scoped>
-
-</style>

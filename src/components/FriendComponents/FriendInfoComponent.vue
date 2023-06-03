@@ -1,6 +1,5 @@
 <script>
 import router from "@/router";
-import { RouterLink } from "vue-router";
 
 export default {
   name: "FriendInfo",
@@ -39,6 +38,7 @@ export default {
           console.log("error: " + error);
         });
     },
+
     unfollowFriend() {
       if (confirm("Are you sure you want to unfollow "+this.friend.name +" "+this.friend.last_name+"?")) {
         fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/friends/' + this.friend.id, {
@@ -63,26 +63,21 @@ export default {
     }
   }
 }
-
 </script>
 
 <template>
-  <img class="friend-profile-img" :src="friend.image">
+  <section class="friend-info-container">
+    <img class="friend-profile-img" :src="friend.image">
 
-  <div class="friend-data">
-    <div class="friend-info">
-      <h2 class="friend-username">{{friend.email}}</h2>
-      <h3 class="friend-name">{{friend.name +" "+friend.last_name}}</h3>
-    </div>
+    <div class="friend-data">
+      <span class="friend-username">{{friend.name +" "+friend.last_name}}</span>
+      <span class="friend-email">{{friend.email}}</span>
 
-    <div class="friend-info-mobile">
-      <p class="friend-username">Username</p>
+      <!--Componente botones del amigo-->
+      <div class="friend-buttons-div">
+        <router-link class="message-button" to="/Messages">Message</router-link>
+        <button class="unfollow-button" @click="unfollowFriend()">Unfollow</button>
+      </div>
     </div>
-
-    <!--Componente botones del amigo-->
-    <div class="friend-buttons-div">
-      <router-link class="message-button" to="/Messages">Message</router-link>
-      <button class="unfollow-button" @click="unfollowFriend()">Unfollow</button>
-    </div>
-  </div>
+  </section>
 </template>

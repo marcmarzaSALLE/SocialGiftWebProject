@@ -51,8 +51,10 @@ export default {
           console.log(error);
         });
       },
+
       deleteAccount() {
         if (confirm("Are you sure you want to delete your account?")) {
+
           const password = prompt("Please enter your password to delete your account:");
 
           if (password) {
@@ -90,7 +92,8 @@ export default {
 
 <template>
     <h2>Edit fields</h2>
-    <div class="line3"></div>
+    <div class="line6"></div>
+
 
     <div class="name-div">
         <span class="name-span">Name:</span>

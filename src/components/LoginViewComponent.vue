@@ -27,30 +27,22 @@ export default {
       })
       // Si el login es correcto, se guarda el token y se redirige a la página de MyLists
       .then(response => {
-        console.log("ok: " + response.ok)
-        console.log("status: " + response.status)
-        if (response.status === 200) {
-          //console.log("OK: " + response.text());
+        if (response.ok) {
           return response.json()
         } else {
-
           throw new Error(response.statusText)
         }
       })
       .then(data => {
-        console.log("data: " + data)
-        console.log(data.accessToken)
         localStorage.setItem("token", data.accessToken)
-
         this.getIdUser()
-
       })
       .catch(error => {
         alert("Usuario o contraseña incorrectos: " + error)
       })
     },
+
     getIdUser(){
-      console.log(this.email)
       fetch('https://balandrau.salle.url.edu/i3/socialgift/api/v1/users/search?s='+this.email,{
         headers:{
           "accept": "application/json",
@@ -59,10 +51,7 @@ export default {
         }
       })
       .then(response => {
-        console.log("ok: " + response.ok)
-        console.log("status: " + response.status)
-        console.log("status text: " + response.statusText)
-        if (response.status === 200) {
+        if (response.ok) {
           return response.json()
         } else {
           throw new Error(response.statusText)
@@ -76,14 +65,12 @@ export default {
         router.push({name:"MyUser"})
       })
     },
-
   },
 };
 </script>
 
 <template>
   <section class="background-login">
-
     <img class="socialGift-img-login" src="public/icons/socialGiftBlack.png">
 
     <div class="line4"></div>
@@ -98,12 +85,10 @@ export default {
     <h3 class="new-user-text">Are you new in Social Gift?</h3>
     <div class="line4"></div>
 
-
     <section class="section-signin">
       <RouterLink to="/Register" class="routerLink-login-button">
         <button class="signin-button">Create account</button>
       </RouterLink>
     </section>
-
   </section>
 </template>
