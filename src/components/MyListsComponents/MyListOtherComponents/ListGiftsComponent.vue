@@ -30,7 +30,6 @@ export default {
       };
   },
   methods: {
-
     deleteGift(giftDeleted) {
       console.log("giftDeletedId: " + giftDeleted.id);
       fetch("https://balandrau.salle.url.edu/i3/socialgift/api/v1/gifts/" + giftDeleted.id, {
@@ -104,11 +103,11 @@ export default {
     },
   },
   computed: {
-      filteredWishlists() {
-          return this.wishlists.filter(
-              (wishlist) => wishlist.id !== this.wishlistToEdit.id
-          );
-      }
+    filteredWishlists() {
+      return this.wishlists.filter(
+        (wishlist) => wishlist.id !== this.wishlistToEdit.id
+      );
+    },
   }
 }
 </script>

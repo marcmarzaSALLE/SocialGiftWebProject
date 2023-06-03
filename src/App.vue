@@ -42,18 +42,18 @@ export default {
       <!--Componente logo y lenguajes-->
       <div class="logo-language-div">
         <!--Componente logo-->
-        <RouterLink to="/MyUser" class="socialgift-logo"><img class="socialGift-img" src="public/icons/socialGift.png"></RouterLink>
+        <RouterLink to="/MyUser" class="socialgift-logo"><img class="socialGift-img" src="/../../public/Icons/socialGift.png"></RouterLink>
 
         <!--Componente languajes-->
         <div class="languages-div">
           <input type="checkbox" id="languages-menu" class="languages-menu-input">
-          <label for="languages-menu" class="languages-menu-label"><img class="language-icon" src="public/icons/languagesIcon.png"></label>
+          <label for="languages-menu" class="languages-menu-label"><img class="language-icon" src="/../../public/Icons/languagesIcon.png"></label>
 
           <nav class="languages-menu-nav">
             <p class="language-text">Languages</p>
-            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="public/icons/languagesIcon.png">EN</a></li>
-            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="public/icons/languagesIcon.png">ES</a></li>
-            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="public/icons/languagesIcon.png">FR</a></li>
+            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="/../../public/Icons/languagesIcon.png">EN</a></li>
+            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="/../../public/Icons/languagesIcon.png">ES</a></li>
+            <li class="language-option-li"><a href="#" class="language-text-anchor"><img class="language-icon" src="/../../public/Icons/languagesIcon.png">FR</a></li>
           </nav>
         </div>
       </div>
@@ -64,13 +64,13 @@ export default {
       <!--Componente navegación usuario-->
       <nav class="user-nav-header">
         <div class="user-nav-div" @click="myLists">
-          <img class="user-nav-icons" src="public/Icons/myListIcon.png">
+          <img class="user-nav-icons" src="./../../public/Icons/myListIcon.png">
         </div>
         <div class="user-nav-div" @click="messages">
-         <img class="user-nav-icons" src="public/Icons/messagesIcon.png">
+          <img class="user-nav-icons" src="./../../public/Icons/messagesIcon.png">
         </div>
         <div class="user-nav-div" @click="myUser">
-          <img class="user-nav-icons" src="public/Icons/myUserIcon.png">
+          <img class="user-nav-icons" src="./../../public/Icons/myUserIcon.png">
         </div>
       </nav>
     </section>
@@ -106,13 +106,13 @@ export default {
 
   <nav class="user-nav-footer" v-if="isLoggedIn">
     <div class="user-nav-div">
-      <RouterLink to="/MyLists"><img class="user-nav-icons" src="public/Icons/myListIcon.png"></RouterLink>
+      <RouterLink to="/MyLists"><img class="user-nav-icons" src="./../../public/Icons/myListIcon.png"></RouterLink>
     </div>
     <div class="user-nav-div">
-      <RouterLink to="/Messages"><img class="user-nav-icons" src="public/Icons/messagesIcon.png"></RouterLink>
+      <RouterLink to="/Messages"><img class="user-nav-icons" src="./../../public/Icons/messagesIcon.png"></RouterLink>
     </div>
     <div class="user-nav-div">
-      <RouterLink to="/MyUser"><img class="user-nav-icons" src="public/Icons/myUserIcon.png"></RouterLink>
+      <RouterLink to="/MyUser"><img class="user-nav-icons" src="./../../public/Icons/myUserIcon.png"></RouterLink>
     </div>
   </nav>
 </template>
